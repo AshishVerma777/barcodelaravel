@@ -40,6 +40,17 @@
                     <th scope="col">Date</th>
                     <th scope="col">Bar-Code</th>
                     <th scope="col">Actions</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Product No</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Batch</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Bar-Code</th>
+                    <th scope="col">Actions</th>
+
+
+
                 </tr>
             </thead>
             <tbody>
