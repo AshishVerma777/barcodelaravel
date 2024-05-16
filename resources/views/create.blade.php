@@ -4,7 +4,7 @@
 <title>Generate Label</title>       
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
 </head>
-<script>
+{{-- <script>
   function showLaunchDeviationButton() {
       var batchStatus = document.getElementById("batch_status").value;
       var launchDeviationButton = document.getElementById("launch_deviation_button");
@@ -19,6 +19,42 @@
 
   function launchDeviation() {
       // Open the specified link in a new tab
+      window.open("https://agio.mydemosoftware.com/", "_blank");
+  }
+</script> --}}
+
+<script>
+  function showLaunchDeviationButton() {
+      var batchStatus = document.getElementById("batch_status").value;
+      var launchDeviationButton = document.getElementById("launch_deviation_button");
+
+      // Show the Launch Deviation button if "Rejected" is selected for Batch Status, otherwise hide it
+      if (batchStatus === "rejected") {
+          launchDeviationButton.style.display = "block";
+      } else {
+          launchDeviationButton.style.display = "none";
+      }
+  }
+
+  function launchDeviation() {
+      // Open the specified link in a new tab for Batch Status
+      window.open("https://agio.mydemosoftware.com/", "_blank");
+  }
+
+  function showLaunchDeviationButtonForContainer() {
+      var containerStatus = document.getElementById("container_status").value;
+      var launchDeviationButtonContainer = document.getElementById("launch_deviation_button_container");
+
+      // Show the Launch Deviation button if "Leakage/Damage" is selected for Container Status, otherwise hide it
+      if (containerStatus === "leakage_damage") {
+          launchDeviationButtonContainer.style.display = "block";
+      } else {
+          launchDeviationButtonContainer.style.display = "none";
+      }
+  }
+
+  function launchDeviationForContainer() {
+      // Open the specified link in a new tab for Container Status
       window.open("https://agio.mydemosoftware.com/", "_blank");
   }
 </script>
@@ -73,17 +109,14 @@
 
                            
    
-                    <label for="batch_status">Container Status:</label>
-                    <select class="form-control mb-3" name="batch_status" id="caontainer_status" required onchange="showLaunchDeviationButton()">
-                        <option value="">Select</option>
-                      
-                        <option value="Leakage/Damage">Leakage/Damage</option>
-                        <option value="ok">Ok</option>
-                    </select>
-                    
-                    <!-- Launch Deviation button -->
-                    <button type="button" class="btn btn-primary mb-3" id="launch_deviation_button" style="display: none;" onclick="launchDeviation()">Launch Deviation</button>
-                    
+                    <label for="container_status">Container Status:</label>
+              <select class="form-control mb-3" name="container_status" id="container_status" required onchange="showLaunchDeviationButtonForContainer()">
+                  <option value="">Select</option>
+                  <option value="leakage_damage">Leakage/Damage</option>
+                  <option value="ok">Ok</option>
+              </select>
+              <button type="button" class="btn btn-primary mb-3" id="launch_deviation_button_container" style="display: none;" onclick="launchDeviationForContainer()">Launch Deviation for Container</button>
+
 
                     {{-- <label for="">Date:</label>
                     <input type="date" class="form-control mb-3" name="date" required> --}}
