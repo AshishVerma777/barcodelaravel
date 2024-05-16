@@ -31,6 +31,8 @@ return new class extends Migration
             $table->date('exp_dt')->nullable();
             $table->string('no_of_cont')->nullable();
             $table->string('pack_size')->nullable();
+            $table->string('count_no')->nullable();
+            
             $table->string('rec_qty')->nullable();
             $table->string('manufacturer')->nullable();
             $table->string('supplier')->nullable();

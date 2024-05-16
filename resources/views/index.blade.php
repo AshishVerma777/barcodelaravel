@@ -13,13 +13,18 @@
     img.logo {
         height: 200px; /* Adjust the size of the logo */
     }
+    .table_responsive{
+       
+            overflow-x: auto;
+        
+    }
 </style>
 </head>
 <body>
 <header>
-    <img src="https://vidyagxp.com/vidhyaGxp.png" alt="Logo" class="logo">
+    <img src="https://vidyagxp.com/vidhyaGxp.png" alt="Logo" class="logo" style="scale: 1;">
 </header>
-<div class="container">
+<div class="container-fluid">
     <h1 class="text-primary pt-4 text-center mb-4">Generate Label </h1>
     <div class="row justify-content-md-center">
         <h1 class="pt-4 text-left mb-4"><b>List of Products</b></h1>
@@ -29,36 +34,39 @@
             <a href="{{route('show')}}" class="btn btn-success">Show</a>
 
         </div>
-        <table class="table table-hover">
+       <div class="main_class">
+       <div class="table_responsive">
+        <table class="table table-hover" >
             <thead>
                 <tr>
                     <th>Id</th>
                 
-                    <th>Batch Status</th>
-                    <th>Item Code</th>
-                    <th>Item Name</th>
-                    <th>Location Code</th>
-                    <th>Store</th>
-                    <th>GRN Batch ID</th>
-                    <th>Container No.</th>
-                    <th>Container Status</th>
-                    <th>Brand Name</th>
-                    <th>Item Description</th>
-                    <th>Batch/No</th>
+                    {{-- <th>Id</th> --}}
+                    <th>Batch Status:</th>
+                    <th>Item Code :</th>
+                    <th>Item Name:</th>
+                    <th>Location Code:</th>
+                    <th>Store :</th>
+                    <th>Grn Batch Id :</th>
+                    <th>Arn Id :</th>
+                    <th>Container No. :</th>
+                    <th>Container Status:</th>
+                    <th>Brand Name:</th>
+                    <th>Item Description:</th>
+                    <th>Batch/No:</th>
                     <th>UOM</th>
-                    <th>Mfg.DT</th>
+                    <th>Mfg.DT.</th>
                     <th>Exp.DT</th>
                     <th>No. Of Cont.</th>
-                    <th>Rec Qty</th>
-                    <th>Manufacturer</th>
-                    <th>Supplier</th>
-                    <th>GRN No.</th>
-                    <th>GRN Date</th>
-                    <th>Format No.</th>
-                    <th>Printed By</th>
-                    <th >Bar-Code</th>
-                    <th scope="col">Actions</th>
-
+                    <th>Rec Qty:</th>
+                    <th>Manufacturer:</th>
+                    <th>Supplier:</th>
+                    <th>GRN No.:</th>
+                    <th>GRN Date:</th>
+                    <th >Format No.:</th>
+                    <th >Printed By</th>
+                    <th>Bar-Code</th>
+                    <th>Actions</th>
 
 
                 </tr>
@@ -107,7 +115,8 @@
                     </tr>
                 @endforeach
             </tbody>
-        </table>
+        </table></div>
+       </div>
     </div>
 </div>
 </body>

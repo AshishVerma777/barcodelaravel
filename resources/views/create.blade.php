@@ -123,13 +123,13 @@
               <div class="col-12">
                 <label for="brand_name">Brand Name:</label>
                        <input type="text" class="form-control mb-3" name="brand_name" required>
-                     </div>
+              </div>
 
                      
                  <div class="col-12">
                   <label for="Item_Description">Item Description:</label>
                          <input type="text" class="form-control mb-3" name="item_description" required>
-                       </div>
+                  </div>
 
 
                        
@@ -148,13 +148,19 @@
                  <div class="col-12">
                   <label for="Mfg_dt">Mfg.DT.</label>
                          <input type="date" class="form-control mb-3" name="mfg_dt" >
-                       </div>
+                </div>
 
                        <label for="exp_dt">Exp.DT</label>
                         <input type="date" class="form-control mb-3" name="exp_dt" >
 
                         <label for="no_of_cont">No. Of Cont.</label>
                         <input type="text" class="form-control mb-3" name="no_of_cont" >
+
+                        <label for="pack_size">Pack.Size</label>
+                        <input type="text" class="form-control mb-3" name="pack_size" >
+
+                         <label for="count_no">Count No.</label>
+                        <input type="text" class="form-control mb-3" name="count_no" >
 
 
                         <label for="rec_qty">Rec Qty:</label>
