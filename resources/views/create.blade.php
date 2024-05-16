@@ -4,24 +4,16 @@
 <title>Generate Label</title>       
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
 </head>
-{{-- <script>
-  function showLaunchDeviationButton() {
-      var batchStatus = document.getElementById("batch_status").value;
-      var launchDeviationButton = document.getElementById("launch_deviation_button");
-
-      // Show the Launch Deviation button if "Rejected" is selected, otherwise hide it
-      if (batchStatus === "rejected") {
-          launchDeviationButton.style.display = "block";
-      } else {
-          launchDeviationButton.style.display = "none";
-      }
+<style>
+  .image_head{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
   }
-
-  function launchDeviation() {
-      // Open the specified link in a new tab
-      window.open("https://agio.mydemosoftware.com/", "_blank");
-  }
-</script> --}}
+  img.logo {
+        height: 150px; /* Adjust the size of the logo */
+    }
+</style>
 
 <script>
   function showLaunchDeviationButton() {
@@ -61,9 +53,17 @@
 <body>
     <div class="container-fluid  ">
       <div class="row justify-content-md-center">
-        <div class="col-md-9">
+        <div class="col-md-12">
             <div class="card px-5 mt-3  shadow">
-               <h1 class="text-primary pt-4 text-center mb-4"> QR Label</h1>
+              <div class="image_head">
+                <div class="logo">
+                  <img src="https://vidyagxp.com/vidhyaGxp.png" alt="Logo" class="logo" style="scale: 2.5">
+               
+                </div>
+                <div class="logo">
+                  <img src="{{ asset('user/images/ajio-removebg-preview.png') }}" alt="logo" style="scale: 0.5; margin-top: -51px;">
+                </div>
+              </div>
                 <form action="{{route('store')}}" method="post">
                  @csrf
                  <label for="batch_status">Batch Status:</label>
@@ -85,7 +85,7 @@
                     <label for="batch_status">Item Name:</label>
                     <select class="form-control mb-3" name="item_name" id="batch_status" required>
                         <option value="">Select </option>
-                        <option value="approved">Hydro</option>
+                        {{-- <option value="approved">Hydro</option> --}}
                         <option value="reject">Hydrosulfuric Acid</option>
                         <option value="restrat"></option>
                     </select>
@@ -115,7 +115,7 @@
                   <option value="leakage_damage">Leakage/Damage</option>
                   <option value="ok">Ok</option>
               </select>
-              <button type="button" class="btn btn-primary mb-3" id="launch_deviation_button_container" style="display: none;" onclick="launchDeviationForContainer()">Launch Deviation for Container</button>
+              <button type="button" class="btn btn-primary mb-3" id="launch_deviation_button_container" style="display: none;" onclick="launchDeviationForContainer()">Launch Deviation</button>
 
 
 
