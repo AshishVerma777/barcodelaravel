@@ -66,9 +66,24 @@
                <h1 class="text-primary pt-4 text-center mb-4"> QR Label</h1>
                 <form action="{{route('store')}}" method="post">
                  @csrf
+
+                   <label for="brand_name"> Brand Name:</label>
+                    <input type="text" class="form-control mb-3" name="brand_name" required>
+
+                     <label for="item_description"> Item Description:</label>
+                    <input type="text" class="form-control mb-3" name="item_description" required>
+
+
+ 
+                    <label for="brand_name"> UOM:</label>
+                    <input type="text" class="form-control mb-3" name="brand_name" required>
+
+                     <label for="item_description"> Item Description:</label>
+                    <input type="text" class="form-control mb-3" name="item_description" required>
+
                  <label for="batch_status">Batch Status:</label>
                 <select class="form-control mb-3" name="batch_status" id="batch_status" required onchange="showLaunchDeviationButton()">
-                    <option value="">Select</option>
+                    <option value="0">Select</option>
                     <option value="under_quarantine">Under Quarantine</option>
                     <option value="under_testing">Under Testing</option>
                     <option value="approved">Approved</option>
@@ -77,40 +92,60 @@
                 </select>
                 <button type="button" class="btn btn-primary mb-3" id="launch_deviation_button" style="display: none;" onclick="launchDeviation()">Launch Deviation</button>
 
-                    <label for="">Item Code :</label>
-                    <input type="text" class="form-control mb-3" name="product_no" required>
+                    <label for="item_code">Item Code :</label>
+                    <input type="text" class="form-control mb-3" name="item_code" >
 
                     {{-- <label for="">Item Name:</label>
                     <input type="text" class="form-control mb-3" name="batch" required> --}}
-                    <label for="batch_status">Item Name:</label>
-                    <select class="form-control mb-3" name="item_name" id="batch_status" required>
-                        <option value="">Select </option>
-                        <option value="approved">Hydro</option>
-                        <option value="reject">Hydrosulfuric Acid</option>
-                        <option value="restrat"></option>
-                    </select>
+                    <label for="item_name">Item Name:</label>
+                   <input type="text" class="form-control mb-3" name="item_name">
                     {{-- <select name="" id="">
                       <option value="Hydro">Hydro</option>
                       <option value="Hydro">Hydro</option>
 
                     </select> --}}
                     {{-- <input type="text" class="form-control mb-3" name="product_name" required> --}}
-                    <label for="">Location Code:</label>
-                    <input type="text" class="form-control mb-3" name="batch" required>
-                    <label for="">Store :</label>
-                    <input type="text" class="form-control mb-3" name="price"  value="RMS" required>
-                    <label for="">Grn Batch Id :</label>
-                    <input type="text" class="form-control mb-3" name="price"   required>
-                    <label for="">Arn Id :</label>
-                    <input type="text" class="form-control mb-3" name="price"   required>
-                    <label for="">Container No. :</label>
-                    <input type="text" class="form-control mb-3" name="price"   required>
+                    <label for="location_code">Location Code:</label>
+                    <input type="text" class="form-control mb-3" name="location_code">
+                   
+                    <label for="store">Store :</label>
+                    <input type="text" class="form-control mb-3" name="store"  value="RMS" required>
 
+                    <label for="grn_batch_id">Grn Batch Id :</label>
+                    <input type="text" class="form-control mb-3" name="grn_batch_id"   required>
 
-                           
+                    <label for="arn_id">Arn Id :</label>
+                    <input type="text" class="form-control mb-3" name="arn_id"   required>
+
+                    <label for="container_no">Container No. :</label>
+                    <input type="text" class="form-control mb-3" name="container_no"   required>
+                     
+                     <label for="supplier">Supplier :</label>
+                    <input type="text" class="form-control mb-3" name="supplier"   required>
+
+                    <label for="mfg_date">Mfg Date:</label>
+                    <input type="text" class="form-control mb-3" name="mfg_date"   required>
+
+                    <label for="date"> Exp. Date:</label>
+                    <input type="date" class="form-control mb-3" name="dateexp" required>
+
+                    <label for="no_of_cont">No. of Container </label>
+                    <input type="text" class="form-control mb-3" name="no_of_cont" required>
+
+                    <label for="pack_size">Pack. Size </label>
+                    <input type="text" class="form-control mb-3" name="pack_size" required>
+
+                     <label for="rec_qty">Rec.Qty</label>
+                    <input type="text" class="form-control mb-3" name="rec_qty" required>
    
+                     <label for="format_no">Format No</label>
+                    <input type="text" class="form-control mb-3" name="format_no" required>
+
+                     <label for="print_by">Printed By</label>
+                    <input type="text" class="form-control mb-3" name="print_by" required>
+
                     <label for="container_status">Container Status:</label>
-              <select class="form-control mb-3" name="container_status" id="container_status" required onchange="showLaunchDeviationButtonForContainer()">
+                    <select class="form-control mb-3" name="container_status" id="container_status" required onchange="showLaunchDeviationButtonForContainer()">
                   <option value="">Select</option>
                   <option value="leakage_damage">Leakage/Damage</option>
                   <option value="ok">Ok</option>
@@ -118,8 +153,15 @@
               <button type="button" class="btn btn-primary mb-3" id="launch_deviation_button_container" style="display: none;" onclick="launchDeviationForContainer()">Launch Deviation for Container</button>
 
 
-                    {{-- <label for="">Date:</label>
-                    <input type="date" class="form-control mb-3" name="date" required> --}}
+                     <label for="date"> GRN Date:</label>
+                    <input type="date" class="form-control mb-3" name="date" required>
+
+
+                      <label for="format_no">Format No</label>
+                    <input type="text" class="form-control mb-3" name="format_no" required>
+
+                     <label for="print_by">Printed By</label>
+                    <input type="text" class="form-control mb-3" name="print_by" required>
                  <button type="submit" class="btn btn-success col-md-3">Submit</button>
             </form>
         </div>
