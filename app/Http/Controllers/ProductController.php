@@ -17,12 +17,15 @@ class ProductController extends Controller
     }
  
     public function store(Request $request){
+
         $number = mt_rand(1000000000,9999999999);
          
         if ($this->productCodeExists($number)) {
             $number = mt_rand(1000000000,999999999);
         }
          
+
+        
         $request['bar_code'] = $number;
         product::create($request->all());
  
