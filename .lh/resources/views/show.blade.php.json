@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 3,
             "patches": [
                 {
                     "date": 1715663986227,
@@ -16,6 +16,10 @@
                 {
                     "date": 1715664026949,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     <div class=\"row justify-content-md-center\">\n         <h1 class=\"pt-4 text-left mb-4\"><b>List of Products</b></h1>\n         <hr>\n         <div class=\"pb-2\">\n-            <a href=\"{{  }}\" class=\"btn btn-success\">New Post</a>\n+            <a href=\"{{ r }}\" class=\"btn btn-success\">New Post</a>\n             <input type=\"text\" name=\"qr_scanner\" id=\"QrScanner\" />\n         </div>\n         <table class=\"table table-hover\">\n             <thead>\n"
+                },
+                {
+                    "date": 1715840587734,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,9 @@\n <div class=\"container-fluid  \">\n     <div class=\"row justify-content-md-center\">\n       <div class=\"col-md-9\">\n           <div class=\"card px-5 mt-3  shadow\">\n-             <h1 class=\"text-primary pt-4 text-center mb-4\">Laravel Generat</h1>\n+             <h1 class=\"text-primary pt-4 text-center mb-4\">Laravel </h1>\n               <form action=\"{{route('store')}}\" method=\"post\">\n                @csrf\n                   <label for=\"\">Product Number:</label>\n                   <input type=\"text\" class=\"form-control mb-3\" name=\"product_no\" required>\n"
                 }
             ],
             "date": 1715663986227,

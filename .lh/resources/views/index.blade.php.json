@@ -1,0 +1,26 @@
+{
+    "sourceFile": "resources/views/index.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1715840734995,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1715840742535,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n <title>Laravel Generate Barcode</title>       \n <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css\" />\n </head>\n <body>\n-<he\n+<hea\n <div class=\"container\">\n     <h1 class=\"text-primary pt-4 text-center mb-4\">Laravel Generate Barcode</h1>\n     <div class=\"row justify-content-md-center\">\n         <h1 class=\"pt-4 text-left mb-4\"><b>List of Products</b></h1>\n"
+                },
+                {
+                    "date": 1715840748353,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,5 +57,5 @@\n         </table>\n     </div>\n </div>\n </body>\n-</h\n\\ No newline at end of file\n+</html>\n"
+                }
+            ],
+            "date": 1715840734995,
+            "name": "Commit-0",
+            "content": "<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<title>Laravel Generate Barcode</title>       \n<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css\" />\n</head>\n<body>\n    \n<div class=\"container\">\n    <h1 class=\"text-primary pt-4 text-center mb-4\">Laravel Generate Barcode</h1>\n    <div class=\"row justify-content-md-center\">\n        <h1 class=\"pt-4 text-left mb-4\"><b>List of Products</b></h1>\n        <hr>\n        <div class=\"pb-2\">\n            <a href=\"{{route('create')}}\" class=\"btn btn-success\">New Post</a>\n        </div>\n        <table class=\"table table-hover\">\n            <thead>\n                <tr>\n                    <th scope=\"col\">ID</th>\n                    <th scope=\"col\">Product No</th>\n                    <th scope=\"col\">Product Name</th>\n                    <th scope=\"col\">Batch</th>\n                    <th scope=\"col\">Price</th>\n                    <th scope=\"col\">Date</th>\n                    <th scope=\"col\">Bar-Code</th>\n                    <th scope=\"col\">Actions</th>\n                </tr>\n            </thead>\n            <tbody>\n                @foreach ($products as $product)\n                    <tr>\n                        <th>{{ $product->id }}</th>\n                        <td>{{ $product->product_no }}</td>\n                        <td>{{ $product->product_name }}</td>\n                        <td>{{ $product->batch}}</td>\n                        <td>{{ $product->price }}</td>\n                        <td>{{ $product->date }}</td>\n                        {{-- <td>{!! DNS1D::getBarcodeHTML($product->bar_code,'C39') !!}\n                            p - {{ $product->bar_code }}\n                        </td> --}}\n\n                        <td>{!! DNS1D::getBarcodeHTML($product->bar_code,'C39') !!}\n                            p - {{ $product->bar_code }}\n                        </td>\n\n                        <td>\n                            <form action=\"{{ route('print', $product->id) }}\" method=\"POST\">\n                                @csrf\n                                <button type=\"submit\" class=\"btn btn-primary\">Print</button>\n                            </form>\n                        </td>\n                    </tr>\n                @endforeach\n            </tbody>\n        </table>\n    </div>\n</div>\n</body>\n</html>\n"
+        }
+    ]
+}

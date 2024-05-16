@@ -1,0 +1,58 @@
+{
+    "sourceFile": "resources/views/create.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 10,
+            "patches": [
+                {
+                    "date": 1715841904884,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1715842317054,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n             <div class=\"card px-5 mt-3  shadow\">\n                <h1 class=\"text-primary pt-4 text-center mb-4\">Generate Label</h1>\n                 <form action=\"{{route('store')}}\" method=\"post\">\n                  @csrf\n-                    <label for=\"\">Product Number:</label>\n+                    <label for=\"\">:</label>\n                     <input type=\"text\" class=\"form-control mb-3\" name=\"product_no\" required>\n \n                     <label for=\"\">Product Name:</label>\n                     <input type=\"text\" class=\"form-control mb-3\" name=\"product_name\" required>\n"
+                },
+                {
+                    "date": 1715842326796,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n             <div class=\"card px-5 mt-3  shadow\">\n                <h1 class=\"text-primary pt-4 text-center mb-4\">Generate Label</h1>\n                 <form action=\"{{route('store')}}\" method=\"post\">\n                  @csrf\n-                    <label for=\"\">:</label>\n+                    <label for=\"\">Item:</label>\n                     <input type=\"text\" class=\"form-control mb-3\" name=\"product_no\" required>\n \n                     <label for=\"\">Product Name:</label>\n                     <input type=\"text\" class=\"form-control mb-3\" name=\"product_name\" required>\n"
+                },
+                {
+                    "date": 1715842337550,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,12 +8,12 @@\n     <div class=\"container-fluid  \">\n       <div class=\"row justify-content-md-center\">\n         <div class=\"col-md-9\">\n             <div class=\"card px-5 mt-3  shadow\">\n-               <h1 class=\"text-primary pt-4 text-center mb-4\">Generate Label</h1>\n+               <h1 class=\"text-primary pt-4 text-center mb-4\"> Label</h1>\n                 <form action=\"{{route('store')}}\" method=\"post\">\n                  @csrf\n-                    <label for=\"\">Item:</label>\n+                    <label for=\"\">Item Code :</label>\n                     <input type=\"text\" class=\"form-control mb-3\" name=\"product_no\" required>\n \n                     <label for=\"\">Product Name:</label>\n                     <input type=\"text\" class=\"form-control mb-3\" name=\"product_name\" required>\n"
+                },
+                {
+                    "date": 1715842353453,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,15 +8,15 @@\n     <div class=\"container-fluid  \">\n       <div class=\"row justify-content-md-center\">\n         <div class=\"col-md-9\">\n             <div class=\"card px-5 mt-3  shadow\">\n-               <h1 class=\"text-primary pt-4 text-center mb-4\"> Label</h1>\n+               <h1 class=\"text-primary pt-4 text-center mb-4\"> QR Label</h1>\n                 <form action=\"{{route('store')}}\" method=\"post\">\n                  @csrf\n                     <label for=\"\">Item Code :</label>\n                     <input type=\"text\" class=\"form-control mb-3\" name=\"product_no\" required>\n \n-                    <label for=\"\">Product Name:</label>\n+                    <label for=\"\">Item Name:</label>\n                     <input type=\"text\" class=\"form-control mb-3\" name=\"product_name\" required>\n                     <label for=\"\">Batch:</label>\n                     <input type=\"text\" class=\"form-control mb-3\" name=\"batch\" required>\n                     <label for=\"\">Price:</label>\n"
+                },
+                {
+                    "date": 1715842367336,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n                     <input type=\"text\" class=\"form-control mb-3\" name=\"product_no\" required>\n \n                     <label for=\"\">Item Name:</label>\n                     <input type=\"text\" class=\"form-control mb-3\" name=\"product_name\" required>\n-                    <label for=\"\">Batch:</label>\n+                    <label for=\"\">Local:</label>\n                     <input type=\"text\" class=\"form-control mb-3\" name=\"batch\" required>\n                     <label for=\"\">Price:</label>\n                     <input type=\"text\" class=\"form-control mb-3\" name=\"price\" required>\n                     \n"
+                },
+                {
+                    "date": 1715842377748,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n                     <input type=\"text\" class=\"form-control mb-3\" name=\"product_no\" required>\n \n                     <label for=\"\">Item Name:</label>\n                     <input type=\"text\" class=\"form-control mb-3\" name=\"product_name\" required>\n-                    <label for=\"\">Local:</label>\n+                    <label for=\"\">Local code:</label>\n                     <input type=\"text\" class=\"form-control mb-3\" name=\"batch\" required>\n                     <label for=\"\">Price:</label>\n                     <input type=\"text\" class=\"form-control mb-3\" name=\"price\" required>\n                     \n"
+                },
+                {
+                    "date": 1715842394478,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,10 +15,11 @@\n                     <label for=\"\">Item Code :</label>\n                     <input type=\"text\" class=\"form-control mb-3\" name=\"product_no\" required>\n \n                     <label for=\"\">Item Name:</label>\n+                    \n                     <input type=\"text\" class=\"form-control mb-3\" name=\"product_name\" required>\n-                    <label for=\"\">Local code:</label>\n+                    <label for=\"\">Local Code:</label>\n                     <input type=\"text\" class=\"form-control mb-3\" name=\"batch\" required>\n                     <label for=\"\">Price:</label>\n                     <input type=\"text\" class=\"form-control mb-3\" name=\"price\" required>\n                     \n"
+                },
+                {
+                    "date": 1715842401130,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n                     <label for=\"\">Item Code :</label>\n                     <input type=\"text\" class=\"form-control mb-3\" name=\"product_no\" required>\n \n                     <label for=\"\">Item Name:</label>\n-                    \n+                    select\n                     <input type=\"text\" class=\"form-control mb-3\" name=\"product_name\" required>\n                     <label for=\"\">Local Code:</label>\n                     <input type=\"text\" class=\"form-control mb-3\" name=\"batch\" required>\n                     <label for=\"\">Price:</label>\n"
+                },
+                {
+                    "date": 1715842409107,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n                     <input type=\"text\" class=\"form-control mb-3\" name=\"product_no\" required>\n \n                     <label for=\"\">Item Name:</label>\n                     <select name=\"\" id=\"\">\n-                      \n+                      o\n                     </select>\n                     <input type=\"text\" class=\"form-control mb-3\" name=\"product_name\" required>\n                     <label for=\"\">Local Code:</label>\n                     <input type=\"text\" class=\"form-control mb-3\" name=\"batch\" required>\n"
+                },
+                {
+                    "date": 1715842598082,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n                       <option value=\"Hydro\">Hydro</option>\n \n                     </select> --}}\n                     {{-- <input type=\"text\" class=\"form-control mb-3\" name=\"product_name\" required> --}}\n-                    <label for=\"\">Loca Code:</label>\n+                    <label for=\"\">Locat Code:</label>\n                     <input type=\"text\" class=\"form-control mb-3\" name=\"batch\" required>\n                     <label for=\"\">Price:</label>\n                     <input type=\"text\" class=\"form-control mb-3\" name=\"price\" required>\n                     \n"
+                }
+            ],
+            "date": 1715841904883,
+            "name": "Commit-0",
+            "content": "<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<title>Generate Label</title>       \n<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css\" />\n</head>\n<body>\n    <div class=\"container-fluid  \">\n      <div class=\"row justify-content-md-center\">\n        <div class=\"col-md-9\">\n            <div class=\"card px-5 mt-3  shadow\">\n               <h1 class=\"text-primary pt-4 text-center mb-4\">Generate Label</h1>\n                <form action=\"{{route('store')}}\" method=\"post\">\n                 @csrf\n                    <label for=\"\">Product Number:</label>\n                    <input type=\"text\" class=\"form-control mb-3\" name=\"product_no\" required>\n\n                    <label for=\"\">Product Name:</label>\n                    <input type=\"text\" class=\"form-control mb-3\" name=\"product_name\" required>\n                    <label for=\"\">Batch:</label>\n                    <input type=\"text\" class=\"form-control mb-3\" name=\"batch\" required>\n                    <label for=\"\">Price:</label>\n                    <input type=\"text\" class=\"form-control mb-3\" name=\"price\" required>\n                    \n                    <label for=\"\">Date:</label>\n                    <input type=\"date\" class=\"form-control mb-3\" name=\"date\" required>\n                 <button type=\"submit\" class=\"btn btn-success col-md-3\">Submit</button>\n            </form>\n        </div>\n        </div>\n      </div>\n    </div>\n</body>\n</html>"
+        }
+    ]
+}
