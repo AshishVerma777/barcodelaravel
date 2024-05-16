@@ -118,13 +118,39 @@
               <button type="button" class="btn btn-primary mb-3" id="launch_deviation_button_container" style="display: none;" onclick="launchDeviationForContainer()">Launch Deviation</button>
 
 
-
+              
               
               <div class="col-12">
                 <label for="brand_name">Brand Name:</label>
                        <input type="text" class="form-control mb-3" name="brand_name" required>
-              </div>
+                     </div>
+                     <div class="row">
+                     <div class="col-6">
+                     <label for="quantity_of_product">Quantity of Product</label>
+                       <input type="text" id="quantity" class="form-control mb-3" name="quantity" oninput="calculateTotalWeight()" placeholder="Enter quantity" required>
+                     
+                     </div>
+                     <div class="col-6">
+                       <label for="unit">Unit</label>
+                       <select class="form-control mb-3" name="unit" id="unit" required onchange="calculateTotalTime()"">
+                           <option value="kg">Kilogram (kg)</option>
+                           <option value="gm">Gram (gm)</option>
+                           {{-- <option value="ok">Ok</option> --}}
+                       </select>
+                   
+                     </div>
+                     </div>
+                       <label for="weightPerPackage">Weight per Package</label>
+                       <input type="text" id="weightPerPackage" class="form-control mb-3" name="weightPerPackage" oninput="calculateTotalWeight()" placeholder="Enter weight per package" required>
+                     
+                       <label for="totalWeight">Total Weight</label>
+                       <input type="text" id="totalWeight" class="form-control mb-3" name="totalWeight" oninput="calculateTotalWeight()" placeholder="Enter weight per package" required>
+                     
 
+   
+
+
+                     
                      
                  <div class="col-12">
                   <label for="Item_Description">Item Description:</label>
@@ -148,8 +174,8 @@
                  <div class="col-12">
                   <label for="Mfg_dt">Mfg.DT.</label>
                          <input type="date" class="form-control mb-3" name="mfg_dt" >
-                </div>
-
+                       </div>
+<br>
                        <label for="exp_dt">Exp.DT</label>
                         <input type="date" class="form-control mb-3" name="exp_dt" >
 
@@ -186,7 +212,30 @@
                     <input type="date" class="form-control mb-3" name="date" required> --}}
                  <button type="submit" class="btn btn-success col-md-3">Submit</button>
 
+                        
 
+               
+    
+    <script>
+        function calculateTotalWeight() {
+            var quantity = document.getElementById('quantity').value;
+            var unit = document.getElementById('unit').value;
+            var weightPerPackage = document.getElementById('weightPerPackage').value;
+            var totalWeight = 0;
+
+            // Ensure both quantity and weightPerPackage are provided before calculating
+            if (quantity && weightPerPackage) {
+                if (unit === 'kg') {
+                    totalWeight = quantity * weightPerPackage; // Total weight in kilograms
+                } else if (unit === 'gm') {
+                    totalWeight = quantity * (weightPerPackage / 1000); // Convert grams to kilograms
+                }
+                document.getElementById('totalWeight').value = totalWeight + ' kg';
+            } else {
+                document.getElementById('totalWeight').value = ''; // Clear if inputs are incomplete
+            }
+        }
+    </script>
 
                  {{-- new added  --}}
                 
