@@ -29,9 +29,9 @@ return new class extends Migration
             $table->date('mfg_dt')->nullable();
             
             $table->date('exp_dt')->nullable();
-            $table->integer('no_of_cont')->nullable();
+            $table->string('no_of_cont')->nullable();
             $table->string('pack_size')->nullable();
-            $table->integer('rec_qty')->nullable();
+            $table->string('rec_qty')->nullable();
             $table->string('manufacturer')->nullable();
             $table->string('supplier')->nullable();
             $table->string('grn_no')->nullable();

@@ -32,21 +32,31 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Product No</th>
-                    <th scope="col">Product Name</th>
-                    <th scope="col">Batch</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Bar-Code</th>
-                    <th scope="col">Actions</th>
-                    <th scope="col">ID</th>
-                    <th scope="col">Product No</th>
-                    <th scope="col">Product Name</th>
-                    <th scope="col">Batch</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Bar-Code</th>
+                    <th>Id</th>
+                
+                    <th>Batch Status</th>
+                    <th>Item Code</th>
+                    <th>Item Name</th>
+                    <th>Location Code</th>
+                    <th>Store</th>
+                    <th>GRN Batch ID</th>
+                    <th>Container No.</th>
+                    <th>Container Status</th>
+                    <th>Brand Name</th>
+                    <th>Item Description</th>
+                    <th>Batch/No</th>
+                    <th>UOM</th>
+                    <th>Mfg.DT</th>
+                    <th>Exp.DT</th>
+                    <th>No. Of Cont.</th>
+                    <th>Rec Qty</th>
+                    <th>Manufacturer</th>
+                    <th>Supplier</th>
+                    <th>GRN No.</th>
+                    <th>GRN Date</th>
+                    <th>Format No.</th>
+                    <th>Printed By</th>
+                    <th >Bar-Code</th>
                     <th scope="col">Actions</th>
 
 
@@ -57,11 +67,34 @@
                 @foreach ($products as $product)
                     <tr>
                         <th>{{ $product->id }}</th>
-                        <td>{{ $product->product_no }}</td>
-                        <td>{{ $product->product_name }}</td>
-                        <td>{{ $product->batch}}</td>
-                        <td>{{ $product->price }}</td>
-                        <td>{{ $product->date }}</td>
+                        <td>{{ $product->batch_status }}</td>
+                        <td>{{ $product->item_code }}</td>
+                        <td>{{ $product->item_name}}</td>
+                        <td>{{ $product->location_code }}</td>
+                         <th>{{ $product->store }}</th>
+                        <td>{{ $product->grn_batch_id    }}</td>
+                        <td>{{ $product->arn_id }}</td>
+                        <td>{{ $product->container_no}}</td>
+                        <td>{{ $product->container_status }}</td>
+                         <th>{{ $product->brand_name }}</th>
+                        <td>{{ $product->item_description }}</td>
+                        <td>{{ $product->batch_no }}</td>
+                        <td>{{ $product->uom_branch}}</td>
+                        <td>{{ $product->mfg_dt }}</td>
+                         <th>{{ $product->exp_dt }}</th>
+                        <td>{{ $product->no_of_cont }}</td>
+                        <td>{{ $product->pack_size }}</td>
+                        <td>{{ $product->rec_qty	}}</td>
+                        <td>{{ $product->manufacturer }}</td>
+
+                         <td>{{ $product->supplier}}</td>
+                        <td>{{ $product->grn_no }}</td>
+                         <th>{{ $product->grn_date }}</th>
+                        <td>{{ $product->format_no }}</td>
+                        <td>{{ $product->printed_by }}</td>
+                        
+                       
+
                         <td>{!! DNS1D::getBarcodeHTML($product->bar_code,'C39') !!}
                             p - {{ $product->bar_base }}
                         </td>

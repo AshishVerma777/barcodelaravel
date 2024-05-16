@@ -147,7 +147,7 @@
                        
                  <div class="col-12">
                   <label for="Mfg_dt">Mfg.DT.</label>
-                         <input type="text" class="form-control mb-3" name="mfg_dt" >
+                         <input type="date" class="form-control mb-3" name="mfg_dt" >
                        </div>
 
                        <label for="exp_dt">Exp.DT</label>
