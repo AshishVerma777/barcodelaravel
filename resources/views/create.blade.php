@@ -100,11 +100,11 @@
                     <label for="">Store :</label>
                     <input type="text" class="form-control mb-3" name="price"  value="RMS" required>
                     <label for="">Grn Batch Id :</label>
-                    <input type="text" class="form-control mb-3" name="price"   required>
+                    <input type="text" class="form-control mb-3" name="Grn_Batch_Id"   required>
                     <label for="">Arn Id :</label>
-                    <input type="text" class="form-control mb-3" name="price"   required>
+                    <input type="text" class="form-control mb-3" name="Arn_Id"   required>
                     <label for="">Container No. :</label>
-                    <input type="text" class="form-control mb-3" name="price"   required>
+                    <input type="text" class="form-control mb-3" name="Container_No"   required>
 
 
                            
@@ -118,9 +118,73 @@
               <button type="button" class="btn btn-primary mb-3" id="launch_deviation_button_container" style="display: none;" onclick="launchDeviationForContainer()">Launch Deviation</button>
 
 
+
+              
+              <div class="col-12">
+                <label for="brand_name">Brand Name:</label>
+                       <input type="text" class="form-control mb-3" name="brand_name" required>
+                     </div>
+
+                     
+                 <div class="col-12">
+                  <label for="Item_Description">Item Description:</label>
+                         <input type="text" class="form-control mb-3" name="Item_Description" required>
+                       </div>
+
+
+                       
+                 <div class="col-12">
+                  <label for="batch_no">Batch/No:</label>
+                         <input type="text" class="form-control mb-3" name="batch_no" required>
+                       </div>
+
+                       
+                 <div class="col-12">
+                  <label for="uom_branch">UOM</label>
+                         <input type="text" class="form-control mb-3" name="uom_branch" required>
+                       </div>
+
+                       
+                 <div class="col-12">
+                  <label for="Mfg_dt">Mfg.DT.</label>
+                         <input type="text" class="form-control mb-3" name="Mfg_dt" required>
+                       </div>
+
+                       <label for="exp_dt">Exp.DT</label>
+                        <input type="date" class="form-control mb-3" name="exp_dt" required>
+
+                        <label for="no_of_cont">No. Of Cont.</label>
+                        <input type="text" class="form-control mb-3" name="no_of_cont" required>
+
+
+                        <label for="rec_qty">Rec Qty:</label>
+                        <input type="number" class="form-control mb-3" name="rec_qty" required>
+
+                        <label for="manufacturer">Manufacturer:</label>
+                        <input type="text" class="form-control mb-3" name="manufacturer" required>
+                        <label for="supplier">Supplier:</label>
+                        <input type="text" class="form-control mb-3" name="supplier" required>
+                        <label for="grn_no">GRN No.:</label>
+                        <input type="text" class="form-control mb-3" name="grn_no" required>
+                        <label for="grn_date">GRN Date:</label>
+                        <input type="date" class="form-control mb-3" name="grn_date" required>
+                        <label for="format_no">Format No.:</label>
+                        <input type="text" class="form-control mb-3" name="format_no" required>
+
+                        <label for="printed_by">Printed By:</label>
+                        <input type="text" class="form-control mb-3" name="printed_by" required>
+
+
+
                     {{-- <label for="">Date:</label>
                     <input type="date" class="form-control mb-3" name="date" required> --}}
                  <button type="submit" class="btn btn-success col-md-3">Submit</button>
+
+
+
+                 {{-- new added  --}}
+                
+       
             </form>
         </div>
         </div>
