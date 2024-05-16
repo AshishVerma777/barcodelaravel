@@ -11,7 +11,7 @@
         <h1 class="pt-4 text-left mb-4"><b>List of Products</b></h1>
         <hr>
         <div class="pb-2">
-            <a href="{{route('create')}}" class="btn btn-success">New Post</a>
+            <a href="{{ route('create') }}" class="btn btn-success">New Post</a>
             <input type="text" name="qr_scanner" id="QrScanner" />
         </div>
         <table class="table table-hover">
@@ -45,6 +45,33 @@
         </table>
     </div>
 </div>
+
+
+<div class="container-fluid  ">
+    <div class="row justify-content-md-center">
+      <div class="col-md-9">
+          <div class="card px-5 mt-3  shadow">
+             <h1 class="text-primary pt-4 text-center mb-4">Laravel Generate Barcode</h1>
+              <form action="{{route('store')}}" method="post">
+               @csrf
+                  <label for="">Product Number:</label>
+                  <input type="text" class="form-control mb-3" name="product_no" required>
+
+                  <label for="">Product Name:</label>
+                  <input type="text" class="form-control mb-3" name="product_name" required>
+                  <label for="">Batch:</label>
+                  <input type="text" class="form-control mb-3" name="batch" required>
+                  <label for="">Price:</label>
+                  <input type="text" class="form-control mb-3" name="price" required>
+                  
+                  <label for="">Date:</label>
+                  <input type="date" class="form-control mb-3" name="date" required>
+               <button type="submit" class="btn btn-success col-md-3">Submit</button>
+          </form>
+      </div>
+      </div>
+    </div>
+  </div>
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js" integrity="sha512-PJa3oQSLWRB7wHZ7GQ/g+qyv6r4mbuhmiDb8BjSFZ8NZ2a42oTtAq5n0ucWAwcQDlikAtkub+tPVCw4np27WCg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

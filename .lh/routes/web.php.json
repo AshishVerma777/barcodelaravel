@@ -1,0 +1,18 @@
+{
+    "sourceFile": "routes/web.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1715664077217,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1715664077217,
+            "name": "Commit-0",
+            "content": "<?php\n\nuse Illuminate\\Support\\Facades\\Route;\nuse App\\Http\\Controllers\\Product;\nuse App\\Http\\Controllers\\ProductController;\n/*\n|--------------------------------------------------------------------------\n| Web Routes\n|--------------------------------------------------------------------------\n|\n| Here is where you can register web routes for your application. These\n| routes are loaded by the RouteServiceProvider and all of them will\n| be assigned to the \"web\" middleware group. Make something great!\n|\n*/\n\n// \n\nRoute::get('/', [ProductController::class, 'index']);\n\nRoute::get('create', [ProductController::class, 'create'])->name('create');\nRoute::post('store', [ProductController::class, 'store'])->name('store');\nRoute::post('/print/{id}',  [ProductController::class, 'print'])->name('print');\nRoute::get('show', [ProductController::class, 'show'])->name('show');\n"
+        }
+    ]
+}

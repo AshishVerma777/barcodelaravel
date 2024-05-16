@@ -1,0 +1,26 @@
+{
+    "sourceFile": "resources/views/show.blade.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1715663986227,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1715664020941,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     <div class=\"row justify-content-md-center\">\n         <h1 class=\"pt-4 text-left mb-4\"><b>List of Products</b></h1>\n         <hr>\n         <div class=\"pb-2\">\n-            <a href=\"{{route('create')}}\" class=\"btn btn-success\">New Post</a>\n+            <a href=\" class=\"btn btn-success\">New Post</a>\n             <input type=\"text\" name=\"qr_scanner\" id=\"QrScanner\" />\n         </div>\n         <table class=\"table table-hover\">\n             <thead>\n"
+                },
+                {
+                    "date": 1715664026949,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     <div class=\"row justify-content-md-center\">\n         <h1 class=\"pt-4 text-left mb-4\"><b>List of Products</b></h1>\n         <hr>\n         <div class=\"pb-2\">\n-            <a href=\"{{  }}\" class=\"btn btn-success\">New Post</a>\n+            <a href=\"{{ r }}\" class=\"btn btn-success\">New Post</a>\n             <input type=\"text\" name=\"qr_scanner\" id=\"QrScanner\" />\n         </div>\n         <table class=\"table table-hover\">\n             <thead>\n"
+                }
+            ],
+            "date": 1715663986227,
+            "name": "Commit-0",
+            "content": "<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<title>Laravel Generate Barcode</title>       \n<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css\" />\n</head>\n<body>\n<div class=\"container\">\n    <h1 class=\"text-primary pt-4 text-center mb-4\">Laravel Generate Barcode</h1>\n    <div class=\"row justify-content-md-center\">\n        <h1 class=\"pt-4 text-left mb-4\"><b>List of Products</b></h1>\n        <hr>\n        <div class=\"pb-2\">\n            <a href=\"{{route('create')}}\" class=\"btn btn-success\">New Post</a>\n            <input type=\"text\" name=\"qr_scanner\" id=\"QrScanner\" />\n        </div>\n        <table class=\"table table-hover\">\n            <thead>\n                <tr>\n                    <th scope=\"col\">ID</th>\n                    <th scope=\"col\">Product No</th>\n                    <th scope=\"col\">Product Name</th>\n                    <th scope=\"col\">Batch/ Material No.</th>\n                    <th scope=\"col\">Price</th>\n                    <th scope=\"col\">Date</th>\n                    <th scope=\"col\">Bar-Code</th>\n                    <th scope=\"col\">Actions</th>\n                </tr>\n            </thead>\n            <tbody id=\"productList\">\n               \n                    <tr>\n                        <th></th>\n                        <td></td>\n                        <td></td>\n                        <td></td>\n                        <td></td>\n                        <td></td>\n                        <td>\n                        </td>\n                        \n                    </tr>\n               \n            </tbody>\n        </table>\n    </div>\n</div>\n\n<script src=\"https://code.jquery.com/jquery-3.7.1.min.js\" integrity=\"sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=\" crossorigin=\"anonymous\"></script>\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js\" integrity=\"sha512-PJa3oQSLWRB7wHZ7GQ/g+qyv6r4mbuhmiDb8BjSFZ8NZ2a42oTtAq5n0ucWAwcQDlikAtkub+tPVCw4np27WCg==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\"></script>\n    <script>\n    \n    $(document).ready(function() {\n        console.log('page loaded');\n\n        let postUrl = \"{{ route('product.barcode') }}\"\n\n        $('#QrScanner').change( async function() {\n            let barCode = $(this).val();\n            \n            $(this).attr('disabled', true);\n\n            const data = {\n                barCode: barCode\n            }\n            \n            try {\n\n                const res = await axios.post(postUrl, data);\n\n                console.log(res);\n\n                if (res.data.status == 'ok') {\n                    $('#productList').append(res.data.body);\n                }\n\n            } catch (err) {\n                alert(err.message);\n                console.log('error', err.message);\n            }\n\n            $(this).attr('disabled', false);\n            $(this).val('')\n\n        })\n    })\n\n    </script>\n\n</body>\n</html>\n"
+        }
+    ]
+}
