@@ -67,6 +67,10 @@ class ProductController extends Controller
     {
      return view("show");
      }
+     public function document()
+    {
+     return view("document");
+     }
  
      public function Editshow($id)
      {

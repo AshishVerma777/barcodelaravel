@@ -25,3 +25,4 @@ Route::get('show', [ProductController::class, 'show'])->name('show');
 Route::get('edit/{id}', [ProductController::class, 'Editshow'])->name('Editshow');
 Route::get('update-container-status/{container}', [ProductController::class, 'updateStatus'])->name('update_container_status');
 Route::post('update/{id}', [ProductController::class, 'update'])->name('update');
+Route::get('document', [ProductController::class, 'document'])->name('document');
