@@ -83,12 +83,13 @@
                     {{-- <label for="">Item Name:</label>
                     <input type="text" class="form-control mb-3" name="batch" required> --}}
                     <label for="batch_status">Item Name:</label>
-                    <select class="form-control mb-3" name="item_name" id="batch_status" required>
+                     <input type="text" class="form-control mb-3" name="batch_status" required>
+                    {{-- <select class="form-control mb-3" name="item_name" id="batch_status" required>
                         <option value="">Select </option>
                         {{-- <option value="approved">Hydro</option> --}}
-                        <option value="reject">Hydrosulfuric Acid</option>
-                        <option value="restrat"></option>
-                    </select>
+                        {{-- <option value="reject">Hydrosulfuric Acid</option> --}}
+                        {{-- <option value="restrat"></option> --}}
+                    {{-- </select> --}} 
                     {{-- <select name="" id="">
                       <option value="Hydro">Hydro</option>
                       <option value="Hydro">Hydro</option>

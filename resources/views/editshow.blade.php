@@ -83,12 +83,9 @@
                     {{-- <label for="">Item Name:</label>
                     <input type="text" class="form-control mb-3" name="batch" required> --}}
                     <label for="batch_status">Item Name:</label>
-                    <select class="form-control mb-3" name="item_name" id="batch_status" required>
-                        <option value="">Select </option>
-                        {{-- <option value="approved">Hydro</option> --}}
-                        <option value="reject">Hydrosulfuric Acid</option>
-                        <option value="restrat"></option>
-                    </select>
+
+                    <input type="text" class="form-control mb-3" value="{{$data->batch_status}}" name="item_code" required>
+
                     {{-- <select name="" id="">
                       <option value="Hydro">Hydro</option>
                       <option value="Hydro">Hydro</option>
@@ -125,10 +122,10 @@
                     </select>
 
                     <label for="weightPerPackage">Weight per Package</label>
-                    <input type="text" id="weightPerPackage" class="form-control mb-3" name="weightPerPackage" value="{{ $data->weight_per_package }}" oninput="calculateTotalWeight()" placeholder="Enter weight per package" required>
+                    <input type="text" id="weightPerPackage" class="form-control mb-3" name="weightPerPackage" value="{{ $data->weightPerPackage }}" oninput="calculateTotalWeight()" placeholder="Enter weight per package" required>
 
                     <label for="totalWeight">Total Weight</label>
-                    <input type="text" id="totalWeight" class="form-control mb-3" name="totalWeight" value="{{ $data->total_weight }}" oninput="calculateTotalWeight()" placeholder="Enter weight per package" required>
+                    <input type="text" id="totalWeight" class="form-control mb-3" name="totalWeight" value="{{ $data->totalWeight }}" oninput="calculateTotalWeight()" placeholder="Enter weight per package" required>
 
                     <label for="Item_Description">Item Description:</label>
                     <input type="text" class="form-control mb-3" name="item_description" value="{{ $data->item_description }}" required>
