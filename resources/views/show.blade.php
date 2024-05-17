@@ -6,42 +6,75 @@
 </head>
 <body>
 <div class="container">
-    <h1 class="text-primary pt-4 text-center mb-4">Laravel Generate Barcode</h1>
+    <h1 class="text-primary pt-4 text-center mb-4">Generate Barcode</h1>
     <div class="row justify-content-md-center">
         <h1 class="pt-4 text-left mb-4"><b>List of Products</b></h1>
         <hr>
         <div class="pb-2">
             <input type="text" name="qr_scanner" id="QrScanner" />
         </div>
-        <table class="table table-hover">
+
+
+  <div class="main_class">
+           <div class="table_responsive">
+        <table class="table table-hover" >
             <thead>
                 <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Product No</th>
-                    <th scope="col">Product Name</th>
-                    <th scope="col">Batch/ Material No.</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Bar-Code</th>
-                    <th scope="col">Actions</th>
+                    <th>Id</th>
+                
+                    {{-- <th>Id</th> --}}
+                    <th>Batch Status:</th>
+                    <th>Item Code :</th>
+                    <th>Item Name:</th>
+                    <th>Location Code:</th>
+                    <th>Store :</th>
+                    <th>Grn Batch Id :</th>
+                    <th>Arn Id :</th>
+                    <th>Container No. :</th>
+                    <th>Container Status:</th>
+                    <th>Brand Name:</th>
+
+                    <th>unit:</th>
+                    <th>Quantity of Product:</th>
+                    <th>weight Per Package</th>
+                    <th>Total Weight</th>
+                    
+                    <th>Item Description:</th>
+                    <th>Batch/No:</th>
+                    <th>UOM</th>
+                    <th>Mfg.DT.</th>
+                    <th>Exp.DT</th>
+                    <th>No. Of Cont.</th>
+
+                    <th>Pack. Size</th>
+                    <th>Cont. No.</th>
+
+
+                    <th>Rec Qty:</th>
+                    <th>Manufacturer:</th>
+                    <th>Supplier:</th>
+                    <th>GRN No.:</th>
+                    <th>GRN Date:</th>
+                    <th >Format No.:</th>
+                    <th >Printed By</th>
+                    <th>Bar-Code</th>
+                    <th>Actions</th>
+
+
                 </tr>
             </thead>
-            <tbody id="productList">
+            <tbody>
                
                     <tr>
-                        <th></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
-                        </td>
-                        
+                   
                     </tr>
                
             </tbody>
-        </table>
+        </table></div>
+           </div>
+       </div>
+
+
     </div>
 </div>
 

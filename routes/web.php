@@ -22,3 +22,5 @@ Route::get('create', [ProductController::class, 'create'])->name('create');
 Route::post('store', [ProductController::class, 'store'])->name('store');
 Route::post('/print/{id}',  [ProductController::class, 'print'])->name('print');
 Route::get('show', [ProductController::class, 'show'])->name('show');
+Route::get('edit/{id}', [ProductController::class, 'Editshow'])->name('Editshow');
+Route::post('update/{id}', [ProductController::class, 'update'])->name('update');
