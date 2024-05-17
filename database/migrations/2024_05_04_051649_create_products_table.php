@@ -23,15 +23,24 @@ return new class extends Migration
             $table->string('container_no')->nullable();
             $table->string('container_status')->nullable();
             $table->string('brand_name')->nullable();
+        
+            $table->string('unit')->nullable();
+            $table->string('quantity_of_product')->nullable();
+            $table->string('weightPerPackage')->nullable();
+            $table->string('totalWeight')->nullable();
+        
             $table->text('item_description')->nullable();
             $table->string('batch_no')->nullable();
             $table->string('uom_branch')->nullable();
             $table->date('mfg_dt')->nullable();
             
             $table->date('exp_dt')->nullable();
-            $table->integer('no_of_cont')->nullable();
+            $table->string('no_of_cont')->nullable();
+            
             $table->string('pack_size')->nullable();
-            $table->integer('rec_qty')->nullable();
+            $table->string('count_no')->nullable();
+            
+            $table->string('rec_qty')->nullable();
             $table->string('manufacturer')->nullable();
             $table->string('supplier')->nullable();
             $table->string('grn_no')->nullable();
