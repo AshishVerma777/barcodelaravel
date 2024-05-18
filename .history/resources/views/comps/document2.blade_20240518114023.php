@@ -17,7 +17,6 @@
         }
 
         .performance-facts {
-            font-size: 10px;
             border: 1px solid black;
             /* margin: 30px; */
             float: left;
@@ -39,7 +38,7 @@
         .performance-facts__header {
             border-bottom: 1.2px solid black;
             width: 100%;
-height: 80px;
+height: 50px;
 
             p {
                 margin: 0;
@@ -78,15 +77,15 @@ height: 80px;
         }
 
         .logo-img img {
-            height: 80px;
-            width: 80px;
+            height: 100px;
+            width: 100px;
 
         }
 
         .heading-header {
             position: absolute;
-            top: 4%;
-            left: 24%;
+            top: 6%;
+            left: 25%;
             text-align: center;
             font-weight: bold;
             font-size: 20px;
@@ -95,7 +94,7 @@ height: 80px;
 
         .logo-image {
             position: absolute;
-            top: 0%;
+            top: 2%;
             left: 78%;
         }
 

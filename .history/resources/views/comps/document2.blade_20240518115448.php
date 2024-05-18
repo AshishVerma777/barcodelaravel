@@ -85,8 +85,8 @@ height: 80px;
 
         .heading-header {
             position: absolute;
-            top: 4%;
-            left: 24%;
+            top: 6%;
+            left: 25%;
             text-align: center;
             font-weight: bold;
             font-size: 20px;
@@ -95,7 +95,7 @@ height: 80px;
 
         .logo-image {
             position: absolute;
-            top: 0%;
+            top: 2%;
             left: 78%;
         }
 
@@ -231,7 +231,7 @@ height: 80px;
                         <td><strong>Supplier:</strong></td>
                     </tr>
                     <tr>
-                        <td><strong>GRN No.:</strong></td>
+                        <td><strong>GRN No.:</strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur tempora, sed rerum exercitationem aliquam veritatis fugit harum mollitia aperiam nemo temporibus voluptatum repellat consequatur rem recusandae fugiat quidem quia officiis!</td>
                     </tr>
 
                     <tr>

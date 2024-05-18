@@ -17,7 +17,6 @@
         }
 
         .performance-facts {
-            font-size: 10px;
             border: 1px solid black;
             /* margin: 30px; */
             float: left;
@@ -85,8 +84,8 @@ height: 80px;
 
         .heading-header {
             position: absolute;
-            top: 4%;
-            left: 24%;
+            top: 6%;
+            left: 25%;
             text-align: center;
             font-weight: bold;
             font-size: 20px;
@@ -95,7 +94,7 @@ height: 80px;
 
         .logo-image {
             position: absolute;
-            top: 0%;
+            top: 2%;
             left: 78%;
         }
 
