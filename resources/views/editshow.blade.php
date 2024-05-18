@@ -88,31 +88,31 @@
                 <button type="button" class="btn btn-primary mb-3" id="launch_deviation_button" style="display: none;" onclick="launchDeviation()">Launch Deviation</button>
 
                     <label for="">Item Code :</label>
-                    <input type="text" class="form-control mb-3" value="{{$data->item_code}}" name="item_code" required>
+                    <input type="text" class="form-control mb-3" value="{{$data->item_code}}" name="item_code" >
 
                     {{-- <label for="">Item Name:</label>
-                    <input type="text" class="form-control mb-3" name="batch" required> --}}
+                    <input type="text" class="form-control mb-3" name="batch" > --}}
                     <label for="batch_status">Item Name:</label>
 
-                    <input type="text" class="form-control mb-3" value="{{$data->batch_status}}" name="item_code" required>
+                    <input type="text" class="form-control mb-3" value="{{$data->item_name}}" name="item_name" >
 
                     {{-- <select name="" id="">
                       <option value="Hydro">Hydro</option>
                       <option value="Hydro">Hydro</option>
 
                     </select> --}}
-                    {{-- <input type="text" class="form-control mb-3" name="product_name" required> --}}
+                    {{-- <input type="text" class="form-control mb-3" name="product_name" > --}}
                   <label for="">Location Code:</label>
-                <input type="text" class="form-control mb-3" name="location_code" value="{{ $data->location_code }}" required>
+                <input type="text" class="form-control mb-3" name="location_code" value="{{ $data->location_code }}" >
 
                 <label for="">Store :</label>
-                <input type="text" class="form-control mb-3" name="store" value="{{ $data->store }}" required>
+                <input type="text" class="form-control mb-3" name="store" value="{{ $data->store }}" >
 
                 <label for="">Grn Batch Id :</label>
-                <input type="text" class="form-control mb-3" name="grn_batch_id" value="{{ $data->grn_batch_id }}" required>
+                <input type="text" class="form-control mb-3" name="grn_batch_id" value="{{ $data->grn_batch_id }}" >
 
                 <label for="">Arn Id :</label>
-                <input type="text" class="form-control mb-3" name="arn_id" value="{{ $data->arn_id }}" required>
+                <input type="text" class="form-control mb-3" name="arn_id" value="{{ $data->arn_id }}" >
 
              
 
@@ -138,7 +138,7 @@
           </div> --}}
 
           <div class="col-12">
-                <label for="">Containers:</label>
+                <label for="">Total Containers:</label>
                 @if ($data->containers)
                     <table class="table">
                         <thead>
@@ -208,12 +208,17 @@
                     </div>
                     <div class="col-12">
                     <label for="uom_branch">UOM</label>
-                    <input type="text" class="form-control mb-3" name="uom_branch" value="{{ $data->uom_branch }}" required>
+                    {{-- <input type="text" class="form-control mb-3" name="uom_branch" value="{{ $data->uom_branch }}" required> --}}
+                   <select class="form-control mb-3" name="uom_branch" id="unit">
+                        <option value="kg" {{ $data->unit === 'kg' ? 'selected' : '' }}>Kilogram (kg)</option>
+                        <option value="gm" {{ $data->unit === 'gm' ? 'selected' : '' }}>Gram (gm)</option>
+                    </select>
                     </div>
                        
                       <div class="col-12">
                     <label for="Mfg_dt">Mfg.DT.</label>
                     <input type="date" class="form-control mb-3" name="mfg_dt" value="{{ $data->mfg_dt }}">
+                   
                     </div>
             
                 <div class="col-12">
@@ -230,7 +235,7 @@
                 <input type="text" class="form-control mb-3" name="pack_size" value="{{ $data->pack_size }}">
                 </div>
                 <div class="col-12">
-                <label for="count_no">Count No.</label>
+                <label for="count_no">Container Number</label>
                 <input type="text" class="form-control mb-3" name="count_no" value="{{ $data->count_no }}">
                  </div>
                 <div class="col-12">

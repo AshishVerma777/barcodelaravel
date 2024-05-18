@@ -95,16 +95,16 @@
                                 <th>Item Name:</th>
                                 <th>Location Code:</th>
                                 <th>Store :</th>
-                                <th>Grn Batch Id :</th>
+                                <th>Grn Batch Id </th>
                                 <th>Arn Id :</th>
-                                <th>Container No. :</th>
-                                <th>Container Status:</th>
-                                <th>Brand Name:</th>
-                                <th>unit:</th>
+                                <th>Tatal Container</th>
+                                <th>Container Status </th>
+                                <th>Brand Name</th>
+                                <th>Unit:</th>
                                 <th>Quantity of Product:</th>
-                                <th>weight Per Package</th>
+                                <th>Weight Per Package</th>
                                 <th>Total Weight</th>
-                                <th>Item Description:</th>
+                                <th>Item Description</th>
                                 <th>Batch/No:</th>
                                 <th>UOM</th>
                                 <th>Mfg.DT.</th>
@@ -118,7 +118,7 @@
                                 <th>GRN No.:</th>
                                 <th>GRN Date:</th>
                                 <th>Format No.:</th>
-                                <th>Printed By</th>
+                                {{-- <th>Printed By</th> --}}
                                 <th>Bar-Code</th>
                                 <th>Actions</th>
                             </tr>
@@ -155,7 +155,7 @@
                                 <td>{{ $product->grn_no }}</td>
                                 <td>{{ $product->grn_date }}</td>
                                 <td>{{ $product->format_no }}</td>
-                                <td>{{ $product->printed_by }}</td>
+                                {{-- <td>{{ $product->printed_by }}</td> --}}
                                 <td>{!! DNS1D::getBarcodeHTML($product->bar_code, 'C39') !!} p - {{ $product->bar_base
                                     }}</td>
                                 <td>

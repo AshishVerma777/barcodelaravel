@@ -28,15 +28,15 @@
                     <th>Item Name:</th>
                     <th>Location Code:</th>
                     <th>Store :</th>
-                    <th>Grn Batch Id :</th>
-                    <th>Arn Id :</th>
-                    <th>Container No. :</th>
+                    <th>GRN Batch Id :</th>
+                    <th>ARN Id :</th>
+                    <th>Tatal Container :</th>
                     <th>Container Status:</th>
                     <th>Brand Name:</th>
 
-                    <th>unit:</th>
+                    <th>Unit:</th>
                     <th>Quantity of Product:</th>
-                    <th>weight Per Package</th>
+                    <th>Weight Per Package</th>
                     <th>Total Weight</th>
                     
                     <th>Item Description:</th>
@@ -47,7 +47,7 @@
                     {{-- <th>No. Of Cont.</th> --}}
 
                     <th>Pack. Size</th>
-                    <th>Cont. No.</th>
+                    <th>Container No.</th>
 
 
                     <th>Rec Qty:</th>

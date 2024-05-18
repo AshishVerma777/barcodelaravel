@@ -100,11 +100,11 @@
                     <input type="text" class="form-control mb-3" name="location_code">
                     <label for="">Store :</label>
                     <input type="text" class="form-control mb-3" name="store"  value="RMS">
-                    <label for="">Grn Batch Id :</label>
+                    <label for="">GRN Batch Id :</label>
                     <input type="text" class="form-control mb-3" name="grn_batch_id"  >
-                    <label for="">Arn Id :</label>
+                    <label for="">ARN Id :</label>
                     <input type="text" class="form-control mb-3" name="arn_id"  >
-                    <label for="">Container No. :</label>
+                    <label for=""> Total Container :</label>
                     <input type="text" class="form-control mb-3" name="container_no"  >
 
 
@@ -155,20 +155,24 @@
                      
                  <div class="col-12">
                   <label for="Item_Description">Item Description:</label>
-                         <input type="text" class="form-control mb-3" name="item_description" required>
+                         <input type="text" class="form-control mb-3" name="item_description" >
                   </div>
 
 
                        
                  <div class="col-12">
                   <label for="batch_no">Batch/No:</label>
-                         <input type="text" class="form-control mb-3" name="batch_no" required>
+                         <input type="text" class="form-control mb-3" name="batch_no" >
                        </div>
 
                        
                  <div class="col-12">
                   <label for="uom_branch">UOM</label>
-                         <input type="text" class="form-control mb-3" name="uom_branch" required>
+                          <select name="uom_branch" class="form-control mb-3" name="unit" id="unit">
+                           <option value="kg">Kilogram (kg)</option>
+                           <option value="gm">Gram (gm)</option>
+                           {{-- <option value="ok">Ok</option> --}}
+                       </select>
                        </div>
 
                        
@@ -186,7 +190,7 @@
                         <label for="pack_size">Pack.Size</label>
                         <input type="text" class="form-control mb-3" name="pack_size" >
 
-                         <label for="count_no">Count No.</label>
+                         <label for="count_no">Container Number</label>
                         <input type="text" class="form-control mb-3" name="count_no" >
 
 
