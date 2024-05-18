@@ -6,7 +6,9 @@ use App\Models\product;
 use App\Models\ProductContainer;
 ;
 use Illuminate\Http\Request;
- 
+use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Support\Facades\App;
+
 class ProductController extends Controller
 {
     public function index(){
@@ -69,7 +71,8 @@ class ProductController extends Controller
      }
      public function document()
     {
-     return view("document");
+        $pdf = Pdf::loadView('comps.document2');
+        return $pdf->stream();
      }
  
      public function Editshow($id)
