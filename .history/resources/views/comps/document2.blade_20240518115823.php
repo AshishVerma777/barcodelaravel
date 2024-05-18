@@ -86,7 +86,7 @@ height: 80px;
         .heading-header {
             position: absolute;
             top: 4%;
-            left: 24%;
+            left: 25%;
             text-align: center;
             font-weight: bold;
             font-size: 20px;
