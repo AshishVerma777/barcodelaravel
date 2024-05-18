@@ -69,6 +69,8 @@ class ProductController extends Controller
     {
      return view("show");
      }
+
+     
      public function document()
     {
         $pdf = Pdf::loadView('comps.document2');

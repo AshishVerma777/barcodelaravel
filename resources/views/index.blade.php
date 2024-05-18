@@ -109,7 +109,7 @@
                                 <th>UOM</th>
                                 <th>Mfg.DT.</th>
                                 <th>Exp.DT</th>
-                                <th>No. Of Cont.</th>
+                                {{-- <th>No. Of Cont.</th> --}}
                                 <th>Pack. Size</th>
                                 <th>Cont. No.</th>
                                 <th>Rec Qty:</th>
@@ -146,7 +146,7 @@
                                 <td>{{ $product->uom_branch }}</td>
                                 <td>{{ $product->mfg_dt }}</td>
                                 <td>{{ $product->exp_dt }}</td>
-                                <td>{{ $product->no_of_cont }}</td>
+                                {{-- <td>{{ $product->no_of_cont }}</td> --}}
                                 <td>{{ $product->pack_size }}</td>
                                 <td>{{ $product->count_no }}</td>
                                 <td>{{ $product->rec_qty }}</td>

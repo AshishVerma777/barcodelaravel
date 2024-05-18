@@ -78,12 +78,12 @@
                 <button type="button" class="btn btn-primary mb-3" id="launch_deviation_button" style="display: none;" onclick="launchDeviation()">Launch Deviation</button>
 
                     <label for="">Item Code :</label>
-                    <input type="text" class="form-control mb-3" name="item_code" required>
+                    <input type="text" class="form-control mb-3" name="item_code" >
 
                     {{-- <label for="">Item Name:</label>
                     <input type="text" class="form-control mb-3" name="batch" required> --}}
                     <label for="batch_status">Item Name:</label>
-                     <input type="text" class="form-control mb-3" name="batch_status" required>
+                     <input type="text" class="form-control mb-3" name="item_name" >
                     {{-- <select class="form-control mb-3" name="item_name" id="batch_status" required>
                         <option value="">Select </option>
                         {{-- <option value="approved">Hydro</option> --}}
@@ -97,21 +97,21 @@
                     </select> --}}
                     {{-- <input type="text" class="form-control mb-3" name="product_name" required> --}}
                     <label for="">Location Code:</label>
-                    <input type="text" class="form-control mb-3" name="location_code" required>
+                    <input type="text" class="form-control mb-3" name="location_code">
                     <label for="">Store :</label>
-                    <input type="text" class="form-control mb-3" name="store"  value="RMS" required>
+                    <input type="text" class="form-control mb-3" name="store"  value="RMS">
                     <label for="">Grn Batch Id :</label>
-                    <input type="text" class="form-control mb-3" name="grn_batch_id"   required>
+                    <input type="text" class="form-control mb-3" name="grn_batch_id"  >
                     <label for="">Arn Id :</label>
-                    <input type="text" class="form-control mb-3" name="arn_id"   required>
+                    <input type="text" class="form-control mb-3" name="arn_id"  >
                     <label for="">Container No. :</label>
-                    <input type="text" class="form-control mb-3" name="container_no"   required>
+                    <input type="text" class="form-control mb-3" name="container_no"  >
 
 
                            
    
                     <label for="container_status">Container Status:</label>
-              <select class="form-control mb-3" name="container_status" id="container_status" required onchange="showLaunchDeviationButtonForContainer()">
+              <select class="form-control mb-3" name="container_status" id="container_status" onchange="showLaunchDeviationButtonForContainer()">
                   <option value="">Select</option>
                   <option value="leakage_damage">Leakage/Damage</option>
                   <option value="ok">Ok</option>
@@ -180,8 +180,8 @@
                        <label for="exp_dt">Exp.DT</label>
                         <input type="date" class="form-control mb-3" name="exp_dt" >
 
-                        <label for="no_of_cont">No. Of Cont.</label>
-                        <input type="text" class="form-control mb-3" name="no_of_cont" >
+                        {{-- <label for="no_of_cont">No. Of Cont.</label>
+                        <input type="text" class="form-control mb-3" name="no_of_cont" > --}}
 
                         <label for="pack_size">Pack.Size</label>
                         <input type="text" class="form-control mb-3" name="pack_size" >
@@ -204,8 +204,8 @@
                         <label for="format_no">Format No.:</label>
                         <input type="text" class="form-control mb-3" name="format_no" >
 
-                        <label for="printed_by">Printed By:</label>
-                        <input type="text" class="form-control mb-3" name="printed_by" >
+                        {{-- <label for="printed_by">Printed By:</label>
+                        <input type="text" class="form-control mb-3" name="printed_by">> --}}
 
 
 

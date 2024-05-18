@@ -44,7 +44,7 @@
                     <th>UOM</th>
                     <th>Mfg.DT.</th>
                     <th>Exp.DT</th>
-                    <th>No. Of Cont.</th>
+                    {{-- <th>No. Of Cont.</th> --}}
 
                     <th>Pack. Size</th>
                     <th>Cont. No.</th>
@@ -56,14 +56,14 @@
                     <th>GRN No.:</th>
                     <th>GRN Date:</th>
                     <th >Format No.:</th>
-                    <th >Printed By</th>
+                    {{-- <th >Printed By</th> --}}
                     <th>Bar-Code</th>
                     <th>Actions</th>
 
 
                 </tr>
             </thead>
-            <tbody>
+             <tbody id="productList">
                
                     <tr>
                    

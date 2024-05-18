@@ -221,10 +221,10 @@
                 <input type="date" class="form-control mb-3" name="exp_dt" value="{{ $data->exp_dt }}">
                 </div>
 
-                <div class="col-12">
+                {{-- <div class="col-12">
                 <label for="no_of_cont">No. Of Cont.</label>
                 <input type="text" class="form-control mb-3" name="no_of_cont" value="{{ $data->no_of_cont }}">
-                </div>
+                </div> --}}
                 <div class="col-12">
                 <label for="pack_size">Pack.Size</label>
                 <input type="text" class="form-control mb-3" name="pack_size" value="{{ $data->pack_size }}">
@@ -257,10 +257,10 @@
                 <label for="format_no">Format No.:</label>
                 <input type="text" class="form-control mb-3" name="format_no" value="{{ $data->format_no }}">
                  </div>
-                <div class="col-12">
+                {{-- <div class="col-12">
                 <label for="printed_by">Printed By:</label>
                 <input type="text" class="form-control mb-3" name="printed_by" value="{{ $data->printed_by }}">
-                 </div>
+                 </div> --}}
 
                     {{-- <label for="">Date:</label>
                     <input type="date" class="form-control mb-3" name="date" required> --}}
