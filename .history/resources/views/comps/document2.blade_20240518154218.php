@@ -231,7 +231,7 @@
                     <td colspan="2"><strong>Id :&nbsp;</strong> RAIP00007</td>
                 </tr>
                 <tr>
-                    <td colspan="2"><strong>Batch Status:&nbsp;<strong> dff </td>
+                    <td colspan="2"><strong>Batch Status:&nbsp;<strong>dff </td>
                 </tr>
                 <tr>
                     <td><strong>Item Code:</strong> FP240901</td>
@@ -292,7 +292,7 @@
                 </tr>
                 <tr>
                     <td><strong>Format No:</strong> </td>
-                    {{-- <td><strong>Barcode:</strong></td> --}}
+                    <td><strong>Barcode:</strong></td>
                     </tr>
 
                     <tr>

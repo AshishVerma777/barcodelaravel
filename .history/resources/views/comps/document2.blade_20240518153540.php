@@ -22,8 +22,6 @@
             /* margin: 30px; */
             float: left;
             width: 100%;
-            height: 100%
-            ;
 
             /* padding: 0.5rem; */
 
@@ -53,7 +51,6 @@
 
         .performance-facts__table {
             width: 100%;
-
 
 
 
@@ -143,7 +140,6 @@
         .info tr {
             padding-left: 10px;
         }
-
         .label-container {
             width: 800px;
             margin: 0 auto;
@@ -151,57 +147,45 @@
             padding: 20px;
             background-color: #fff;
         }
-
         .label-header {
             text-align: center;
             margin-bottom: 20px;
         }
-
         .label-header img {
             max-width: 100px;
         }
-
         .label-table {
             width: 100%;
             border-collapse: collapse;
         }
-
-        .label-table th,
-        .label-table td {
+        .label-table th, .label-table td {
             border: 1px solid #000;
             padding: 8px;
             text-align: left;
         }
-
         .label-header {
             text-align: center;
             margin-bottom: 20px;
         }
-
         .label-header img {
             max-width: 100px;
             margin-bottom: 10px;
         }
-
         .label-container {
             width: 665px;
             padding: 0px !important;
             background-color: #fff;
         }
-
         .label-table {
             width: 100%;
             border-collapse: collapse;
         }
-
-        .label-table th,
-        .label-table td {
-
+        .label-table th, .label-table td {
+            
             padding: 8px;
             text-align: left;
             font-size: 14px;
         }
-
         .label-table th {
             background-color: #e9ecef;
         }
@@ -225,13 +209,13 @@
         </header>
 
         <div class="label-container">
-
+            
             <table class="label-table">
                 <tr>
                     <td colspan="2"><strong>Id :&nbsp;</strong> RAIP00007</td>
                 </tr>
                 <tr>
-                    <td colspan="2"><strong>Batch Status:&nbsp;<strong> dff </td>
+                    <td colspan="2"><strong>Batch Status:&nbsp;<</strong>dff </td>
                 </tr>
                 <tr>
                     <td><strong>Item Code:</strong> FP240901</td>
@@ -250,19 +234,29 @@
                     <td><strong>Brand Name:</strong> 2000.00 KG</td>
                 </tr>
 
+            <tr>
+                <td><strong>Unit:</strong> fdg</td> 
+                <td><strong>Quantity of Product:</strong>dfg</td>
+            </tr>
+            <tr>
+                <td><strong>weight Per Package:</strong> df</td>
+            </tr>
                 <tr>
-                    <td><strong>Unit:</strong> fdg</td>
-                    <td><strong>Quantity of Product:</strong>dfg</td>
-                </tr>
-                <tr>
-                    <td><strong>weight Per Package:</strong> df</td>
+                    <td colspan="2"><strong>Brand Name:</strong>sd</td>
                     <td><strong>Total Weight:</strong>dfg</td>
                 </tr>
                 <tr>
-                    <td colspan="2"><strong>Brand Name:</strong>sd</td>
-
+                    {{-- <td><strong>Unit:</strong> fdg</td> --}}
                 </tr>
-
+                <tr>
+                    {{-- <td><strong>Quantity of Product:</strong>dfg</td> --}}
+                </tr>
+                <tr>
+                    {{-- <td><strong>weight Per Package:</strong> df</td> --}}
+                </tr>
+                <tr>
+                    {{-- <td><strong>Total Weight:</strong>dfg</td> --}}
+                </tr>
                 <tr>
                     <td colspan="2"><strong>Manufacturer :</strong> df</td>
                 </tr>
@@ -287,17 +281,16 @@
                     <td><strong>Supplier :</strong> 2000.00 KG</td>
                 </tr> --}}
                 <tr>
-                    <td><strong>GRN No:</strong></td>
-                    <td><strong>GRN Date:</strong> </td>
+                    <td ><strong>GRN No:</strong></td>
+                    <td ><strong>GRN Date:</strong> </td>
                 </tr>
+                <
                 <tr>
-                    <td><strong>Format No:</strong> </td>
-                    {{-- <td><strong>Barcode:</strong></td> --}}
-                    </tr>
-
-                    <tr>
-                        <td colspan="2"><strong>Barcode :</strong>sd</td>
-                    </tr>
+                    <td ><strong>Format No:</strong> </td>
+                    <td ><strong>Barcode:</strong></td>
+                
+                   
+                </tr>
             </table>
         </div>
 

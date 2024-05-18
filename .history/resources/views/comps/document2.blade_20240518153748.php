@@ -22,8 +22,6 @@
             /* margin: 30px; */
             float: left;
             width: 100%;
-            height: 100%
-            ;
 
             /* padding: 0.5rem; */
 
@@ -53,7 +51,6 @@
 
         .performance-facts__table {
             width: 100%;
-
 
 
 
@@ -231,7 +228,7 @@
                     <td colspan="2"><strong>Id :&nbsp;</strong> RAIP00007</td>
                 </tr>
                 <tr>
-                    <td colspan="2"><strong>Batch Status:&nbsp;<strong> dff </td>
+                    <td colspan="2"><strong>Batch Status:&nbsp;<< /strong>dff </td>
                 </tr>
                 <tr>
                     <td><strong>Item Code:</strong> FP240901</td>
@@ -290,13 +287,11 @@
                     <td><strong>GRN No:</strong></td>
                     <td><strong>GRN Date:</strong> </td>
                 </tr>
-                <tr>
+                < <tr>
                     <td><strong>Format No:</strong> </td>
-                    {{-- <td><strong>Barcode:</strong></td> --}}
-                    </tr>
+                    <td><strong>Barcode:</strong></td>
 
-                    <tr>
-                        <td colspan="2"><strong>Barcode :</strong>sd</td>
+
                     </tr>
             </table>
         </div>

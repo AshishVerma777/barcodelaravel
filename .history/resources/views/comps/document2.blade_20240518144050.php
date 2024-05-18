@@ -18,12 +18,10 @@
 
         .performance-facts {
             font-size: 12px;
-            /* border: 1px 1px 0px 1px solid black; */
+            border: 1px solid black;
             /* margin: 30px; */
             float: left;
             width: 100%;
-            height: 100%
-            ;
 
             /* padding: 0.5rem; */
 
@@ -39,9 +37,7 @@
         }
 
         .performance-facts__header {
-            border-top: 1px solid black;
-            border-left: 1px solid black;
-            border-right: 1px solid black;
+            border-bottom: 1.4px solid black;
             width: 100%;
             height: 70px;
             padding-bottom: 2px;
@@ -53,7 +49,6 @@
 
         .performance-facts__table {
             width: 100%;
-
 
 
 
@@ -143,7 +138,6 @@
         .info tr {
             padding-left: 10px;
         }
-
         .label-container {
             width: 800px;
             margin: 0 auto;
@@ -151,57 +145,45 @@
             padding: 20px;
             background-color: #fff;
         }
-
         .label-header {
             text-align: center;
             margin-bottom: 20px;
         }
-
         .label-header img {
             max-width: 100px;
         }
-
         .label-table {
             width: 100%;
             border-collapse: collapse;
         }
-
-        .label-table th,
-        .label-table td {
+        .label-table th, .label-table td {
             border: 1px solid #000;
             padding: 8px;
             text-align: left;
         }
-
         .label-header {
             text-align: center;
             margin-bottom: 20px;
         }
-
         .label-header img {
             max-width: 100px;
             margin-bottom: 10px;
         }
-
         .label-container {
             width: 665px;
             padding: 0px !important;
             background-color: #fff;
         }
-
         .label-table {
             width: 100%;
             border-collapse: collapse;
         }
-
-        .label-table th,
-        .label-table td {
-
+        .label-table th, .label-table td {
+            
             padding: 8px;
             text-align: left;
             font-size: 14px;
         }
-
         .label-table th {
             background-color: #e9ecef;
         }
@@ -225,79 +207,72 @@
         </header>
 
         <div class="label-container">
-
+            
             <table class="label-table">
                 <tr>
-                    <td colspan="2"><strong>Id :&nbsp;</strong> RAIP00007</td>
+                    <td><strong>Brand Name:</strong></td>
+                    <td>RAIP00007</td>
                 </tr>
                 <tr>
-                    <td colspan="2"><strong>Batch Status:&nbsp;<strong> dff </td>
+                    <td><strong>Item Description:</strong></td>
+                    <td>PARACETAMOL BP (CRYSTALLINE POWDER)</td>
                 </tr>
                 <tr>
-                    <td><strong>Item Code:</strong> FP240901</td>
-                    <td><strong>Item Name:</strong> KGS</td>
+                    <td><strong>Batch / Lot No:</strong></td>
+                    <td>FP240901</td>
                 </tr>
                 <tr>
-                    <td><strong>Location Code:</strong> 2024</td>
-                    <td><strong>Store:</strong> 2029</td>
+                    <td><strong>UOM:</strong></td>
+                    <td>KGS</td>
                 </tr>
                 <tr>
-                    <td><strong>GRN Batch Id:</strong> 40</td>
-                    <td><strong>ARN Id:</strong> 50.00 KG</td>
+                    <td><strong>Mfg. DT:</strong></td>
+                    <td>01/03/2024</td>
                 </tr>
                 <tr>
-                    <td><strong>Container No:</strong> 40</td>
-                    <td><strong>Brand Name:</strong> 2000.00 KG</td>
-                </tr>
-
-                <tr>
-                    <td><strong>Unit:</strong> fdg</td>
-                    <td><strong>Quantity of Product:</strong>dfg</td>
+                    <td><strong>Exp. DT:</strong></td>
+                    <td>28/02/2029</td>
                 </tr>
                 <tr>
-                    <td><strong>weight Per Package:</strong> df</td>
-                    <td><strong>Total Weight:</strong>dfg</td>
+                    <td><strong>No. of Cont.:</strong></td>
+                    <td>40 Nos</td>
                 </tr>
                 <tr>
-                    <td colspan="2"><strong>Brand Name:</strong>sd</td>
-
-                </tr>
-
-                <tr>
-                    <td colspan="2"><strong>Manufacturer :</strong> df</td>
+                    <td><strong>Pack Size:</strong></td>
+                    <td>50.00 KG</td>
                 </tr>
                 <tr>
-                    <td colspan="2"><strong>Supplier :</strong> df</td>
-                </tr>
-
-                <tr>
-                    <td><strong>Batch/No:</strong> FP240901</td>
-                    <td><strong>UOM:</strong> KGS</td>
+                    <td><strong>Rec. Qty:</strong></td>
+                    <td>2000.00 KG</td>
                 </tr>
                 <tr>
-                    <td><strong>Mfg.DT. :</strong> 2024</td>
-                    <td><strong>Exp.DT. :</strong> 2029</td>
+                    <td><strong>Manufacturer:</strong></td>
+                    <td>Farmson Pharmaceuticals Pvt. Ltd.</td>
                 </tr>
                 <tr>
-                    <td><strong>No. Of Container :</strong> 40</td>
-                    <td><strong>Pack. Size:</strong> 50.00 KG</td>
+                    <td><strong>Supplier:</strong></td>
+                    <td>Farmson Pharmaceuticals Pvt. Ltd.</td>
                 </tr>
-                {{-- <tr>
-                    <td><strong>Manufacturer :</strong> 40</td>
-                    <td><strong>Supplier :</strong> 2000.00 KG</td>
-                </tr> --}}
                 <tr>
                     <td><strong>GRN No:</strong></td>
-                    <td><strong>GRN Date:</strong> </td>
+                    <td>MPN/2324/CCG/ARM/00974</td>
                 </tr>
                 <tr>
-                    <td><strong>Format No:</strong> </td>
-                    {{-- <td><strong>Barcode:</strong></td> --}}
-                    </tr>
-
-                    <tr>
-                        <td colspan="2"><strong>Barcode :</strong>sd</td>
-                    </tr>
+                    <td><strong>GRN Date:</strong></td>
+                    <td>12/03/2024</td>
+                </tr>
+                <tr>
+                    <td><strong>Format No:</strong></td>
+                    <td>SOP/ST/3-01</td>
+                </tr>
+                <tr>
+                    <td><strong>Printed By:</strong></td>
+                    <td>ANILB.MPN</td>
+                </tr>
+                <tr>
+                    <td><strong>Bar-Code:</strong></td>
+                    <td></td>
+                </tr>
             </table>
         </div>
 

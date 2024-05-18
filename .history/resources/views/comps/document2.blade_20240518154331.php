@@ -292,7 +292,7 @@
                 </tr>
                 <tr>
                     <td><strong>Format No:</strong> </td>
-                    {{-- <td><strong>Barcode:</strong></td> --}}
+                    <td><strong>Barcode:</strong></td>
                     </tr>
 
                     <tr>
