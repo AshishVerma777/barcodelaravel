@@ -234,74 +234,74 @@
                     <td colspan="2"><strong>Batch Status :&nbsp;<strong> dff </td>
                 </tr>
                 <tr>
-                    <td><strong>Item Code :&nbsp;</strong> FP240901</td>
-                    <td><strong>Item Name :&nbsp;</strong> KGS</td>
+                    <td><strong>Item Code :</strong> FP240901</td>
+                    <td><strong>Item Name :</strong> KGS</td>
                 </tr>
                 <tr>
-                    <td><strong>Location Code :&nbsp;</strong> 2024</td>
-                    <td><strong>Store :&nbsp;</strong> 2029</td>
+                    <td><strong>Location Code :</strong> 2024</td>
+                    <td><strong>Store :</strong> 2029</td>
                 </tr>
                 <tr>
-                    <td><strong>GRN Batch Id :&nbsp;</strong> 40</td>
-                    <td><strong>ARN Id :&nbsp;</strong> 50.00 KG</td>
+                    <td><strong>GRN Batch Id :</strong> 40</td>
+                    <td><strong>ARN Id :</strong> 50.00 KG</td>
                 </tr>
                 <tr>
-                    <td><strong>Total Container :&nbsp;</strong> 40</td>
-                    <td><strong>Container Status :&nbsp;</strong> 2000.00 KG</td>
-                </tr>
-
-                <tr>
-                    <td><strong> Container No :&nbsp;</strong> 40</td>
-                    {{-- <td><strong>Unit :&nbsp;</strong> fdg</td> --}}
-                    <td><strong>Quantity of Product :&nbsp;</strong>dfg</td>
-                </tr>
-                <tr>
-                    <td><strong>weight Per Package :&nbsp;</strong> df</td>
-                    <td><strong>Total Weight :&nbsp;</strong>dfg</td>
-                </tr>
-                <tr>
-                    <td colspan="2"><strong>Unit :&nbsp;</strong>sd</td>
-
-                </tr>
-                <tr>
-                    <td colspan="2"><strong>Brand Name :&nbsp;</strong>sd</td>
-
+                    <td><strong>Total Container :</strong> 40</td>
+                    <td><strong>Container Status :</strong> 2000.00 KG</td>
                 </tr>
 
                 <tr>
-                    <td colspan="2"><strong>Manufacturer :&nbsp;</strong> df</td>
+                    <td><strong> Container No :</strong> 40</td>
+                    {{-- <td><strong>Unit :</strong> fdg</td> --}}
+                    <td><strong>Quantity of Product :</strong>dfg</td>
                 </tr>
                 <tr>
-                    <td colspan="2"><strong>Supplier :&nbsp;</strong> df</td>
+                    <td><strong>weight Per Package :</strong> df</td>
+                    <td><strong>Total Weight :</strong>dfg</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><strong>Unit :</strong>sd</td>
+
+                </tr>
+                <tr>
+                    <td colspan="2"><strong>Brand Name :</strong>sd</td>
+
                 </tr>
 
                 <tr>
-                    <td><strong>Batch/No :&nbsp;</strong> FP240901</td>
-                    <td><strong>UOM :&nbsp;</strong> KGS</td>
+                    <td colspan="2"><strong>Manufacturer :</strong> df</td>
                 </tr>
                 <tr>
-                    <td><strong>Mfg.DT. :&nbsp;</strong> 2024</td>
-                    <td><strong>Exp.DT. :&nbsp;</strong> 2029</td>
+                    <td colspan="2"><strong>Supplier :</strong> df</td>
+                </tr>
+
+                <tr>
+                    <td><strong>Batch/No :</strong> FP240901</td>
+                    <td><strong>UOM :</strong> KGS</td>
                 </tr>
                 <tr>
-                    <td><strong>No. Of Container :&nbsp;</strong> 40</td>
-                    <td><strong>Pack. Size :&nbsp;</strong> 50.00 KG</td>
+                    <td><strong>Mfg.DT. :</strong> 2024</td>
+                    <td><strong>Exp.DT. :</strong> 2029</td>
+                </tr>
+                <tr>
+                    <td><strong>No. Of Container :</strong> 40</td>
+                    <td><strong>Pack. Size :</strong> 50.00 KG</td>
                 </tr>
                 {{-- <tr>
-                    <td><strong>Manufacturer :&nbsp;</strong> 40</td>
-                    <td><strong>Supplier :&nbsp;</strong> 2000.00 KG</td>
+                    <td><strong>Manufacturer :</strong> 40</td>
+                    <td><strong>Supplier :</strong> 2000.00 KG</td>
                 </tr> --}}
                 <tr>
-                    <td><strong>GRN No :&nbsp;</strong></td>
-                    <td><strong>GRN Date :&nbsp;</strong> </td>
+                    <td><strong>GRN No :</strong></td>
+                    <td><strong>GRN Date :</strong> </td>
                 </tr>
                 <tr>
-                    <td><strong>Format No :&nbsp;</strong> </td>
-                    <td><strong>Rec Qty :&nbsp;</strong></td>
+                    <td><strong>Format No :</strong> </td>
+                    <td><strong>Rec Qty :</strong></td>
                     </tr>
 
                     <tr>
-                        <td colspan="2"><strong>Barcode :&nbsp;</strong>sd</td>
+                        <td colspan="2"><strong>Barcode :</strong>sd</td>
                     </tr>
             </table>
         </div>
