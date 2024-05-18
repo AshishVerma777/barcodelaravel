@@ -20,4 +20,11 @@ class product extends Model
         'print'
 
     ];
+
+    public function containers()
+    {
+        return $this->hasMany(ProductContainer::class, 'product_id');
+    }
+
+
 }

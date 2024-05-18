@@ -78,12 +78,12 @@
                 <button type="button" class="btn btn-primary mb-3" id="launch_deviation_button" style="display: none;" onclick="launchDeviation()">Launch Deviation</button>
 
                     <label for="">Item Code :</label>
-                    <input type="text" class="form-control mb-3" name="item_code" required>
+                    <input type="text" class="form-control mb-3" name="item_code" >
 
                     {{-- <label for="">Item Name:</label>
                     <input type="text" class="form-control mb-3" name="batch" required> --}}
                     <label for="batch_status">Item Name:</label>
-                     <input type="text" class="form-control mb-3" name="batch_status" required>
+                     <input type="text" class="form-control mb-3" name="item_name" >
                     {{-- <select class="form-control mb-3" name="item_name" id="batch_status" required>
                         <option value="">Select </option>
                         {{-- <option value="approved">Hydro</option> --}}
@@ -97,21 +97,21 @@
                     </select> --}}
                     {{-- <input type="text" class="form-control mb-3" name="product_name" required> --}}
                     <label for="">Location Code:</label>
-                    <input type="text" class="form-control mb-3" name="location_code" required>
+                    <input type="text" class="form-control mb-3" name="location_code">
                     <label for="">Store :</label>
-                    <input type="text" class="form-control mb-3" name="store"  value="RMS" required>
-                    <label for="">Grn Batch Id :</label>
-                    <input type="text" class="form-control mb-3" name="grn_batch_id"   required>
-                    <label for="">Arn Id :</label>
-                    <input type="text" class="form-control mb-3" name="arn_id"   required>
-                    <label for="">Container No. :</label>
-                    <input type="text" class="form-control mb-3" name="container_no"   required>
+                    <input type="text" class="form-control mb-3" name="store"  value="RMS">
+                    <label for="">GRN Batch Id :</label>
+                    <input type="text" class="form-control mb-3" name="grn_batch_id"  >
+                    <label for="">ARN Id :</label>
+                    <input type="text" class="form-control mb-3" name="arn_id"  >
+                    <label for=""> Total Container :</label>
+                    <input type="text" class="form-control mb-3" name="container_no"  >
 
 
                            
    
                     <label for="container_status">Container Status:</label>
-              <select class="form-control mb-3" name="container_status" id="container_status" required onchange="showLaunchDeviationButtonForContainer()">
+              <select class="form-control mb-3" name="container_status" id="container_status" onchange="showLaunchDeviationButtonForContainer()">
                   <option value="">Select</option>
                   <option value="leakage_damage">Leakage/Damage</option>
                   <option value="ok">Ok</option>
@@ -155,20 +155,24 @@
                      
                  <div class="col-12">
                   <label for="Item_Description">Item Description:</label>
-                         <input type="text" class="form-control mb-3" name="item_description" required>
+                         <input type="text" class="form-control mb-3" name="item_description" >
                   </div>
 
 
                        
                  <div class="col-12">
                   <label for="batch_no">Batch/No:</label>
-                         <input type="text" class="form-control mb-3" name="batch_no" required>
+                         <input type="text" class="form-control mb-3" name="batch_no" >
                        </div>
 
                        
                  <div class="col-12">
                   <label for="uom_branch">UOM</label>
-                         <input type="text" class="form-control mb-3" name="uom_branch" required>
+                          <select name="uom_branch" class="form-control mb-3" name="unit" id="unit">
+                           <option value="kg">Kilogram (kg)</option>
+                           <option value="gm">Gram (gm)</option>
+                           {{-- <option value="ok">Ok</option> --}}
+                       </select>
                        </div>
 
                        
@@ -180,13 +184,13 @@
                        <label for="exp_dt">Exp.DT</label>
                         <input type="date" class="form-control mb-3" name="exp_dt" >
 
-                        <label for="no_of_cont">No. Of Cont.</label>
-                        <input type="text" class="form-control mb-3" name="no_of_cont" >
+                        {{-- <label for="no_of_cont">No. Of Cont.</label>
+                        <input type="text" class="form-control mb-3" name="no_of_cont" > --}}
 
                         <label for="pack_size">Pack.Size</label>
                         <input type="text" class="form-control mb-3" name="pack_size" >
 
-                         <label for="count_no">Count No.</label>
+                         <label for="count_no">Container Number</label>
                         <input type="text" class="form-control mb-3" name="count_no" >
 
 
@@ -204,8 +208,8 @@
                         <label for="format_no">Format No.:</label>
                         <input type="text" class="form-control mb-3" name="format_no" >
 
-                        <label for="printed_by">Printed By:</label>
-                        <input type="text" class="form-control mb-3" name="printed_by" >
+                        {{-- <label for="printed_by">Printed By:</label>
+                        <input type="text" class="form-control mb-3" name="printed_by">> --}}
 
 
 

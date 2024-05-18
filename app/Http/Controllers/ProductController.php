@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
  
 use App\Models\product;
+use App\Models\ProductContainer;
+;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\App;
@@ -29,7 +31,20 @@ class ProductController extends Controller
 
         
         $request['bar_code'] = $number;
-        product::create($request->all());
+        $product = product::create($request->all());
+
+        for ($i = 0; $i < $request->container_no; $i++)
+        {
+            // new ProductContainers
+
+            $container   = new ProductContainer();
+            $container->product_id = $product->id;
+            $container->status   = 'ok'; //$request->status;
+            $container->save();
+           
+           
+            // status = 'ok'
+        }
  
         return redirect('/');
     }
@@ -54,6 +69,8 @@ class ProductController extends Controller
     {
      return view("show");
      }
+
+     
      public function document()
     {
         $pdf = Pdf::loadView('comps.document2');
@@ -120,6 +137,16 @@ class ProductController extends Controller
     return redirect('/');
 } 
 
+
+public function updateStatus($container)
+{
+    $container = ProductContainer::findOrFail($container);
+    
+    $container->status = $container->status == 'ok' ? 'leakage_damage' : 'ok'; // Update the status as per your requirement
+    $container->save();
+
+    return redirect()->back()->with('success', 'Container status updated successfully.');
+}
 
 
    
