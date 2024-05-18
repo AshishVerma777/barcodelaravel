@@ -74,6 +74,7 @@
                 </div>
             </div>
         </div>
+    
     </header>
     <div class="container-fluid">
         <h1 class="text-primary pt-4 text-center mb-4">Generate Label</h1>
