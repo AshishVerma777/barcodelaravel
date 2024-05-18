@@ -14,9 +14,8 @@ return new class extends Migration
     {
         Schema::create('product_containers', function (Blueprint $table) {
             $table->id();
-            $table->longtext('product_id')->nullable();
-            $table->longtext('status')->default('ok')->nullable();
-            
+            $table->integer('product_id')->nullable();
+            $table->longtext('status')->nullable();
             $table->timestamps();
         });
     }
