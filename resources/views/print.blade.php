@@ -224,6 +224,7 @@
             </div>
         </header>
   @foreach ($product->containers as $container)
+  /
         <div class="label-container">
 
             <table class="label-table">
@@ -247,7 +248,7 @@
                 </tr>
                 <tr>
                     <td><strong>Total Container :&nbsp;</strong>{{ $product->container_no }}</td>
-                    <td><strong>Container Status :&nbsp;</strong>{{ $product->container_status }}</td>
+                    <td><strong>Container Status :&nbsp;</strong>{{ $container->status }}</td>
                 </tr>
 
                 <tr>
@@ -304,9 +305,11 @@
                     </tr>
 
                     <tr>
-                        <td colspan="2"><strong>Barcode :&nbsp;</strong> {!! DNS1D::getBarcodeHTML($product->bar_code, 'C39') !!} p - {{ $product->bar_base }}</td>
+                        <td colspan="2"><strong>Barcode :&nbsp;</strong> {!! DNS1D::getBarcodeHTML($product->bar_code, 'C39') !!} {{ $product->bar_base }}</td>
                     </tr>
             </table>
+            <br>
+            <br>
         </div>
   @endforeach
     </section>

@@ -157,7 +157,7 @@
                                 <td>{{ $product->grn_date }}</td>
                                 <td>{{ $product->format_no }}</td>
                                 {{-- <td>{{ $product->printed_by }}</td> --}}
-                                <td>{!! DNS1D::getBarcodeHTML($product->bar_code, 'C39') !!} p - {{ $product->bar_base
+                                <td>{!! DNS1D::getBarcodeHTML($product->bar_code, 'C39') !!}  {{ $product->bar_base
                                     }}</td>
                                 <td>
                                     <a href="{{ route('Editshow', $product->id) }}" class="btn btn-warning">Edit</a>

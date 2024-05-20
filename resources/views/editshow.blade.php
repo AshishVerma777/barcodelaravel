@@ -111,10 +111,11 @@
                 <label for="">Grn Batch Id :</label>
                 <input type="text" class="form-control mb-3" name="grn_batch_id" value="{{ $data->grn_batch_id }}" >
 
-                <label for="">Arn Id :</label>
-                <input type="text" class="form-control mb-3" name="arn_id" value="{{ $data->arn_id }}" >
+                 <label for="">ARN Id :</label>
+                  <input type="text" class="form-control mb-3" name="arn_id"  value="{{$data->arn_id}}" >
+                  <label for=""> Total Container :</label>
+                  <input type="text" class="form-control mb-3" name="container_no"  value="{{$data->container_no}}" >
 
-             
 
           {{-- <div class="col-12">
             <label for="">Containers:</label>
@@ -149,7 +150,9 @@
                             </tr>
                         </thead>
                         <tbody>
+
                             @foreach ($data->containers as $container)
+                            {{-- {{dd($container)}}; --}}
                                 <tr>
                                     <td>Container {{ $loop->index + 1 }}</td>
                                     <td>{{ $container->status }}</td>

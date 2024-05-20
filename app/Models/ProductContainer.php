@@ -10,9 +10,9 @@ class ProductContainer extends Model
     use HasFactory;
 
 
-    public function Container()
+    public function product()//container
     {
-        return $this->belongsTo(product::class, '');
+        return $this->belongsTo(product::class, 'id');
     }
 
 }

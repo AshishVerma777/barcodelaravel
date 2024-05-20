@@ -93,7 +93,9 @@ class ProductController extends Controller
       public function update(Request $request, $id)
       {
         $product = product::findOrFail($id);
-       // return $product;
+       // $product1 = ProductContainer::findOrFail($id);
+        
+        // return $product;
         $product->batch_status = $request->batch_status;
         $product->item_code = $request->item_code;
         $product->item_name = $request->item_name;
@@ -123,6 +125,8 @@ class ProductController extends Controller
         $product->grn_date = $request->grn_date;
         $product->format_no = $request->format_no;
         $product->printed_by = $request->printed_by;
+       // $product1->status = $request->status;
+        
        if ($request->has('generate_new_barcode')) {
         $number = mt_rand(1000000000, 9999999999);
         
@@ -135,6 +139,7 @@ class ProductController extends Controller
         $product->bar_code = $number;
     }
 
+    //return $product;
     // Save the updated product
     $product->save();
 
