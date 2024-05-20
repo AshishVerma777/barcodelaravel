@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
  
 use App\Models\product;
 use App\Models\ProductContainer;
-;
+use Milon\Barcode\DNS1D;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\App;

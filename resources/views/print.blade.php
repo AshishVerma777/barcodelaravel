@@ -204,7 +204,23 @@
 
         .label-table th {
             background-color: #e9ecef;
+
         }
+
+        .label-container {
+    width: 665px;
+    margin: 0 auto; /* Adjust as needed */
+    padding: 20px; /* Adjust as needed */
+    background-color: #fff;
+    page-break-after: always; /* New rule for printing */
+}
+
+@media print {
+    .label-container {
+        page-break-after: always; /* Ensure it works in print mode */
+    }
+}
+
     </style>
 </head>
 
@@ -224,7 +240,7 @@
             </div>
         </header>
   @foreach ($product->containers as $container)
-  /
+  
         <div class="label-container">
 
             <table class="label-table">
@@ -305,7 +321,8 @@
                     </tr>
 
                     <tr>
-                        <td colspan="2"><strong>Barcode :&nbsp;</strong> {!! DNS1D::getBarcodeHTML($product->bar_code, 'C39') !!} {{ $product->bar_base }}</td>
+                        <td colspan="2" style="width: 150px; height: 50px;">
+                        <strong>Barcode :&nbsp;</strong> {!! DNS1D::getBarcodeHTML($product->bar_code, 'C39') !!} {{ $product->bar_base }}</td>
                     </tr>
             </table>
             <br>

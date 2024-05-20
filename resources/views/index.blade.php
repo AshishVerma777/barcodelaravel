@@ -157,8 +157,23 @@
                                 <td>{{ $product->grn_date }}</td>
                                 <td>{{ $product->format_no }}</td>
                                 {{-- <td>{{ $product->printed_by }}</td> --}}
-                                <td>{!! DNS1D::getBarcodeHTML($product->bar_code, 'C39') !!}  {{ $product->bar_base
-                                    }}</td>
+                                  <td style="width: 150px; height: 50px;">
+                                 {!! DNS1D::getBarcodeHTML($product->bar_code, 'C39') !!}  {{ $product->bar_base
+                                    }}
+                                </td>  
+
+                                
+                                {{-- </td>
+                              @if ($product)
+    @foreach($product as $products)
+        <div>
+            {!! DNS1D::getBarcodeHTML($products->bar_code, "C39" ,1,13) !!}
+        </div>
+    @endforeach
+@else
+    <p>No products found.</p>
+@endif
+                                </td> --}}
                                 <td>
                                     <a href="{{ route('Editshow', $product->id) }}" class="btn btn-warning">Edit</a>
                                     <form action="{{ route('print', $product->id) }}" method="POST">
