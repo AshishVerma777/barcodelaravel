@@ -251,16 +251,19 @@
                 </tr>
 
                 <tr>
-                    <td><strong> Container No :&nbsp;</strong> 40</td>
+                    {{-- <td><strong> Total Weight :&nbsp;</strong></td> --}}
                     {{-- <td><strong>Unit :&nbsp;</strong> fdg</td> --}}
+                    <td><strong>weight Per Package :&nbsp;</strong>{{ $product->weightPerPackage }}</td>
+                    
                     <td><strong>Quantity of Product :&nbsp;</strong>{{ $product->quantity_of_product }}</td>
                 </tr>
                 <tr>
-                    <td><strong>weight Per Package :&nbsp;</strong>{{ $product->weightPerPackage }}</td>
-                    <td><strong>Total Weight :&nbsp;</strong>dfg</td>
+                <td ><strong>Unit :&nbsp;</strong>{{ $product->unit }}</td>
+
+                    <td><strong>Total Weight :&nbsp;</strong> {{ $product->totalWeight }}</td>
                 </tr>
                 <tr>
-                    <td colspan="2"><strong>Unit :&nbsp;</strong>{{ $product->unit }}</td>
+                    {{-- <td colspan="2"><strong>Unit :&nbsp;</strong>{{ $product->unit }}</td> --}}
 
                 </tr>
                 <tr>
@@ -276,15 +279,15 @@
                 </tr>
 
                 <tr>
-                    <td><strong>Batch/No :&nbsp;</strong> FP240901</td>
-                    <td><strong>UOM :&nbsp;</strong> KGS</td>
+                    <td><strong>Batch/No :&nbsp;</strong> {{ $product->batch_no }}</td>
+                    <td><strong>UOM :&nbsp;</strong>{{ $product->unit }}</td>
                 </tr>
                 <tr>
                     <td><strong>Mfg.DT. :&nbsp;</strong>{{ $product->mfg_dt }}</td>
                     <td><strong>Exp.DT. :&nbsp;</strong>{{ $product->exp_dt }}</td>
                 </tr>
                 <tr>
-                    <td><strong>No. Of Container :&nbsp;</strong>{{ $product->count_no }}</td>
+                    <td><strong>Container no :&nbsp;</strong>{{ $loop->index + 1 }} /{{ $product->container_no }}</td>
                     <td><strong>Pack. Size :&nbsp;</strong>{{ $product->pack_size }}</td>
                 </tr>
                 {{-- <tr>
