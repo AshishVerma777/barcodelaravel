@@ -17,12 +17,14 @@
         }
 
         .performance-facts {
-            font-size: 10px;
-            border: 1px solid black;
+            font-size: 12px;
+            /* border: 1px 1px 0px 1px solid black; */
             /* margin: 30px; */
             float: left;
             width: 100%;
-            
+            height: 100%
+            ;
+
             /* padding: 0.5rem; */
 
             table {
@@ -37,9 +39,12 @@
         }
 
         .performance-facts__header {
-            border-bottom: 1.2px solid black;
+            border-top: 1px solid black;
+            border-left: 1px solid black;
+            border-right: 1px solid black;
             width: 100%;
-height: 80px;
+            height: 70px;
+            padding-bottom: 2px;
 
             p {
                 margin: 0;
@@ -48,7 +53,8 @@ height: 80px;
 
         .performance-facts__table {
             width: 100%;
-            
+
+
 
 
         }
@@ -78,15 +84,15 @@ height: 80px;
         }
 
         .logo-img img {
-            height: 80px;
-            width: 80px;
+            height: 70px;
+            width: 70px;
 
         }
 
         .heading-header {
             position: absolute;
             top: 4%;
-            left: 24%;
+            left: 22%;
             text-align: center;
             font-weight: bold;
             font-size: 20px;
@@ -109,6 +115,11 @@ height: 80px;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
         }
 
         .info,
@@ -128,8 +139,72 @@ height: 80px;
             padding: 6px;
             border-bottom: 1px solid #5f5c5c;
         }
-      
-       
+
+        .info tr {
+            padding-left: 10px;
+        }
+
+        .label-container {
+            width: 800px;
+            margin: 0 auto;
+            /* border: 1px solid #000; */
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        .label-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .label-header img {
+            max-width: 100px;
+        }
+
+        .label-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .label-table th,
+        .label-table td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .label-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .label-header img {
+            max-width: 100px;
+            margin-bottom: 10px;
+        }
+
+        .label-container {
+            width: 665px;
+            padding: 0px !important;
+            background-color: #fff;
+        }
+
+        .label-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .label-table th,
+        .label-table td {
+
+            padding: 8px;
+            text-align: left;
+            font-size: 14px;
+        }
+
+        .label-table th {
+            background-color: #e9ecef;
+        }
     </style>
 </head>
 
@@ -148,113 +223,91 @@ height: 80px;
                 <img src="https://vidyagxp.com/vidhyaGxp.png" alt="Logo" class="logo">
             </div>
         </header>
+  @foreach ($product->containers as $container)
+        <div class="label-container">
 
-        <div class="content">
-            <div class="info">
-                <table>
-                    <tr>
-                        <td><strong>Id:</strong></td>
-                    </tr>
-                    <tr>
-                        <td><strong>Batch Status:</strong>{{ $product->batch_status }}</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Item Code:</strong> {{ $product->item_code }}</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Item Name:</strong> {{ $product->item_name }}</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Location Code {{ $product->location_code }}</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Store:</strong>{{ $product->store }}</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Grn Batch Id :</strong> {{ $product->grn_batch_id }}</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Arn Id:</strong>{{ $product->arn_id }}</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Container No.:</strong>{{ $product->container_no }}</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Container No.:</strong> </td>
-                    </tr>
-                    <tr>
-                        <td><strong>Brand Name:</strong> {{ $product->brand_name }}</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Unit:</strong>{{ $product->unit }}</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Quantity of Product:</strong> {{ $product->quantity_of_product }}</td>
-                    </tr>
-                    <tr>
-                        <td><strong>weight Per Package:</strong>{{ $product->weightPerPackage }} </td>
-                    </tr>
-                    <tr>
-                        <td><strong>Total Weight:</strong> {{ $product->totalWeight }}</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Item Description:</strong>  {{ $product->item_description }}</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Batch/No:</strong>{{ $product->batch_no }}</td>
-                    </tr>
-                    <tr>
-                        <td><strong>UOM:</strong>{{ $product->uom_branch }}</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Mfg.DT.:</strong> {{ $product->mfg_dt }}</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Exp.DT:</strong>{{ $product->exp_dt }}</td>
-                    </tr>
-                    <tr>
-                        <td><strong>No. Of Cont.:</strong>{{ $product->no_of_cont }}</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Pack. Size:</strong> {{ $product->pack_size }}</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Cont. No:</strong>{{ $product->count_no }}</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Rec Qty:</strong>{{ $product->rec_qty }}</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Manufacturer:</strong> {{ $product->manufacturer }}</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Supplier:</strong> {{ $product->supplier }}</td>
-                    </tr>
-                    <tr>
-                        <td><strong>GRN No.:</strong>{{ $product->grn_no }}</td>
+            <table class="label-table">
+                <tr>
+                    <td colspan="2"><strong>Id :&nbsp;</strong> {{ $product->id }}</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><strong>Batch Status :&nbsp;<strong>  {{ $product->batch_status }} </td>
+                </tr>
+                <tr>
+                    <td><strong>Item Code :&nbsp;</strong>{{ $product->item_code }}</td>
+                    <td><strong>Item Name :&nbsp;</strong> {{ $product->item_name}}</td>
+                </tr>
+                <tr>
+                    <td><strong>Location Code :&nbsp;</strong>{{ $product->location_code }}</td>
+                    <td><strong>Store :&nbsp;</strong> {{ $product->store }}</td>
+                </tr>
+                <tr>
+                    <td><strong>GRN Batch Id :&nbsp;</strong> {{ $product->grn_batch_id }}</td>
+                    <td><strong>ARN Id :&nbsp;</strong> {{ $product->arn_id }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Total Container :&nbsp;</strong>{{ $product->container_no }}</td>
+                    <td><strong>Container Status :&nbsp;</strong>{{ $product->container_status }}</td>
+                </tr>
+
+                <tr>
+                    <td><strong> Container No :&nbsp;</strong> 40</td>
+                    {{-- <td><strong>Unit :&nbsp;</strong> fdg</td> --}}
+                    <td><strong>Quantity of Product :&nbsp;</strong>{{ $product->quantity_of_product }}</td>
+                </tr>
+                <tr>
+                    <td><strong>weight Per Package :&nbsp;</strong>{{ $product->weightPerPackage }}</td>
+                    <td><strong>Total Weight :&nbsp;</strong>dfg</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><strong>Unit :&nbsp;</strong>{{ $product->unit }}</td>
+
+                </tr>
+                <tr>
+                    <td colspan="2"><strong>Brand Name :&nbsp;</strong>{{ $product->brand_name }}</td>
+
+                </tr>
+
+                <tr>
+                    <td colspan="2"><strong>Manufacturer :&nbsp;</strong> {{ $product->manufacturer }}</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><strong>Supplier :&nbsp;</strong>{{ $product->supplier }}</td>
+                </tr>
+
+                <tr>
+                    <td><strong>Batch/No :&nbsp;</strong> FP240901</td>
+                    <td><strong>UOM :&nbsp;</strong> KGS</td>
+                </tr>
+                <tr>
+                    <td><strong>Mfg.DT. :&nbsp;</strong>{{ $product->mfg_dt }}</td>
+                    <td><strong>Exp.DT. :&nbsp;</strong>{{ $product->exp_dt }}</td>
+                </tr>
+                <tr>
+                    <td><strong>No. Of Container :&nbsp;</strong>{{ $product->count_no }}</td>
+                    <td><strong>Pack. Size :&nbsp;</strong>{{ $product->pack_size }}</td>
+                </tr>
+                {{-- <tr>
+                    <td><strong>Manufacturer :&nbsp;</strong> 40</td>
+                    <td><strong>Supplier :&nbsp;</strong> 2000.00 KG</td>
+                </tr> --}}
+                <tr>
+                    <td><strong>GRN No :&nbsp;</strong>{{ $product->grn_no }}</td>
+                    <td><strong>GRN Date :&nbsp;</strong> {{ $product->grn_date }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Format No :&nbsp;</strong>{{ $product->format_no }} </td>
+                    <td><strong>Rec Qty :&nbsp;</strong>{{ $product->rec_qty }}</td>
                     </tr>
 
                     <tr>
-                        <td><strong>GRN Date:</strong>{{ $product->grn_date }}</td>
+                        <td colspan="2"><strong>Barcode :&nbsp;</strong> {!! DNS1D::getBarcodeHTML($product->bar_code, 'C39') !!} p - {{ $product->bar_base }}</td>
                     </tr>
-
-                    <tr>
-                        <td><strong>Format No.:</strong>{{ $product->format_no }}</td>
-                    </tr>
-
-                    <tr>
-                        <td><strong>Printed By:</strong>{{ $product->printed_by }}</td>
-                    </tr>
-
-                    
-
-                    <tr >
-                        <td style="border-bottom: none; padding-bottom:0px;"><strong>Bar-Code::</strong>{!! DNS1D::getBarcodeHTML($product->bar_code, 'C39') !!} p - {{ $product->bar_base }}</td>
-                    </tr>
-                </table>
-            </div>
+            </table>
         </div>
+  @endforeach
     </section>
+
 
 
 </body>

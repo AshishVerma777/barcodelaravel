@@ -24,9 +24,9 @@ class ProductController extends Controller
 
         $number = mt_rand(1000000000,9999999999);
          
-        if ($this->productCodeExists($number)) {
-            $number = mt_rand(1000000000,999999999);
-        }
+        // if ($this->productCodeExists($number)) {
+        //     $number = mt_rand(1000000000,999999999);
+        // }
          
 
         
@@ -38,6 +38,11 @@ class ProductController extends Controller
             // new ProductContainers
 
             $container   = new ProductContainer();
+
+            // if ($this->productCodeExists($number)) {
+            //     $number = mt_rand(1000000000,999999999);
+            // }
+           
             $container->product_id = $product->id;
             $container->status   = 'ok'; //$request->status;
             $container->save();
