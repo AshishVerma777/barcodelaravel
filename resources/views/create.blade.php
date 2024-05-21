@@ -66,24 +66,29 @@
               </div>
                 <form action="{{route('store')}}" method="post">
                  @csrf
-                 <label for="batch_status">Batch Status:</label>
-                <select class="form-control mb-3" name="batch_status" id="batch_status" required onchange="showLaunchDeviationButton()">
-                    <option value="">Select</option>
-                    <option value="under_quarantine">Under Quarantine</option>
-                    <option value="under_testing">Under Testing</option>
-                    <option value="approved">Approved</option>
-                    <option value="partially_approved">Partially Approved</option>
-                    <option value="rejected">Rejected</option>
-                </select>
-                <button type="button" class="btn btn-primary mb-3" id="launch_deviation_button" style="display: none;" onclick="launchDeviation()">Launch Deviation</button>
-
+                  <div class="col-12">
+                   <label for="batch_status">Batch Status:</label>
+                        <select class="form-control mb-3" name="batch_status" id="batch_status" required onchange="showLaunchDeviationButton()">
+                            <option value="">Select</option>
+                            <option value="under_quarantine">Under Quarantine</option>
+                            <option value="under_testing">Under Testing</option>
+                            <option value="approved">Approved</option>
+                            <option value="partially_approved">Partially Approved</option>
+                            <option value="rejected">Rejected</option>
+                        </select>
+                   
+                        <button type="button" class="btn btn-primary mb-3" id="launch_deviation_button" style="display: none;" onclick="launchDeviation()">Launch Deviation</button>
+                     </div>         
+                    <div class="col-12">
                     <label for="">Item Code :</label>
                     <input type="text" class="form-control mb-3" name="item_code" >
-
+                    </div>
                     {{-- <label for="">Item Name:</label>
                     <input type="text" class="form-control mb-3" name="batch" required> --}}
+                     <div class="col-12">
                     <label for="batch_status">Item Name:</label>
                      <input type="text" class="form-control mb-3" name="item_name" >
+                     </div>
                     {{-- <select class="form-control mb-3" name="item_name" id="batch_status" required>
                         <option value="">Select </option>
                         {{-- <option value="approved">Hydro</option> --}}
@@ -96,118 +101,167 @@
 
                     </select> --}}
                     {{-- <input type="text" class="form-control mb-3" name="product_name" required> --}}
+                    <div class="col-12">
                     <label for="">Location Code:</label>
                     <input type="text" class="form-control mb-3" name="location_code">
+                    </div>
+                   <div class="col-12">
                     <label for="">Store :</label>
                     <input type="text" class="form-control mb-3" name="store"  value="RMS">
+                    </div>
+
+                     <div class="col-12">
                     <label for="">GRN Batch Id :</label>
                     <input type="text" class="form-control mb-3" name="grn_batch_id"  >
+                    </div>
+
+                     <div class="col-12">
                     <label for="">ARN Id :</label>
                     <input type="text" class="form-control mb-3" name="arn_id"  >
+                    </div>
+
+                    <div class="col-12">
                     <label for=""> Total Container :</label>
                     <input type="text" class="form-control mb-3" name="container_no"  >
-
+                    </div>
 
                            
-   
+                  <div class="col-12">
                     <label for="container_status">Container Status:</label>
-              <select class="form-control mb-3" name="container_status" id="container_status" onchange="showLaunchDeviationButtonForContainer()">
-                  <option value="">Select</option>
-                  <option value="leakage_damage">Leakage/Damage</option>
-                  <option value="ok">Ok</option>
-              </select>
-              <button type="button" class="btn btn-primary mb-3" id="launch_deviation_button_container" style="display: none;" onclick="launchDeviationForContainer()">Launch Deviation</button>
-
-
-              
-              
-              <div class="col-12">
-                <label for="brand_name">Brand Name:</label>
-                       <input type="text" class="form-control mb-3" name="brand_name" required>
-                     </div>
-                     <div class="row">
-                     <div class="col-6">
-                     <label for="quantity_of_product">Quantity of Product</label>
-                       <input type="text" id="quantity" class="form-control mb-3" name="quantity_of_product" oninput="calculateTotalWeight()" placeholder="Enter quantity" required>
-                     
-                     </div>
-                     <div class="col-6">
-                       <label for="unit">Unit</label>
-                       <select class="form-control mb-3" name="unit" id="unit" required onchange="calculateTotalTime()">
-                           <option value="kg">Kilogram (kg)</option>
-                           <option value="gm">Gram (gm)</option>
-                           {{-- <option value="ok">Ok</option> --}}
-                       </select>
-                   
-                     </div>
-                     </div>
-                       <label for="weightPerPackage">Weight per Package</label>
-                       <input type="text" id="weightPerPackage" class="form-control mb-3" name="weightPerPackage" oninput="calculateTotalWeight()" placeholder="Enter weight per package" required>
-                     
-                       <label for="totalWeight">Total Weight</label>
-                       <input type="text" id="totalWeight" class="form-control mb-3" name="totalWeight" oninput="calculateTotalWeight()" placeholder="Enter weight per package" required>
-                     
-
-   
-
-
-                     
-                     
-                 <div class="col-12">
-                  <label for="Item_Description">Item Description:</label>
-                         <input type="text" class="form-control mb-3" name="item_description" >
+                    <select class="form-control mb-3" name="container_status" id="container_status" onchange="showLaunchDeviationButtonForContainer()">
+                        <option value="">Select</option>
+                        <option value="leakage_damage">Leakage/Damage</option>
+                        <option value="ok">Ok</option>
+                    </select>
+                    <button type="button" class="btn btn-primary mb-3" id="launch_deviation_button_container" style="display: none;" onclick="launchDeviationForContainer()">Launch Deviation</button>
                   </div>
 
+              
+              
+                    <div class="col-12">
+                    <label for="brand_name">Brand Name:</label>
+                      <input type="text" class="form-control mb-3" name="brand_name" required>
+                    </div>
+
+                  <div class="row">
+                      <div class="col-6">
+                      <label for="quantity_of_product">Quantity of Product</label>
+                      <input type="text" id="quantity" class="form-control mb-3" name="quantity_of_product" oninput="calculateTotalWeight()" placeholder="Enter quantity" required>
+                      
+                      </div>
+
+                      <div class="col-6">
+                        <label for="unit">Unit</label>
+                        <select class="form-control mb-3" name="unit" id="unit" required onchange="calculateTotalTime()">
+                            <option value="kg">Kilogram (kg)</option>
+                            <option value="gm">Gram (gm)</option>
+                            {{-- <option value="ok">Ok</option> --}}
+                        </select>
+                      </div>
+                    </div>
+
+                     <div class="col-12">
+                       <label for="weightPerPackage">Weight per Package</label>
+                       <input type="text" id="weightPerPackage" class="form-control mb-3" name="weightPerPackage" oninput="calculateTotalWeight()" placeholder="Enter weight per package" required>
+                     </div>
+                      <div class="col-12">
+                       <label for="totalWeight">Total Weight</label>
+                       <input type="text" id="totalWeight" class="form-control mb-3" name="totalWeight" oninput="calculateTotalWeight()" placeholder="Enter weight per package" required>
+                     </div>
+ 
+                    <div class="col-12">
+                      <label for="Item_Description">Item Description:</label>
+                            <input type="text" class="form-control mb-3" name="item_description" >
+                      </div>
+
 
                        
-                 <div class="col-12">
-                  <label for="batch_no">Batch/No:</label>
-                         <input type="text" class="form-control mb-3" name="batch_no" >
-                       </div>
+                    <div class="col-12">
+                        <label for="batch_no">Batch/No:</label>
+                              <input type="text" class="form-control mb-3" name="batch_no" >
+                      </div>
 
                        
-                 <div class="col-12">
-                  <label for="uom_branch">UOM</label>
-                          <select name="uom_branch" class="form-control mb-3" name="unit" id="unit">
-                           <option value="kg">Kilogram (kg)</option>
-                           <option value="gm">Gram (gm)</option>
-                           {{-- <option value="ok">Ok</option> --}}
-                       </select>
-                       </div>
+                      <div class="col-12">
+                       <label for="uom_branch">UOM</label>
+                              <select name="uom_branch" class="form-control mb-3" name="unit" id="unit">
+                              <option value="kg">Kilogram (kg)</option>
+                              <option value="gm">Gram (gm)</option>
+                              {{-- <option value="ok">Ok</option> --}}
+                              </select>
+                      </div>
+                
+                       <div class="row">
+                          <div class="col-6">
+                              <label for="mfg_dt">Mfg.DT.</label>
+                              <input type="date" class="form-control" name="mfg_dt" id="start_date_input">
+                          </div>
 
-                       
-                 <div class="col-12">
-                  <label for="Mfg_dt">Mfg.DT.</label>
-                         <input type="date" class="form-control mb-3" name="mfg_dt" >
-                       </div>
-<br>
-                       <label for="exp_dt">Exp.DT</label>
-                        <input type="date" class="form-control mb-3" name="exp_dt" >
+                          <div class="col-6">
+                              <label for="exp_dt">Exp.DT</label>
+                              <input type="date" class="form-control" name="exp_dt" id="end_date_input">
+                          </div>
+                      </div>
+
+                      <script>
+                          document.getElementById('start_date_input').addEventListener('change', function() {
+                              var startDate = this.value;
+                              var endDateInput = document.getElementById('end_date_input');
+                              endDateInput.min = startDate; // Set the minimum date of the end date input to the start date
+                          });
+
+                          document.getElementById('end_date_input').addEventListener('change', function() {
+                              var endDate = this.value;
+                              var startDateInput = document.getElementById('start_date_input');
+                              if (endDate < startDateInput.value) {
+                                  startDateInput.max = endDate; // Optional: Restrict the start date max to the end date
+                              }
+                          });
+                      </script>
+
 
                         {{-- <label for="no_of_cont">No. Of Cont.</label>
-                        <input type="text" class="form-control mb-3" name="no_of_cont" > --}}
-
+                        <input type="text" class="form-control mb-3" name="no_of_cont" > --}} 
+                      <br>
+                      <div class="col-12">
                         <label for="pack_size">Pack.Size</label>
                         <input type="text" class="form-control mb-3" name="pack_size" >
+                      </div>
 
+                      <div class="col-12">
                          <label for="count_no">Container Number</label>
                         <input type="text" class="form-control mb-3" name="count_no" >
+                      </div>
 
-
+                      <div class="col-12">
                         <label for="rec_qty">Rec Qty:</label>
                         <input type="number" class="form-control mb-3" name="rec_qty" >
+                      </div>
 
+                      <div class="col-12">
                         <label for="manufacturer">Manufacturer:</label>
                         <input type="text" class="form-control mb-3" name="manufacturer" >
+                      </div>
+
+                      <div class="col-12">
                         <label for="supplier">Supplier:</label>
                         <input type="text" class="form-control mb-3" name="supplier" >
+                      </div>
+
+                      <div class="col-12">
                         <label for="grn_no">GRN No.:</label>
                         <input type="text" class="form-control mb-3" name="grn_no" >
+                      </div>
+
+                      <div class="col-12">
                         <label for="grn_date">GRN Date:</label>
                         <input type="date" class="form-control mb-3" name="grn_date" >
+                      </div>                       
+
+                      <div class="col-12">
                         <label for="format_no">Format No.:</label>
                         <input type="text" class="form-control mb-3" name="format_no" >
-
+                      </div>                       
                         {{-- <label for="printed_by">Printed By:</label>
                         <input type="text" class="form-control mb-3" name="printed_by">> --}}
 
@@ -221,30 +275,28 @@
 
                
     
-    <script>
-        function calculateTotalWeight() {
-            var quantity = document.getElementById('quantity').value;
-            var unit = document.getElementById('unit').value;
-            var weightPerPackage = document.getElementById('weightPerPackage').value;
-            var totalWeight = 0;
+            <script>
+                function calculateTotalWeight() {
+                    var quantity = document.getElementById('quantity').value;
+                    var unit = document.getElementById('unit').value;
+                    var weightPerPackage = document.getElementById('weightPerPackage').value;
+                    var totalWeight = 0;
 
-            // Ensure both quantity and weightPerPackage are provided before calculating
-            if (quantity && weightPerPackage) {
-                if (unit === 'kg') {
-                    totalWeight = quantity * weightPerPackage; // Total weight in kilograms
-                } else if (unit === 'gm') {
-                    totalWeight = quantity * (weightPerPackage / 1000); // Convert grams to kilograms
+                    // Ensure both quantity and weightPerPackage are provided before calculating
+                    if (quantity && weightPerPackage) {
+                        if (unit === 'kg') {
+                            totalWeight = quantity * weightPerPackage; // Total weight in kilograms
+                        } else if (unit === 'gm') {
+                            totalWeight = quantity * (weightPerPackage / 1000); // Convert grams to kilograms
+                        }
+                        document.getElementById('totalWeight').value = totalWeight + ' kg';
+                    } else {
+                        document.getElementById('totalWeight').value = ''; // Clear if inputs are incomplete
+                    }
                 }
-                document.getElementById('totalWeight').value = totalWeight + ' kg';
-            } else {
-                document.getElementById('totalWeight').value = ''; // Clear if inputs are incomplete
-            }
-        }
-    </script>
+            </script>
 
                  {{-- new added  --}}
-                
-       
             </form>
         </div>
         </div>

@@ -49,11 +49,12 @@
         }
        
     </style>
-    </style>
+    
 </head>
 
 <body>
     <header>
+    
         <div class="container">
             <div class="row">
                 <div class="col-lg-2">
@@ -64,7 +65,7 @@
                 </div>
                 <div class="col-lg-7">
                     <div class="heading-header ">
-                        Warehouse and Leveling Management
+                       Warehouse and Labeling Management
                     </div>
                 </div>
                 <div class="col-lg-2">
@@ -160,6 +161,7 @@
                                   <td style="width: 150px; height: 50px;">
                                  {!! DNS1D::getBarcodeHTML($product->bar_code, 'C39') !!}  {{ $product->bar_base
                                     }}
+
                                 </td>  
 
                                 

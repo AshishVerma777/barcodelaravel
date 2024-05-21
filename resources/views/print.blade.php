@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Black & White</title>
+    <title>Barcodde Print</title>
 
     <style type="text/css">
         body {
@@ -221,6 +221,32 @@
     }
 }
 
+.image_head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 2px solid #ccc;
+}
+
+.logo {
+    flex: 0 0 auto; /* Do not grow or shrink */
+}
+
+.heading {
+    flex-grow: 1;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Ensure the logo images are correctly sized and aligned */
+.logo img {
+    height: 80px; /* Adjust based on your needs */
+    width: auto;
+}
+
+
     </style>
 </head>
 
@@ -228,111 +254,117 @@
 
 
     <section class="performance-facts">
-        <header class="performance-facts__header">
-            <div class="logo-img">
-                <img src="http://www.agio-pharma.com/wp-content/uploads/2019/10/logo-agio.png" alt="Logos">
-            </div>
-            <div class="heading-header ">
-                Warehouse and Leveling Management
-            </div>
-            <div class="logo-image">
-                <img src="https://vidyagxp.com/vidhyaGxp.png" alt="Logo" class="logo">
-            </div>
-        </header>
-  @foreach ($product->containers as $container)
-  
-        <div class="label-container">
+                @foreach ($product->containers as $container)
+            
+                   <div class="image_head">
+                    <div class="logo">
+                        <img src="http://www.agio-pharma.com/wp-content/uploads/2019/10/logo-agio.png" alt="VidhyaGxp Logo">
+                    </div>
+                    <div class="heading">
+                    Warehouse and Labeling Management
+                    </div>
+                    <div class="logo">
+                        <img src="https://vidyagxp.com/vidhyaGxp.png" alt="Other Logo">
+                    </div>
+                </div>
 
-            <table class="label-table">
-                <tr>
-                    <td colspan="2"><strong>Id :&nbsp;</strong> {{ $product->id }}</td>
-                </tr>
-                <tr>
-                    <td colspan="2"><strong>Batch Status :&nbsp;<strong>  {{ $product->batch_status }} </td>
-                </tr>
-                <tr>
-                    <td><strong>Item Code :&nbsp;</strong>{{ $product->item_code }}</td>
-                    <td><strong>Item Name :&nbsp;</strong> {{ $product->item_name}}</td>
-                </tr>
-                <tr>
-                    <td><strong>Location Code :&nbsp;</strong>{{ $product->location_code }}</td>
-                    <td><strong>Store :&nbsp;</strong> {{ $product->store }}</td>
-                </tr>
-                <tr>
-                    <td><strong>GRN Batch Id :&nbsp;</strong> {{ $product->grn_batch_id }}</td>
-                    <td><strong>ARN Id :&nbsp;</strong> {{ $product->arn_id }}</td>
-                </tr>
-                <tr>
-                    <td><strong>Total Container :&nbsp;</strong>{{ $product->container_no }}</td>
-                    <td><strong>Container Status :&nbsp;</strong>{{ $container->status }}</td>
-                </tr>
+               
+                <div class="label-container">
 
-                <tr>
-                    {{-- <td><strong> Total Weight :&nbsp;</strong></td> --}}
-                    {{-- <td><strong>Unit :&nbsp;</strong> fdg</td> --}}
-                    <td><strong>weight Per Package :&nbsp;</strong>{{ $product->weightPerPackage }}</td>
-                    
-                    <td><strong>Quantity of Product :&nbsp;</strong>{{ $product->quantity_of_product }}</td>
-                </tr>
-                <tr>
-                <td ><strong>Unit :&nbsp;</strong>{{ $product->unit }}</td>
+                    <table class="label-table">
+                        <tr>
+                            <td colspan="2"><strong>Id :&nbsp;</strong> {{ $product->id }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><strong>Batch Status :&nbsp;<strong>  {{ $product->batch_status }} </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Item Code :&nbsp;</strong>{{ $product->item_code }}</td>
+                            <td><strong>Item Name :&nbsp;</strong> {{ $product->item_name}}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Location Code :&nbsp;</strong>{{ $product->location_code }}</td>
+                            <td><strong>Store :&nbsp;</strong> {{ $product->store }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>GRN Batch Id :&nbsp;</strong> {{ $product->grn_batch_id }}</td>
+                            <td><strong>ARN Id :&nbsp;</strong> {{ $product->arn_id }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total Container :&nbsp;</strong>{{ $product->container_no }}</td>
+                            <td><strong>Container Status :&nbsp;</strong>{{ $container->status }}</td>
+                        </tr>
 
-                    <td><strong>Total Weight :&nbsp;</strong> {{ $product->totalWeight }}</td>
-                </tr>
-                <tr>
-                    {{-- <td colspan="2"><strong>Unit :&nbsp;</strong>{{ $product->unit }}</td> --}}
+                        <tr>
+                            {{-- <td><strong> Total Weight :&nbsp;</strong></td> --}}
+                            {{-- <td><strong>Unit :&nbsp;</strong> fdg</td> --}}
+                            <td><strong>weight Per Package :&nbsp;</strong>{{ $product->weightPerPackage }}</td>
+                            
+                            <td><strong>Quantity of Product :&nbsp;</strong>{{ $product->quantity_of_product }}</td>
+                        </tr>
+                        <tr>
+                        <td ><strong>Unit :&nbsp;</strong>{{ $product->unit }}</td>
 
-                </tr>
-                <tr>
-                    <td colspan="2"><strong>Brand Name :&nbsp;</strong>{{ $product->brand_name }}</td>
+                            <td><strong>Total Weight :&nbsp;</strong> {{ $product->totalWeight }}</td>
+                        </tr>
+                        <tr>
+                            {{-- <td colspan="2"><strong>Unit :&nbsp;</strong>{{ $product->unit }}</td> --}}
 
-                </tr>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><strong>Brand Name :&nbsp;</strong>{{ $product->brand_name }}</td>
 
-                <tr>
-                    <td colspan="2"><strong>Manufacturer :&nbsp;</strong> {{ $product->manufacturer }}</td>
-                </tr>
-                <tr>
-                    <td colspan="2"><strong>Supplier :&nbsp;</strong>{{ $product->supplier }}</td>
-                </tr>
+                        </tr>
+                        
+                        <tr>
+                            <td colspan="2"><strong>Manufacturer :&nbsp;</strong> {{ $product->manufacturer }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><strong>Supplier :&nbsp;</strong>{{ $product->supplier }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><strong>Description :&nbsp;</strong>{{ $product->item_description }}</td>
+                        </tr>
 
-                <tr>
-                    <td><strong>Batch/No :&nbsp;</strong> {{ $product->batch_no }}</td>
-                    <td><strong>UOM :&nbsp;</strong>{{ $product->unit }}</td>
-                </tr>
-                <tr>
-                    <td><strong>Mfg.DT. :&nbsp;</strong>{{ $product->mfg_dt }}</td>
-                    <td><strong>Exp.DT. :&nbsp;</strong>{{ $product->exp_dt }}</td>
-                </tr>
-                <tr>
-                    <td><strong>Container no :&nbsp;</strong>{{ $loop->index + 1 }} /{{ $product->container_no }}</td>
-                    <td><strong>Pack. Size :&nbsp;</strong>{{ $product->pack_size }}</td>
-                </tr>
-                {{-- <tr>
-                    <td><strong>Manufacturer :&nbsp;</strong> 40</td>
-                    <td><strong>Supplier :&nbsp;</strong> 2000.00 KG</td>
-                </tr> --}}
-                <tr>
-                    <td><strong>GRN No :&nbsp;</strong>{{ $product->grn_no }}</td>
-                    <td><strong>GRN Date :&nbsp;</strong> {{ $product->grn_date }}</td>
-                </tr>
-                <tr>
-                    <td><strong>Format No :&nbsp;</strong>{{ $product->format_no }} </td>
-                    <td><strong>Rec Qty :&nbsp;</strong>{{ $product->rec_qty }}</td>
-                    </tr>
+                        <tr>
+                            <td><strong>Batch/No :&nbsp;</strong> {{ $product->batch_no }}</td>
+                            <td><strong>UOM :&nbsp;</strong>{{ $product->unit }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mfg.DT. :&nbsp;</strong>{{ $product->mfg_dt }}</td>
+                            <td><strong>Exp.DT. :&nbsp;</strong>{{ $product->exp_dt }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Container no :&nbsp;</strong>{{ $loop->index + 1 }} /{{ $product->container_no }}</td>
+                            <td><strong>Pack. Size :&nbsp;</strong>{{ $product->pack_size }}</td>
+                        </tr>
+                        {{-- <tr>
+                            <td><strong>Manufacturer :&nbsp;</strong> 40</td>
+                            <td><strong>Supplier :&nbsp;</strong> 2000.00 KG</td>
+                        </tr> --}}
+                        <tr>
+                            <td><strong>GRN No :&nbsp;</strong>{{ $product->grn_no }}</td>
+                            <td><strong>GRN Date :&nbsp;</strong> {{ $product->grn_date }}</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Format No :&nbsp;</strong>{{ $product->format_no }} </td>
+                            <td><strong>Rec Qty :&nbsp;</strong>{{ $product->rec_qty }}</td>
+                        </tr>
 
-                    <tr>
-                        <td colspan="2" style="width: 150px; height: 50px;">
-                        <strong>Barcode :&nbsp;</strong> {!! DNS1D::getBarcodeHTML($product->bar_code, 'C39') !!} {{ $product->bar_base }}</td>
-                    </tr>
-            </table>
-            <br>
-            <br>
-        </div>
-  @endforeach
-    </section>
+                        <tr>
+                                <td colspan="2" style="width: 150px; height: 50px;">
+                                <strong>Barcode :&nbsp;</strong>
+                                <img src="data:image/png;base64,{{ DNS1D::getBarcodePNG($product->bar_code, 'C39') }}" alt="barcode"/>
+                        </td>
 
-
-
+                        </tr>
+                    </table>
+                    <br>
+                    <br>
+                </div>
+    @endforeach
+</section>
 </body>
 
 </html>
+                            
