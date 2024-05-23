@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Barcodde Print</title>
+    <link rel="icon" href="{{ asset('assets\icon\logovidyagxp.png.png') }}" type="image/x-icon">
+
 
     <style type="text/css">
         body {

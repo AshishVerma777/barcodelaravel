@@ -23,15 +23,15 @@
         .logo-image img {
             width: 100px;
             height: 200px;
-            padding-left: 290px;
+            padding-left: 190px;
         }
 
         .heading-header {
             font-weight: bold;
             font-size: 30px;
             position: absolute;
-            margin-left: 40px;
-            top: 45px;
+            margin-left: 70px;
+            top: 55px;
             text-align: center;
             background: -webkit-linear-gradient(0deg, #ffa745 0%, #f27575 30%, #fc4040 45%, #5bf48e 70%, #3482f7 85%);
             -webkit-background-clip: text;
@@ -55,7 +55,7 @@
 <body>
     <header>
     
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-2">
                     <div class="logo-img">
@@ -87,7 +87,7 @@
                 <a href="{{ route('show') }}" class="btn btn-success">Show</a>
             </div>
             <div class="main_class">
-                <div class="table_responsive">
+                <div class="table_responsive" style="width: 100%; overflow-x: auto;">
                     <table class="table table-hover">
                         <thead>
                             <tr>

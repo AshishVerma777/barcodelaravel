@@ -1,69 +1,49 @@
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Generate Label</title>       
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
-</head>
+@extends('layouts.app')
+
+@section('content')
 <style>
-  .image_head{
-    display: flex;
-    justify-content: space-between;
-    padding: 5px;
-  }
-  img.logo {
-        height: 150px; /* Adjust the size of the logo */
-    }
+.image_head {
+     display: flex;
+    justify-content: space-between; /* Ensures one logo is on each side */
+    align-items: center; /* Centers logos vertically */
+    width: 100%;
+}
+
+.logo img {
+    height: auto; /* Maintain aspect ratio */
+}
+
+.logo-vidya img {
+    width: 220px; /* Adjust width as desired for the Vidya logo */
+}
+
+.logo-ajio img {
+    width: 100px; /* Adjust width as desired for the Ajio logo */
+}
+
+
+
+
+
 </style>
 
-<script>
-  function showLaunchDeviationButton() {
-      var batchStatus = document.getElementById("batch_status").value;
-      var launchDeviationButton = document.getElementById("launch_deviation_button");
-
-      // Show the Launch Deviation button if "Rejected" is selected for Batch Status, otherwise hide it
-      if (batchStatus === "rejected") {
-          launchDeviationButton.style.display = "block";
-      } else {
-          launchDeviationButton.style.display = "none";
-      }
-  }
-
-  function launchDeviation() {
-      // Open the specified link in a new tab for Batch Status
-      window.open("https://agio.mydemosoftware.com/", "_blank");
-  }
-
-  function showLaunchDeviationButtonForContainer() {
-      var containerStatus = document.getElementById("container_status").value;
-      var launchDeviationButtonContainer = document.getElementById("launch_deviation_button_container");
-
-      // Show the Launch Deviation button if "Leakage/Damage" is selected for Container Status, otherwise hide it
-      if (containerStatus === "leakage_damage") {
-          launchDeviationButtonContainer.style.display = "block";
-      } else {
-          launchDeviationButtonContainer.style.display = "none";
-      }
-  }
-
-  function launchDeviationForContainer() {
-      // Open the specified link in a new tab for Container Status
-      window.open("https://agio.mydemosoftware.com/", "_blank");
-  }
-</script>
-<body>
-    <div class="container-fluid  ">
+<div class="container-fluid  ">
       <div class="row justify-content-md-center">
         <div class="col-md-12">
             <div class="card px-5 mt-3  shadow">
-              <div class="image_head">
-                <div class="logo">
-                  <img src="https://vidyagxp.com/vidhyaGxp.png" alt="Logo" class="logo" style="scale: 2.5">
-               
+       
+               <div class="image_head">
+                <div class="logo logo-vidya">
+                    <img src="https://vidyagxp.com/vidhyaGxp.png" alt="VidyaGxP Logo">
                 </div>
-                <div class="logo">
-                  <img src="{{ asset('user/images/ajio-removebg-preview.png') }}" alt="logo" style="scale: 0.5; margin-top: -51px;">
+                
+                <div class="logo logo-ajio">
+                    <img src="{{ asset('user/images/ajio-removebg-preview.png') }}" alt="Ajio Logo" style="margin-top: -20px;">
                 </div>
+            </div>
+
               </div>
+          
                 <form action="{{route('store')}}" method="post">
                  @csrf
                   <div class="col-12">
@@ -143,7 +123,7 @@
                       <input type="text" class="form-control mb-3" name="brand_name" required>
                     </div>
 
-                  <div class="row">
+                  <div class="d-flex">
                       <div class="col-6">
                       <label for="quantity_of_product">Quantity of Product</label>
                       <input type="text" id="quantity" class="form-control mb-3" name="quantity_of_product" oninput="calculateTotalWeight()" placeholder="Enter quantity" required>
@@ -191,7 +171,7 @@
                               </select>
                       </div>
                 
-                       <div class="row">
+                       <div class="d-flex">
                           <div class="col-6">
                               <label for="mfg_dt">Mfg.DT.</label>
                               <input type="date" class="form-control" name="mfg_dt" id="start_date_input">
@@ -302,5 +282,4 @@
         </div>
       </div>
     </div>
-</body>
-</html>
+@endsection

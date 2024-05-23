@@ -16,7 +16,7 @@ use App\Http\Controllers\ProductController;
 
 // 
 
-Route::get('/', [ProductController::class, 'index']);
+Route::get('/index', [ProductController::class, 'index']);
 
 Route::get('create', [ProductController::class, 'create'])->name('create');
 Route::post('store', [ProductController::class, 'store'])->name('store');
@@ -26,3 +26,5 @@ Route::get('edit/{id}', [ProductController::class, 'Editshow'])->name('Editshow'
 Route::get('update-container-status/{container}', [ProductController::class, 'updateStatus'])->name('update_container_status');
 Route::post('update/{id}', [ProductController::class, 'update'])->name('update');
 Route::get('document', [ProductController::class, 'document'])->name('document');
+
+Route::get('/', [ProductController::class, 'dashboard'])->name('dashboard');

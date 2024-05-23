@@ -51,8 +51,9 @@ class ProductController extends Controller
             // status = 'ok'
         }
  
-        return redirect('/');
-    }
+     return redirect('/');
+      // return redirect()->back()->route('dashboard');
+}
  
     public function productCodeExists($number){
         return product::whereProductCode($number)->exists();
@@ -158,6 +159,32 @@ public function updateStatus($container)
     return redirect()->back()->with('success', 'Container status updated successfully.');
 }
 
+public function dashboard()
+{
+
+    $products = product::all();
+    return view('dashboard',compact('products'));
+    
+   // return view('dashboard');
+}
+
+public function simple()
+{
+
+    return view('simple');
+    
+   // return view('dashboard');
+}
+
+
+
+public function updatesimple($id)
+{
+    $data =product::find($id);
+    return view('updatesimple',compact('data'));
+    
+   // return view('dashboard');
+}
 
    
 }
