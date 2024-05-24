@@ -27,6 +27,42 @@
 
 </style>
 
+<script>
+  function showLaunchDeviationButton() {
+      var batchStatus = document.getElementById("batch_status").value;
+      var launchDeviationButton = document.getElementById("launch_deviation_button");
+
+      // Show the Launch Deviation button if "Rejected" is selected for Batch Status, otherwise hide it
+      if (batchStatus === "rejected") {
+          launchDeviationButton.style.display = "block";
+      } else {
+          launchDeviationButton.style.display = "none";
+      }
+  }
+
+  function launchDeviation() {
+      // Open the specified link in a new tab for Batch Status
+      window.open("https://agio.mydemosoftware.com/", "_blank");
+  }
+
+  function showLaunchDeviationButtonForContainer() {
+      var containerStatus = document.getElementById("container_status").value;
+      var launchDeviationButtonContainer = document.getElementById("launch_deviation_button_container");
+
+      // Show the Launch Deviation button if "Leakage/Damage" is selected for Container Status, otherwise hide it
+      if (containerStatus === "leakage_damage") {
+          launchDeviationButtonContainer.style.display = "block";
+      } else {
+          launchDeviationButtonContainer.style.display = "none";
+      }
+  }
+
+  function launchDeviationForContainer() {
+      // Open the specified link in a new tab for Container Status
+      window.open("https://agio.mydemosoftware.com/", "_blank");
+  }
+</script>
+
 <div class="container-fluid  ">
       <div class="row justify-content-md-center">
         <div class="col-md-12">
