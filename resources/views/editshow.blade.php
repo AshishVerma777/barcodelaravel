@@ -93,9 +93,10 @@
                                         </thead>
                                         <tbody>
 
-                                            @foreach ($data->containers as $container)
+
+                                              @foreach ($data->containers as $container) 
                                             {{-- {{dd($container)}}; --}}
-                                                <tr>
+                                              <tr>
                                                     <td>Container {{ $loop->index + 1 }}</td>
                                                     <td>{{ $container->status }}</td>
                                                     <td>
@@ -106,7 +107,7 @@
                                                         @endif
                                                     </td>
                                                 </tr>
-                                            @endforeach
+                                            @endforeach 
                                         </tbody>
                                     </table>
                                 @endif

@@ -154,6 +154,7 @@ public function updateStatus($container)
     $container = ProductContainer::findOrFail($container);
     
     $container->status = $container->status == 'ok' ? 'leakage_damage' : 'ok'; // Update the status as per your requirement
+  //$container->status =$container->status == 'ok' ?'leakage_demage' : 'ok';
     $container->save();
 
     return redirect()->back()->with('success', 'Container status updated successfully.');
@@ -162,29 +163,17 @@ public function updateStatus($container)
 public function dashboard()
 {
 
-    $products = product::all();
+    //$products = product::all();
+    $products = Product::orderBy('created_at', 'desc')->get();
+
     return view('dashboard',compact('products'));
     
-   // return view('dashboard');
-}
-
-public function simple()
-{
-
-    return view('simple');
-    
-   // return view('dashboard');
+   
 }
 
 
 
-public function updatesimple($id)
-{
-    $data =product::find($id);
-    return view('updatesimple',compact('data'));
-    
-   // return view('dashboard');
-}
+
 
    
 }

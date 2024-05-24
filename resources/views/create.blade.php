@@ -99,8 +99,7 @@
                     <label for="">Item Code :</label>
                     <input type="text" class="form-control mb-3" name="item_code" >
                     </div>
-                    {{-- <label for="">Item Name:</label>
-                    <input type="text" class="form-control mb-3" name="batch" required> --}}
+                   
                      <div class="col-12">
                     <label for="batch_status">Item Name:</label>
                      <input type="text" class="form-control mb-3" name="item_name" >
@@ -156,19 +155,19 @@
               
                     <div class="col-12">
                     <label for="brand_name">Brand Name:</label>
-                      <input type="text" class="form-control mb-3" name="brand_name" required>
+                      <input type="text" class="form-control mb-3" name="brand_name">
                     </div>
 
                   <div class="d-flex">
                       <div class="col-6">
                       <label for="quantity_of_product">Quantity of Product</label>
-                      <input type="text" id="quantity" class="form-control mb-3" name="quantity_of_product" oninput="calculateTotalWeight()" placeholder="Enter quantity" required>
+                      <input type="text" id="quantity" class="form-control mb-3" name="quantity_of_product" oninput="calculateTotalWeight()" placeholder="Enter quantity">
                       
                       </div>
 
                       <div class="col-6">
                         <label for="unit">Unit</label>
-                        <select class="form-control mb-3" name="unit" id="unit" required onchange="calculateTotalTime()">
+                        <select class="form-control mb-3" name="unit" id="unit"  onchange="calculateTotalTime()">
                             <option value="kg">Kilogram (kg)</option>
                             <option value="gm">Gram (gm)</option>
                             {{-- <option value="ok">Ok</option> --}}
@@ -178,11 +177,11 @@
 
                      <div class="col-12">
                        <label for="weightPerPackage">Weight per Package</label>
-                       <input type="text" id="weightPerPackage" class="form-control mb-3" name="weightPerPackage" oninput="calculateTotalWeight()" placeholder="Enter weight per package" required>
+                       <input type="text" id="weightPerPackage" class="form-control mb-3" name="weightPerPackage" oninput="calculateTotalWeight()" placeholder="Enter weight per package" >
                      </div>
                       <div class="col-12">
                        <label for="totalWeight">Total Weight</label>
-                       <input type="text" id="totalWeight" class="form-control mb-3" name="totalWeight" oninput="calculateTotalWeight()" placeholder="Enter weight per package" required>
+                       <input type="text" id="totalWeight" class="form-control mb-3" name="totalWeight" oninput="calculateTotalWeight()" placeholder="Enter weight per package" >
                      </div>
  
                     <div class="col-12">
@@ -312,7 +311,7 @@
                 }
             </script>
 
-                 {{-- new added  --}}
+                <div> 
             </form>
         </div>
         </div>

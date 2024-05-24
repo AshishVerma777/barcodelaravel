@@ -11,12 +11,12 @@
             {{-- <li class="menu-title mt-2">INVENTORY</li> --}}
 
             <li>
-              <a href="#sidebarEcommerce" data-toggle="collapse">
+              <a href="#create" data-toggle="collapse">
                 <i data-feather="users"></i>
                 <span>Create Barcode</span>
                 <span class="menu-arrow"></span>
               </a>
-              <div class="collapse" id="sidebarEcommerce">
+              <div class="collapse" id="create">
                 <ul class="nav-second-level">
                   <li>
                     <a href="{{ route('create') }}"><i data-feather="plus" class="pr-0 mr-1"></i>Barcode 

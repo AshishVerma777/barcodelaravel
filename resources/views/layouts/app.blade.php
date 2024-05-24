@@ -30,7 +30,7 @@
               <img src="{{ asset('user/images/ajio-removebg-preview.png') }}" alt="user-image"  style="scale: 1.6;
                background: white;" />
               <span class="pro-user-name ml-1">
-                Barcode <i class="mdi mdi-chevron-down"></i>  
+                Ajio <i class="mdi mdi-chevron-down"></i>  
               </span>
             </a>
             <div class="dropdown-menu dropdown-menu-right profile-dropdown">
@@ -129,17 +129,17 @@
   <div class="rightbar-overlay"></div>
 
   <!-- Vendor js -->
-  <script src="assets/js2/vendor.min.js"></script>
+  <script src="{{asset('assets/js2/vendor.min.js')}}"></script>
 
   <!-- Plugins js-->
-  <script src="assets/libs2/flatpickr/flatpickr.min.js"></script>
-  <script src="assets/libs2/apexcharts/apexcharts.min.js"></script>
+  <script src="{{asset('assets/libs2/flatpickr/flatpickr.min.js')}}"></script>
+  <script src="{{asset('assets/libs2/apexcharts/apexcharts.min.js')}}"></script>
 
   <!-- Dashboar 1 init js-->
-  <script src="assets/js2/pages/dashboard-1.init.js"></script>
+  <script src="{{asset('assets/js2/pages/dashboard-1.init.js')}}"></script>
 
   <!-- App js-->
-  <script src="assets/js2/app.min.js"></script>
+  <script src="{{asset('assets/js2/app.min.js')}}"></script>
 </body>
 
 </html>
