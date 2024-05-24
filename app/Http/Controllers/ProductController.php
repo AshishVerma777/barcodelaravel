@@ -154,7 +154,7 @@ public function updateStatus($container)
     $container = ProductContainer::findOrFail($container);
     
     $container->status = $container->status == 'ok' ? 'leakage_damage' : 'ok'; // Update the status as per your requirement
-  //$container->status =$container->status == 'ok' ?'leakage_demage' : 'ok';
+
     $container->save();
 
     return redirect()->back()->with('success', 'Container status updated successfully.');
@@ -170,9 +170,15 @@ public function dashboard()
     
    
 }
+//------------------------grid Data ----------------------------------------
 
 
+public function gridData()
+{
+    return view('gridData');
 
+
+}
 
 
    

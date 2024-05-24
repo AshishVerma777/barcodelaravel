@@ -14,7 +14,7 @@ use App\Http\Controllers\ProductController;
 |
 */
 
-// 
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Route::get('/index', [ProductController::class, 'index']);
 
@@ -28,3 +28,8 @@ Route::post('update/{id}', [ProductController::class, 'update'])->name('update')
 Route::get('document', [ProductController::class, 'document'])->name('document');
 
 Route::get('/', [ProductController::class, 'dashboard'])->name('dashboard');
+
+
+//-----------------------------------------------------------------------------------------
+
+Route::get('/gridData', [ProductController::class, 'gridData'])->name('gridData');
