@@ -97,7 +97,9 @@
     {{-- <td>
         <input type="text" value="{{ $product->printed_by }}">
     </td> --}}
-    <td>BARCODE</td>
+    <td> 
+    <img src="data:image/png;base64,{{ DNS1D::getBarcodePNG($product->bar_code, 'C39') }}" alt="barcode"/>
+    </td>
     <td>
         <button>Test</button>
     </td>

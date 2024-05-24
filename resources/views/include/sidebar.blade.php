@@ -6,7 +6,7 @@
         
 
         <!--- Sidemenu -->
-        <div id="sidebar-menu">
+        <div id="sidebar-menu" >
           <ul id="side-menu">
             {{-- <li class="menu-title mt-2">INVENTORY</li> --}}
 

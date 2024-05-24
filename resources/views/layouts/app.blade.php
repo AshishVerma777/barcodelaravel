@@ -27,17 +27,15 @@
           
             <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#"
               role="button" aria-haspopup="false" aria-expanded="false">
-              {{-- <img src="{{ asset('user/images/ajio-removebg-preview.png') }}" alt="user-image" class="rounded-circle" style="scale: 1.3;
+              <img src="{{ asset('user/images/ajio-removebg-preview.png') }}" alt="user-image"  style="scale: 1.6;
                background: white;" />
-              <span class="pro-user-name ml-1"> --}}
-                Barcode <i class="mdi mdi-chevron-down"></i>
+              <span class="pro-user-name ml-1">
+                Barcode <i class="mdi mdi-chevron-down"></i>  
               </span>
             </a>
             <div class="dropdown-menu dropdown-menu-right profile-dropdown">
               <!-- item-->
-              <div class="dropdown-header noti-title">
-                <h6 class="text-overflow m-0">Welcome !</h6>
-              </div>
+             
 
               <!-- item-->
               <a href="javascript:void(0);" class="dropdown-item notify-item">
@@ -58,18 +56,18 @@
 
         <!-- LOGO -->
         <div class="logo-box">
-          <a href="index.html" class="logo logo-dark text-center">
+          {{-- <a href="index.html" class="logo logo-dark text-center"> --}}
             <span class="logo-sm">
               <img src="assets/images/logo-sm.png" alt="" height="22" />
-              <!-- <span class="logo-lg-text-light">UBold</span> -->
+            
             </span>
             <span class="logo-lg">
               <img src="assets/images/logo-dark.png" alt="" height="20" />
-              <!-- <span class="logo-lg-text-light">U</span> -->
+              
             </span>
           </a>
 
-          <a href="index.html" class="logo logo-light text-center">
+          {{-- <a href="index.html" class="logo logo-light text-center"> --}}
             <span class="logo-sm">
               <img src="assets/images/logo-sm.png" alt="" height="22" />
             </span>
