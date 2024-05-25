@@ -253,7 +253,196 @@
 
 
                         <!-- Additional divs and elements go here -->
-                        <!-- ... -->
+
+{{-----------------------------------grid form start--------------------   --}}
+
+ 
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <!-- Main Table Content -->
+        <div class="col-md-12">
+            <div class="group-input" id="grid1">
+                <label for="audit-incident-grid">
+                   details of company
+                    <button type="button" name="audit-incident-grid" id="gridData" class="btn btn-primary">+</button>
+                    <span class="text-primary" data-bs-toggle="modal" data-bs-target="#observation-field-instruction-modal" style="font-size: 0.8rem; font-weight: 400; cursor: pointer;">
+                        (Launch Instruction)
+                    </span>
+                </label>
+                <div class="table-responsive"> <!-- Wrapper for responsive table -->
+                    <table class="table table-bordered" id="observation-incident-table1">
+                        <thead>
+                            <tr>
+                                <th>Sr. No.</th>
+                                <th>Name</th>
+                                <th>mobile</th>
+                                <th>Pincode</th>
+                                <th>Office Address</th>
+                                <th>Company Name</th>
+                                <th>Details of Company</th>
+                                <th>Description</th>
+                                <th>partner</th>
+                                <th>Remarks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @php $serialNumber = 1; @endphp
+
+
+
+
+      
+                    @if (!empty($secondgrids))
+                        @foreach ($secondgrids->data as $index => $secondgrid)
+
+                             {{ return $secondgrid }}
+                            <tr>
+                                 <td><input disabled type="text" name="details_of_company[{{ $index }}][serial]" value="{{ $secondgridIndex++ }}"></td>
+                  
+                                <td><input type="text" name="details_of_company[{{ $index }}][name]" value="{{ $secondgrid['name'] }}" class="form-control"></td>
+                                <td><input type="text" name="details_of_company[{{ $index }}][mobile]" value="{{$secondgrid['mobile'] }}" class="form-control"></td>
+                                <td><input type="text" name="details_of_company[{{ $index }}][pincode]"  value="{{$secondgrid['pincode'] }}"class="form-control"></td>
+                                <td><input type="text" name="details_of_company[{{ $index }}][office_address]" value="{{$secondgrid['office_address'] }}" class="form-control"></td>
+                                <td><input type="text" name="details_of_company[{{ $index }}][company_name]" value="{{$secondgrid['company_name'] }}" class="form-control"></td>
+                                <td><input type="text" name="details_of_company[{{ $index }}][details_of_company]" value="{{$secondgrid['details_of_company'] }}" class="form-control"></td>
+                                <td><input type="text" name="details_of_company[{{ $index }}][description]" value="{{$secondgrid['description'] }}" class="form-control"></td>
+                                <td><input type="text" name="details_of_company[{{ $index }}][partner]" value="{{$secondgrid['partner'] }}" class="form-control"></td>
+                                <td><input type="text" name="details_of_company[{{ $index }}][remarks]" value="{{$secondgrid['remarks'] }}" class="form-control"></td>
+                            </tr>
+                        @endforeach
+                    @else
+                                <tr>
+                                    <td colspan="10">No found</td>
+                                </tr>
+                            @endif
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+      
+    </div>
+ </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+
+        $(document).ready(function() {
+        let companydetails = 1; // Initial count for dynamic fields
+        $('#gridData').click(function(e) {
+            function generateTableRow(serialNumber) {
+                let html = '<tr>' +
+                    '<td>' + serialNumber + '</td>' +
+                    '<td><input type="text" name="details_of_company[' + companydetails + '][name]" class="form-control"></td>' +
+                    '<td><input type="text" name="details_of_company[' + companydetails + '][mobile]" class="form-control"></td>' +
+                    '<td><input type="text" name="details_of_company[' + companydetails + '][pincode]" class="form-control"></td>' +
+                    '<td><input type="text" name="details_of_company[' + companydetails + '][office_address]" class="form-control"></td>' +
+                    '<td><input type="text" name="details_of_company[' + companydetails + '][company_name]" class="form-control"></td>' +
+                    '<td><input type="text" name="details_of_company[' + companydetails + '][details_of_company]" class="form-control"></td>' +
+                    '<td><input type="text" name="details_of_company[' + companydetails + '][description]" class="form-control"></td>' +
+                    '<td><input type="text" name="details_of_company[' + companydetails + '][partner]" class="form-control"></td>' +
+                    '<td><input type="text" name="details_of_company[' + companydetails + '][remarks]" class="form-control"></td>' +
+                    '</tr>';
+                    companydetails++;
+                    return html;
+            }
+
+            var tableBody = $('#observation-incident-table1 tbody');
+            var rowCount = tableBody.children('tr').length + 1;
+            var newRow = generateTableRow(rowCount);
+            tableBody.append(newRow);
+        });
+    });
+
+</script>
+
+{{-- ------------------------- Second Grid Start--------------------------------------  --}}
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <!-- Main Table Content -->
+        <div class="col-md-12">
+            <div class="group-input" id="grid1">
+                <label for="audit-incident-grid">
+                   Company Data
+                    <button type="button" name="audit-incident-grid" id="gridData2" class="btn btn-primary">+</button>
+                    <span class="text-primary" data-bs-toggle="modal" data-bs-target="#observation-field-instruction-modal" style="font-size: 0.8rem; font-weight: 400; cursor: pointer;">
+                        (Launch Instruction)
+                    </span>
+                </label>
+                <div class="table-responsive"> <!-- Wrapper for responsive table -->
+                    <table class="table table-bordered" id="observation-incident-table2">
+                        <thead>
+                            <tr>
+                                <th>Sr. No.</th>
+                                <th>Full Name</th>
+                                <th>Father Name</th>
+                                <th>Mother Name</th>
+                                <th>Office Address</th>
+                                <th>Company Name</th>
+                                <th>Details of Company</th>
+                                <th>Technology</th>
+                                <th>Partner</th>
+                                <th>Remarks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td><input type="text" name="company_data[0][name]" class="form-control"></td>
+                                <td><input type="text" name="company_data[0][fname]" class="form-control"></td>
+                                <td><input type="text" name="company_data[0][mname]" class="form-control"></td>
+                                <td><input type="text" name="company_data[0][office_add]" class="form-control"></td>
+                                <td><input type="text" name="company_data[0][company_name]" class="form-control"></td>
+                                <td><input type="text" name="company_data[0][details_company]" class="form-control"></td>
+                                <td><input type="text" name="company_data[0][technology]" class="form-control"></td>
+                                <td><input type="text" name="company_data[0][partner]" class="form-control"></td>
+                                <td><input type="text" name="company_data[0][remarks]" class="form-control"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        let companydata = 1; // Corrected variable name for consistency
+        $('#gridData2').click(function(e) {
+            var tableBody = $('#observation-incident-table2 tbody');
+            var newRow = generateTableRow(companydata); // Pass the current index to function
+            tableBody.append(newRow);
+            companydata++; // Increment after appending to keep the index correct
+        });
+
+        function generateTableRow(index) {
+            let html = '<tr>' +
+                '<td>' + (index + 1) + '</td>' +
+                '<td><input type="text" name="company_data[' + companydata + '][name]" class="form-control"></td>' +
+                '<td><input type="text" name="company_data[' + companydata + '][fname]" class="form-control"></td>' +
+                '<td><input type="text" name="company_data[' + companydata + '][mname]" class="form-control"></td>' +
+                '<td><input type="text" name="company_data[' + companydata + '][office_add]" class="form-control"></td>' +
+                '<td><input type="text" name="company_data[' + companydata + '][company_name]" class="form-control"></td>' +
+                '<td><input type="text" name="company_data[' + companydata + '][details_company]" class="form-control"></td>' +
+                '<td><input type="text" name="company_data[' + companydata + '][technology]" class="form-control"></td>' +
+                '<td><input type="text" name="company_data[' + companydata + '][partner]" class="form-control"></td>' +
+                '<td><input type="text" name="company_data[' + companydata + '][remarks]" class="form-control"></td>' +
+                '</tr>';
+            return html;
+        }
+    });
+</script>
+
+
+{{-- --------------------------------------- grid form end ------------------------- --}}
+
+
+                      
                         
                             <button type="submit" class="btn btn-success col-md-3">Update</button>
                      

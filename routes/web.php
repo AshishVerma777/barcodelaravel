@@ -33,3 +33,4 @@ Route::get('/', [ProductController::class, 'dashboard'])->name('dashboard');
 //-----------------------------------------------------------------------------------------
 
 Route::get('/gridData', [ProductController::class, 'gridData'])->name('gridData');
+Route::post('gridStore', [ProductController::class, 'gridStore'])->name('gridStore');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
  
 use App\Models\product;
 use App\Models\ProductContainer;
+use App\Models\productgrid;
 use Milon\Barcode\DNS1D;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
@@ -49,7 +50,35 @@ class ProductController extends Controller
            
            
             // status = 'ok'
-        }
+        }   
+//----------------------grid data store code------------------------------------------------------------------
+           $griddata= $product->id;
+           $product = ProductGrid::where(['product_id' => $griddata, 'identifier' => 'company_data'])->firstOrNew();
+      
+           $product->product_id = $griddata;
+           $product->identifier = 'company_data';
+           
+           $product->data = $request->company_data;
+          // dd($product);
+           //return $product;
+           $product->save(); //
+//-----------------------------------------Grid second ------------------------------------------------------------------
+
+          
+           $product = ProductGrid::where(['product_id' => $griddata, 'identifier' => 'details_of_company'])->firstOrNew();
+      
+           $product->product_id = $griddata;
+           $product->identifier = 'details_of_company';
+           
+           $product->data = $request->details_of_company;
+          // dd($product);
+          // return $product;
+           $product->save(); //
+      
+   
+      
+    
+        
  
      return redirect('/');
       // return redirect()->back()->route('dashboard');
@@ -86,8 +115,20 @@ class ProductController extends Controller
      public function Editshow($id)
      {
        $data =product::find($id);
-      // return $data;
-      return view("editshow",compact('data'));
+       $firstgrids = ProductGrid::where('product_id',$id)->where('identifier','company_data')->first();
+       $secondgrids = ProductGrid::where('product_id',$id)->where('identifier','details_of_company')->first();
+       
+
+
+
+
+
+
+
+
+       //return $firstgrids;
+
+      return view("editshow",compact('data','firstgrids','secondgrids'));
       }
 
 
@@ -177,6 +218,37 @@ public function gridData()
 {
     return view('gridData');
 
+
+}
+
+public function gridStore(Request $request)
+{
+
+  return  $request->all();
+
+  //$products = Product::all(); // Fetch all products
+  //foreach ($products as $griddata)
+  
+  
+    //dd($griddata);
+//       $product = ProductGrid::where(['product_id' => $griddata->id, 'identifier' => 'investrecord'])->firstOrNew();
+      
+//       $product->product_id = $griddata->id;
+//       $product->identifier = 'investrecord';
+//       $product->data = $request->investrecord;
+//       dd($product);
+//       $product->save(); // Save each modified or new ProductGrid entry
+  
+//   return response()->json(['message' => 'Operation completed successfully.']);
+  
+
+            // $product1 = productgrid::where(['product_id' => $griddata, 'identifier' => 'details_of_company'])->firstOrNew();
+            // $product1->product_id = $griddata;
+            // $product1->identifier = 'details_of_company';
+            // $product1->data = $request->details_of_company;
+            // $product1->save();
+
+           
 
 }
 
