@@ -117,27 +117,27 @@
 
                         <div class="col-12">
                         <label for="brand_name">Brand Name:</label>
-                        <input type="text" class="form-control mb-3" name="brand_name" value="{{ $data->brand_name }}" required>
+                        <input type="text" class="form-control mb-3" name="brand_name" value="{{ $data->brand_name }}">
                         </div>
 
                         <div class="col-12">
                         <label for="quantity_of_product">Quantity of Product</label>
-                        <input type="text" id="quantity" class="form-control mb-3" name="quantity_of_product" value="{{ $data->quantity_of_product }}" oninput="calculateTotalWeight()" placeholder="Enter quantity" required>
+                        <input type="text" id="quantity" class="form-control mb-3" name="quantity_of_product" value="{{ $data->quantity_of_product }}" oninput="calculateTotalWeight()" placeholder="Enter quantity">
                         </div>
                         <div class="col-12">
                         <label for="unit">Unit</label>
-                        <select class="form-control mb-3" name="unit" id="unit" required onchange="calculateTotalTime()">
+                        <select class="form-control mb-3" name="unit" id="unit"  onchange="calculateTotalTime()">
                             <option value="kg" {{ $data->unit === 'kg' ? 'selected' : '' }}>Kilogram (kg)</option>
                             <option value="gm" {{ $data->unit === 'gm' ? 'selected' : '' }}>Gram (gm)</option>
                         </select>
                         </div>
                         <div class="col-12">
                         <label for="weightPerPackage">Weight per Package</label>
-                        <input type="text" id="weightPerPackage" class="form-control mb-3" name="weightPerPackage" value="{{ $data->weightPerPackage }}" oninput="calculateTotalWeight()" placeholder="Enter weight per package" required>
+                        <input type="text" id="weightPerPackage" class="form-control mb-3" name="weightPerPackage" value="{{ $data->weightPerPackage }}" oninput="calculateTotalWeight()" placeholder="Enter weight per package" >
                     </div>
                     <div class="col-12">
                         <label for="totalWeight">Total Weight</label>
-                        <input type="text" id="totalWeight" class="form-control mb-3" name="totalWeight" value="{{ $data->totalWeight }}" oninput="calculateTotalWeight()" placeholder="Enter weight per package" required>
+                        <input type="text" id="totalWeight" class="form-control mb-3" name="totalWeight" value="{{ $data->totalWeight }}" oninput="calculateTotalWeight()" placeholder="Enter weight per package" >
                         </div>
                     <div class="col-12">
                         <label for="Item_Description">Item Description:</label>
@@ -145,7 +145,7 @@
                         <div>
                     <div class="col-12">
                         <label for="batch_no">Batch/No:</label>
-                        <input type="text" class="form-control mb-3" name="batch_no" value="{{ $data->batch_no }}" required>
+                        <input type="text" class="form-control mb-3" name="batch_no" value="{{ $data->batch_no }}" >
                     </div>
                     <div class="col-12">
                     <label for="uom_branch">UOM</label>
@@ -296,9 +296,9 @@
                     @if (!empty($secondgrids))
                         @foreach ($secondgrids->data as $index => $secondgrid)
 
-                             {{ return $secondgrid }}
+                             {{--  {{ return $secondgrid }}  --}}
                             <tr>
-                                 <td><input disabled type="text" name="details_of_company[{{ $index }}][serial]" value="{{ $secondgridIndex++ }}"></td>
+                                 <td><input disabled type="text" name="details_of_company[{{ $index }}][serial]" value="{{ $loop->index + 1}}"></td>
                   
                                 <td><input type="text" name="details_of_company[{{ $index }}][name]" value="{{ $secondgrid['name'] }}" class="form-control"></td>
                                 <td><input type="text" name="details_of_company[{{ $index }}][mobile]" value="{{$secondgrid['mobile'] }}" class="form-control"></td>
@@ -335,6 +335,7 @@
             function generateTableRow(serialNumber) {
                 let html = '<tr>' +
                     '<td>' + serialNumber + '</td>' +
+                    
                     '<td><input type="text" name="details_of_company[' + companydetails + '][name]" class="form-control"></td>' +
                     '<td><input type="text" name="details_of_company[' + companydetails + '][mobile]" class="form-control"></td>' +
                     '<td><input type="text" name="details_of_company[' + companydetails + '][pincode]" class="form-control"></td>' +
@@ -389,18 +390,26 @@
                             </tr>
                         </thead>
                         <tbody>
+                        @if (!empty($firstgrids))
+                            @foreach ($firstgrids->data as $index => $firstgrid)
+        {{--  @dump($firstgrid)  --}}
                             <tr>
-                                <td>1</td>
-                                <td><input type="text" name="company_data[0][name]" class="form-control"></td>
-                                <td><input type="text" name="company_data[0][fname]" class="form-control"></td>
-                                <td><input type="text" name="company_data[0][mname]" class="form-control"></td>
-                                <td><input type="text" name="company_data[0][office_add]" class="form-control"></td>
-                                <td><input type="text" name="company_data[0][company_name]" class="form-control"></td>
-                                <td><input type="text" name="company_data[0][details_company]" class="form-control"></td>
-                                <td><input type="text" name="company_data[0][technology]" class="form-control"></td>
-                                <td><input type="text" name="company_data[0][partner]" class="form-control"></td>
-                                <td><input type="text" name="company_data[0][remarks]" class="form-control"></td>
+                               <td><input disabled type="text" name="company_data[{{ $index }}][serial]" value="{{ $loop->index + 1}}"></td>
+                  
+                                <td><input type="text" name="company_data[{{$index}}][name]"  value="{{$firstgrid['name']}}" class="form-control"></td>
+                                <td><input type="text" name="company_data[{{$index}}][fname]"  value="{{$firstgrid['fname']}}" class="form-control"></td>
+                                <td><input type="text" name="company_data[{{$index}}][mname]" value="{{$firstgrid['mname']}}" class="form-control"></td>
+                                <td><input type="text" name="company_data[{{$index}}][office_add]" value="{{$firstgrid['office_add']}}" class="form-control"></td>
+                                <td><input type="text" name="company_data[{{$index}}][company_name]"  value="{{$firstgrid['company_name']}}" class="form-control"></td>
+                                <td><input type="text" name="company_data[{{$index}}][details_company]" value="{{$firstgrid['details_company']}}" class="form-control"></td>
+                                <td><input type="text" name="company_data[{{$index}}][technology]" value="{{$firstgrid['technology']}}" class="form-control"></td>
+                                <td><input type="text" name="company_data[{{$index}}][partner]" value="{{$firstgrid['partner']}}" class="form-control"></td>
+                                <td><input type="text" name="company_data[{{$index}}][remarks]" value="{{$firstgrid['remarks']}}" class="form-control"></td>
                             </tr>
+                            @endforeach
+                        @endif
+
+                           
                         </tbody>
                     </table>
                 </div>

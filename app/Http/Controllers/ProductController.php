@@ -126,8 +126,9 @@ class ProductController extends Controller
 
 
 
-       //return $firstgrids;
+      // return ([$firstgrids,$secondgrids]);
 
+      // return $secondgrids;
       return view("editshow",compact('data','firstgrids','secondgrids'));
       }
 
@@ -183,7 +184,24 @@ class ProductController extends Controller
 
     //return $product;
     // Save the updated product
-    $product->save();
+
+        $griddata=$product->id;
+        $product=ProductGrid::where(['product_id'=>$griddata,'identifier'=>'company_data'])->firstOrNew();
+                 
+
+        $product->product_id=$griddata;
+
+        $product->identifier='company_data';
+        $product->data=$request->company_data;
+
+       
+        $product=ProductGrid::where(['product_id'=>$griddata,'identifier'=>'details_of_company'])->firstOrNew();
+        
+        $product->identifier='details_of_company';
+        $product->data=$request->details_of_company;
+
+        return $product;
+         $product->save();
 
     // Redirect back to the view page or any other page after updating the product
     return redirect('/');
@@ -221,37 +239,16 @@ public function gridData()
 
 }
 
-public function gridStore(Request $request)
-{
+    public function gridStore(Request $request)
+    {
 
-  return  $request->all();
+      return  $request->all();
 
-  //$products = Product::all(); // Fetch all products
-  //foreach ($products as $griddata)
-  
-  
-    //dd($griddata);
-//       $product = ProductGrid::where(['product_id' => $griddata->id, 'identifier' => 'investrecord'])->firstOrNew();
-      
-//       $product->product_id = $griddata->id;
-//       $product->identifier = 'investrecord';
-//       $product->data = $request->investrecord;
-//       dd($product);
-//       $product->save(); // Save each modified or new ProductGrid entry
-  
-//   return response()->json(['message' => 'Operation completed successfully.']);
-  
-
-            // $product1 = productgrid::where(['product_id' => $griddata, 'identifier' => 'details_of_company'])->firstOrNew();
-            // $product1->product_id = $griddata;
-            // $product1->identifier = 'details_of_company';
-            // $product1->data = $request->details_of_company;
-            // $product1->save();
-
-           
-
-}
+       //$products = Product::all(); // Fetch all products
+       //foreach ($products as $griddata)
+       //dd($griddata);
+   }
 
 
-   
-}
+
+}   
