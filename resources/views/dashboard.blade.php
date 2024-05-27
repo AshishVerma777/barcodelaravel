@@ -105,7 +105,7 @@
                                     <a href="{{ route('Editshow', $product->id) }}" class="btn btn-warning">Edit</a>
                                     <form action="{{ route('print', $product->id) }}" method="POST">
                                         @csrf
-                                        <button type="submit" class="btn btn-primary">Print</button>
+                                        <button type="submit" class="btn btn-primary btn-sm">Show Label</button>
                                     </form>
                                 </td>
                             </tr>

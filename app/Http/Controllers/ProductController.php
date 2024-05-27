@@ -61,6 +61,7 @@ class ProductController extends Controller
 
     public function print($id)
         {
+            //dd($id);
             $product = product::find($id);
              // return $products;
             if (!$product) {

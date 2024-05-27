@@ -39,4 +39,18 @@ class ProductController extends Controller
 
         return response()->json($res);
     }
+
+
+
+    // public function print($id)
+    // {
+    //     $product = product::find($id);
+    //      // return $products;
+    //     if (!$product) {
+    //         return redirect()->route('index')->with('error', 'Product not found.');
+    //     }
+
+    //     return view('print', compact('product'));
+    
+    // }
 }

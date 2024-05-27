@@ -12,6 +12,8 @@ class VerifyCsrfToken extends Middleware
      * @var array<int, string>
      */
     protected $except = [
-        //
+        '/print/*'  //this is page expire error inwhich this error is my print here print  route name 
+
+        
     ];
 }

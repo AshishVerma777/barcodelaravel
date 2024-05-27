@@ -59,7 +59,7 @@
 </header>
 
 <div class="container">
-    <h1 class="text-primary pt-4 text-center mb-4">Generate Barcode</h1>
+    <h1 class="text-primary pt-4 text-center mb-4">Show Barcode</h1>
     <div class="row justify-content-md-center">
         <h1 class="pt-4 text-left mb-4"><b>List of Products</b></h1>
         <hr>

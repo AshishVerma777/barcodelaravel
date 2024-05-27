@@ -30,6 +30,9 @@ Route::get('document', [ProductController::class, 'document'])->name('document')
 Route::get('/', [ProductController::class, 'dashboard'])->name('dashboard');
 
 
+// Route::post('/testprint', function() {
+//     return 'Form submitted successfully!';
+// })->name('testprint');
 //-----------------------------------------------------------------------------------------
 
 Route::get('/gridData', [ProductController::class, 'gridData'])->name('gridData');

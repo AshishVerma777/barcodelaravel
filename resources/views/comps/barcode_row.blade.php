@@ -101,7 +101,11 @@
     <img src="data:image/png;base64,{{ DNS1D::getBarcodePNG($product->bar_code, 'C39') }}" alt="barcode"/>
     </td>
     <td>
-        <button>Test</button>
+        {{--  <button>Test</button>  --}}
+        <form action="{{ route('print', ['id' => $product->id]) }}" method="POST">
+            @csrf
+            <button type="submit" class="btn btn-primary btn-sm">Show Label</button>
+        </form>
     </td>
    
 </tr>

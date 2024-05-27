@@ -6,6 +6,8 @@
     <title>Barcodde Print</title>
     <link rel="icon" href="{{ asset('assets\icon\logovidyagxp.png.png') }}" type="image/x-icon">
 
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
 
     <style type="text/css">
         body {
@@ -256,6 +258,34 @@
 
 
     <section class="performance-facts">
+            <div class="label-container">
+           <button onclick="printLabel()" class="btn btn-primary" id="printButton">Print</button>
+
+            <script>
+                            function printLabel() {
+                                window.print();
+                            }
+
+                            // Add a media query for print to hide the print button
+                            window.onbeforeprint = function() {
+                                document.getElementById('printButton').style.display = 'none';
+                            };
+                            window.onafterprint = function() {
+                                document.getElementById('printButton').style.display = 'block';
+                            };
+            </script>
+
+        <style>
+@media print {
+    #printButton {
+        display: none;
+    }
+}
+</style>
+
+                
+    <section class="performance-facts">
+          <div class="label-container">
                 @foreach ($product->containers as $container)
             
                    <div class="image_head">
