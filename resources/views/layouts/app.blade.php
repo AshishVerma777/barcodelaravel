@@ -109,8 +109,9 @@
     <!-- Start Page Content here -->
     <!-- ============================================================== -->
 
-    <div class="content-page">
-      <div class="content bg-white my-4 p-4">
+    <div class="content-page" style="background:aliceblue;">
+      {{--  <div class="content bg-white my-4 p-4">  --}}
+      <div class="content my-4 p-4" style="background-color:mintcream;">
         <!-- Start Content-->
        @yield('content')
       </div>

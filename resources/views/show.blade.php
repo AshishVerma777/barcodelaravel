@@ -17,7 +17,9 @@
     .heading-header {
         font-weight: bold;
         font-size: 30px;
-        background: linear-gradient(0deg, #ffa745, #f27575 30%, #fc4040 45%, #5bf48e 70%, #3482f7 85%);
+        /* background: linear-gradient(0deg, #ffa745, #f27575 30%, #fc4040 45%, #5bf48e 70%, #3482f7 85%); 
+        */
+        background: linear-gradient(0deg, #ffa745,  #5bf48e 8%, #3482f7 85%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         flex-grow: 1;
@@ -48,13 +50,13 @@
 
 <header>
     <div class="logo-img">
-        <img src="http://www.agio-pharma.com/wp-content/uploads/2019/10/logo-agio.png" alt="Agio Logo">
+        <img src="http://www.agio-pharma.com/wp-content/uploads/2019/10/logo-agio.png" alt="Agio Logo" >
     </div>
     <div class="heading-header">
         Warehouse and Labeling Management
     </div>
-    <div class="logo-img">
-        <img src="https://vidyagxp.com/vidhyaGxp.png" alt="VidyaGxP Logo">
+    <div class="logo-img" style="margin-right: 43px;">
+        <img src="https://vidyagxp.com/vidhyaGxp.png" alt="VidyaGxP Logo" style="scale:3;">
     </div>
 </header>
 

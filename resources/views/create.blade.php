@@ -67,19 +67,19 @@
 <div class="container-fluid  ">
       <div class="row justify-content-md-center">
         <div class="col-md-12">
-            <div class="card px-5 mt-3  shadow">
+            {{--  <div class="card px-5 mt-3  shadow">  --}}
        
                <div class="image_head">
                 <div class="logo logo-vidya">
-                    <img src="https://vidyagxp.com/vidhyaGxp.png" alt="VidyaGxP Logo">
+                    <img src="https://vidyagxp.com/vidhyaGxp.png" alt="VidyaGxP Logo"  height="22"  style="scale:2px;">
                 </div>
-                
-                <div class="logo logo-ajio">
+                <h2 style="margin-right: 55px;">Generate Barcode<h2>
+                <div class="logo logo-ajio" style="margin-right: 34px">
                     <img src="{{ asset('user/images/ajio-removebg-preview.png') }}" alt="Ajio Logo" style="margin-top: -20px;">
                 </div>
             </div>
 
-              </div>
+              {{--  </div>  --}}
           
                 <form action="{{route('store')}}" method="post">
                  @csrf
