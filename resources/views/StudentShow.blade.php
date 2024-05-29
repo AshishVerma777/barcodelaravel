@@ -4,34 +4,30 @@
 <div class="container-fluid">
     <div class="row justify-content-center">
             <div class="col-md-12">
-                @if(session('status'))
-                <div class="alert alert-success">
-                    {{ session('status') }}
-                </div>
-                @endif
-                <form action="{{route('GridStore')}}" method="post">
+
+                <form action="{{route('UpdateStudent',$student->id)}}" method="post">
                  @csrf
+                @method('put')
                     <div class="col-12">
                     <label for="">First Name :</label>
-                    <input type="text" class="form-control mb-3" name="first_name" >
+                    <input type="text" class="form-control mb-3" name="first_name"  value="{{$student->first_name}}">
                     </div>
                    
                     <div class="col-12">
                     <label for="batch_status">Last Name:</label>
-                    <input type="text" class="form-control mb-3" name="lnm" >
+                    <input type="text" class="form-control mb-3" name="lnm" value="{{$student->lnm}}">
                     </div>
 
                     <div class="col-12">
                     <label for="">Mobile Number :</label>
-                    <input type="text" class="form-control mb-3" name="mno" >
+                    <input type="text" class="form-control mb-3" name="mno" value="{{$student->mno}}" >
                     </div>
                    
                     <div class="col-12">
                     <label for="batch_status">Email:</label>
-                    <input type="text" class="form-control mb-3" name="email" >
+                    <input type="text" class="form-control mb-3" name="email" value="{{$student->email}}" >
                     </div>
-                     <button type="submit" class="btn btn-success col-md-3">Submit</button>
-
+                   
         <!--  Grid Main Table  Start Content -->
         {{--  <div class="col-md-12">
             <div class="group-input" id="IncidentRow">

@@ -63,6 +63,51 @@ return [
             ]) : [],
         ],
 
+
+//other database connection 
+        'mysql3' => [
+            'driver' => 'mysql',
+            'url' => env('DATABASE_URL'),
+            'host' => env('DB_HOST_Third', '127.0.0.1'),
+            'port' => env('DB_PORT_Third', '3306'),
+            'database' => env('DB_DATABASE_Third', 'forge'),
+            'username' => env('DB_USERNAME_Third', 'forge'),
+            'password' => env('DB_PASSWORD_Third', ''),
+            'unix_socket' => env('DB_SOCKET', ''),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'strict' => true,
+            'engine' => null,
+            'options' => extension_loaded('pdo_mysql') ? array_filter([
+                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+            ]) : [],
+        ],
+
+
+        //other database connection 
+        'mysql2' => [
+            'driver' => 'mysql',
+            'url' => env('DATABASE_URL'),
+            'host' => env('DB_HOST_Second', '127.0.0.1'),
+            'port' => env('DB_PORT_Second', '3306'),
+            'database' => env('DB_DATABASE_Second', 'forge'),
+            'username' => env('DB_USERNAME_Second', 'forge'),
+            'password' => env('DB_PASSWORD_Second', ''),
+            'unix_socket' => env('DB_SOCKET', ''),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'strict' => true,
+            'engine' => null,
+            'options' => extension_loaded('pdo_mysql') ? array_filter([
+                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+            ]) : [],
+        ],
+
+
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),

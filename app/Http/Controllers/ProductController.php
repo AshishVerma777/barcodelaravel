@@ -3,9 +3,14 @@
 namespace App\Http\Controllers;
  
 use App\Models\product;
+use App\Models\Student;
+use App\Models\ProductDetails;
+use App\Models\job;
+
 use App\Models\ProductContainer;
 use Milon\Barcode\DNS1D;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\App;
 
@@ -72,10 +77,10 @@ class ProductController extends Controller
         
         }
 
-    public function show()
-    {
-     return view("show");
-     }
+    // public function show()
+    // {
+    //  return view("show");
+    //  }
 
      
      public function document()
@@ -161,26 +166,170 @@ public function updateStatus($container)
     return redirect()->back()->with('success', 'Container status updated successfully.');
 }
 
-public function dashboard()
-{
+            public function dashboard()
+            {
 
-    //$products = product::all();
-    $products = Product::orderBy('created_at', 'desc')->get();
+                //$products = product::all();
+                $products = Product::orderBy('created_at', 'desc')->get();
 
-    return view('dashboard',compact('products'));
-    
-   
-}
+                return view('dashboard',compact('products'));
+                
+            
+            }
 //------------------------grid Data ----------------------------------------
 
 
-public function gridData()
-{
-    return view('gridData');
+            public function gridData()
+            {
+                //dd(product::all());
+                // $databaseName = env('mysql2');
+                // dd($databaseName) ;
+
+                //  $data = DB::connection('mysql2')->table('products')->get();
+                //  return ($data);
 
 
-}
+            //return product::all();
+
+                // $data = DB::connection('mysql2')->table('Student')->get();
+                
+            // $data=Student::all();
+                //return ($data);
+                
+                return view('gridData');
+            }
 
 
-   
+
+            public function GridStore(Request $request)
+            {
+            
+                    //return $request->all();
+                $student  = new Student();
+                $student->first_name=$request->first_name;
+                $student->lnm = $request->lnm;
+                $student->mno=$request->mno;
+                $student->email=$request->email;
+                
+                //dd($student);
+                // return $student;
+                return redirect()->route('gridData')->with('status', 'Data Updated successfully');
+
+                
+            }
+
+
+
+
+
+            public function StudentShow($id)
+            {
+                
+                 
+                 $student=Student::find($id);
+                 //return $student;
+                 return View('StudentShow',compact('student'));
+    
+            }
+
+
+            
+
+            public function UpdateStudent( Request $request, $id)
+            {
+                
+                // return "Update form called";
+                $student=Student::findOrFail($id);
+                $student->first_name=$request->first_name;
+                $student->lnm=$request->lnm;
+                $student->mno=$request->mno;
+                $student->email=$request->email;
+                
+                
+            //     $student->save();
+                
+            //    return redirect()->route('gridData')->with('status','Data Updated successfully');
+
+                $student->save();
+
+                return redirect()->route('gridData')->with('status', 'Data Updated successfully');
+
+    }
+
+
+
+
+
+
+    //----------------------------------hrms  database and  job table  -----------------------------------
+
+     public function hrmsjob()
+     {
+  
+            //  $data=job::all();
+            //  dd($data);
+        return view('hrms_job');
+     } 
+
+
+     public function hrmsjobStore(Request $request)
+     {
+          $job = new job();
+          
+          $job->department=$request->department;
+          $job->address=$request->address;
+          $job->branch=$request->branch;
+          $job->salary=$request->salary;
+          $job->technology=$request->technology;
+          $job->company=$request->company;
+          $job->identifier='gridData';
+          $job->data= $request->gridData;
+
+
+ 
+ 
+
+
+          // return $job; 
+          $job->save();
+          
+     } 
+
+
+
+
+     public function hrmsjobShow($id)
+     {  
+        $job = Job::find($id);
+      //  $jobs = Job::where('identifier', 'gridData')->first();
+      $jobs = Job::where('id', $id)->where('identifier', 'gridData')->first();  
+      return view('hrms_job_view', compact('job', 'jobs'));
+     }
+
+
+     public function hrmsjobupdate(Request $request , $id)
+     {
+        $job=job::findOrFail($id) ;
+        
+          //dd($job);
+          $job->department=$request->department;
+          $job->address=$request->address;
+          $job->branch=$request->branch;
+          $job->salary=$request->salary;
+          $job->technology=$request->technology;
+          $job->company=$request->company;
+          $job->identifier='gridData';
+          $job->data= $request->gridData;
+
+
+          $job->update();
+          //return $job;
+          return redirect()->route('hrmsjob')->with('status', 'Data Updated successfully');
+      } 
+
+      public function question()
+      {
+        return view('question');
+      }
+
 }

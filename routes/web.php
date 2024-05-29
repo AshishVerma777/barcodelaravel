@@ -36,3 +36,15 @@ Route::get('/', [ProductController::class, 'dashboard'])->name('dashboard');
 //-----------------------------------------------------------------------------------------
 
 Route::get('/gridData', [ProductController::class, 'gridData'])->name('gridData');
+Route::post('/GridStore', [ProductController::class, 'GridStore'])->name('GridStore');
+
+Route::get('StudentShow/{id}', [ProductController::class, 'StudentShow'])->name('StudentShow');
+Route::put('UpdateStudent/{id}',[ProductController::class, 'UpdateStudent'])->name('UpdateStudent');
+
+Route::get('hrmsjob', [ProductController::class, 'hrmsjob'])->name('hrmsjob');
+
+Route::post('hrmsjobStore', [ProductController::class, 'hrmsjobStore'])->name('hrmsjobStore');
+Route::get('hrmsjobShow/{id}', [ProductController::class, 'hrmsjobShow'])->name('hrmsjobShow');
+Route::post('hrmsjobupdate/{id}', [ProductController::class, 'hrmsjobupdate'])->name('hrmsjobupdate');
+
+Route::get('question', [ProductController::class, 'question'])->name('question');
