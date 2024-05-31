@@ -6,13 +6,13 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box">
-                                    <h4 class="page-title font-weight-bold">DASHBOARD</h4>
+                                    {{--  <h4 class="page-title font-weight-bold">DASHBOARD</h4>  --}}
                                 </div>
                             </div>
                         </div>
                           <!-- end page title -->
 
-                                    <h1 class="text-primary pt-1 font-weight-bold text-center mb-4">Generate Label</h1>
+                                    {{--  <h1 class="text-primary pt-1 font-weight-bold text-center mb-4">Generate Label</h1>  --}}
                                     <div class="table_responsive" style="width: 100%; overflow-x: auto;">
 
                                         <h1 class=" text-left mb-3"><b>List of Products</b></h1>

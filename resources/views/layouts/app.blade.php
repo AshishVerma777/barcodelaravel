@@ -111,7 +111,7 @@
 
     <div class="content-page" style="background:aliceblue;">
       {{--  <div class="content bg-white my-4 p-4">  --}}
-      <div class="content my-4 p-4" style="background-color:mintcream;">
+      <div class="content my-4 p-4" style="background-color:#ffffff;">
         <!-- Start Content-->
        @yield('content')
       </div>
