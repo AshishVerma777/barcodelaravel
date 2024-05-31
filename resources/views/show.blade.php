@@ -16,10 +16,8 @@
 
     .heading-header {
         font-weight: bold;
-        font-size: 30px;
-        /* background: linear-gradient(0deg, #ffa745, #f27575 30%, #fc4040 45%, #5bf48e 70%, #3482f7 85%); 
-        */
-        background: linear-gradient(0deg, #ffa745,  #5bf48e 8%, #3482f7 85%);
+        font-size: 40px;
+        background: linear-gradient(0deg, #ffa745,  #3482f7 85%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         flex-grow: 1;
@@ -36,7 +34,7 @@
         border-collapse: collapse;
     }
 
-    th, td {
+     td {
         border: 1px solid #ccc;
         padding: 8px;
         text-align: left;
@@ -46,33 +44,46 @@
         background-color: #e5fbb2;
         min-height: 100vh;
     }
+    .rows{
+        color:black;
+
+    }
+    .background-color{
+        background-image: linear-gradient(to right, #97938dc3 0%, #5684a8 100%);
+    }
 </style>
 
 <header>
     <div class="logo-img">
         <img src="http://www.agio-pharma.com/wp-content/uploads/2019/10/logo-agio.png" alt="Agio Logo" >
     </div>
-    <div class="heading-header">
+    <div class="heading-header ">
         Warehouse and Labeling Management
     </div>
-    <div class="logo-img" style="margin-right: 43px;">
-        <img src="https://vidyagxp.com/vidhyaGxp.png" alt="VidyaGxP Logo" style="scale:3;">
+    <div class="logo-img">
+        <img src="https://vidyagxp.com/vidhyaGxp.png" alt="VidyaGxP Logo" style="scale: 2; margin-right: 24px;" >
     </div>
 </header>
 
-<div class="container">
-    <h1 class="text-primary pt-4 text-center mb-4">Show Barcode</h1>
+<div class="container-fluid background-color">
+    <h1 class=" pt-4 text-center mb-4">Show Barcode</h1>
     <div class="row justify-content-md-center">
-        <h1 class="pt-4 text-left mb-4"><b>List of Products</b></h1>
-        <hr>
-        <div class="pb-2">
-            <input type="text" name="qr_scanner" id="QrScanner" />
+
+        <div class="pb-2" style="display: flex; gap: 825px;">
+            <div class="right-name">
+                <h2>List of Products</h2>
+            </div>
+<div class="input-field">
+    <div class="text-white fw-bold">Enter Barcode No.</div>
+    <input style="padding: 5px; margin-right: 17px;" type="text" name="qr_scanner" id="QrScanner" />
+
+</div>
         </div>
 
-        <div class="table_responsive">
+        <div class="table_responsive" style="    height: 183px;">
             <table class="table table-hover">
                 <thead>
-                    <tr>
+                    <tr class="rows">
                         <th>Id</th>
                         <th>Batch Status:</th>
                         <th>Item Code :</th>

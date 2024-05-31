@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Generate Label </title>       
+<title>Generate Label </title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
 <style>
     header {
@@ -12,6 +12,9 @@
     }
     img.logo {
         height: 200px; /* Adjust the size of the logo */
+    }
+    .thead{
+        
     }
 </style>
 </head>
@@ -30,7 +33,7 @@
 
         </div>
         <table class="table table-hover">
-            <thead>
+            <thead class="thead">
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Product No</th>

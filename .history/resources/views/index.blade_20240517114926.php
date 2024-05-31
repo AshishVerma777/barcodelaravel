@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Generate Label</title>       
+    <title>Generate Label</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
     <style>
         header {
@@ -15,6 +15,16 @@
         }
         .table_responsive {
             overflow-x: auto;
+
+        }
+         th{
+            color:red !important;
+
+        }
+        table th {
+            background-color: #f8f9fa;
+            color: #000; /* Set the color to black */
+            font-size: 10px; /* Change the font size */
         }
     </style>
 </head>
@@ -26,7 +36,7 @@
         <h1 class="text-primary pt-4 text-center mb-4">Generate Label</h1>
         <div class="row justify-content-md-center">
             <h1 class="pt-4 text-left mb-4"><b>List of Products</b></h1>
-            <hr>
+               <hr>
             <div class="pb-2">
                 <a href="{{ route('create') }}" class="btn btn-success">Add</a>
                 <a href="{{ route('show') }}" class="btn btn-success">Show</a>
@@ -35,8 +45,8 @@
                 <div class="table_responsive">
                     <table class="table table-hover">
                         <thead>
-                            <tr>
-                                <th>Id</th>
+                            <tr class="rows">
+                                <th >Id</th>
                                 <th>Batch Status:</th>
                                 <th>Item Code :</th>
                                 <th>Item Name:</th>

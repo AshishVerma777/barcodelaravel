@@ -47,7 +47,9 @@ body {
 #wrapper {
   height: 100%;
   overflow: hidden;
-  width: 100%; }
+  width: 100%;
+  margin:0;
+}
 
 .content-page {
   margin-left: 240px;
@@ -58,7 +60,6 @@ body {
 
 .left-side-menu {
   width: 240px;
-  background: #ffffff;
   bottom: 0;
   padding: 20px 0;
   position: fixed;
@@ -2942,10 +2943,10 @@ body.authentication-bg-pattern {
 
 /*!
  * Waves v0.7.6
- * http://fian.my.id/Waves 
- * 
- * Copyright 2014-2018 Alfiana E. Sibuea and other contributors 
- * Released under the MIT license 
+ * http://fian.my.id/Waves
+ *
+ * Copyright 2014-2018 Alfiana E. Sibuea and other contributors
+ * Released under the MIT license
  * https://github.com/fians/Waves/blob/master/LICENSE */
 .waves-effect {
   position: relative;
@@ -3747,7 +3748,8 @@ div.dt-button-info {
   flex-wrap: wrap;
   justify-content: flex-start;
   align-content: flex-start;
-  align-items: flex-start; }
+  align-items: flex-start;
+}
 
 .simplebar-wrapper {
   overflow: hidden;
