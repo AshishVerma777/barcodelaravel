@@ -2,17 +2,40 @@
 
 @section('content')
 {{-- start content --}}
+<style>
+     table th {
+            background-color: #f8f9fa;
+            color: #000; /* Set the color to black */
+            font-size: 17px;
+            text-align: center; /* Change the font size */
+        }
+        table td{
+            color:#feffff;
+        }
+        .pb-2{
+            block-size:60px;
+        }
+
+.table_responsive{
+            /* background: linear-gradient(to right, #38658d, #feffff); Add gradient background */
+            padding: 20px;
+            border-radius: 5px;
+            background-image: linear-gradient(to right, #97938dc3 0%, #5684a8 100%);
+
+}
+
+    </style>
 <div class="container-fluid">
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box">
-                                    <h4 class="page-title font-weight-bold">DASHBOARD</h4>
+                                    {{-- <h4 class="page-title font-weight-bold">Generate Label</h4> --}}
                                 </div>
                             </div>
                         </div>
                           <!-- end page title -->
 
-                                    <h1 class="text-primary pt-1 font-weight-bold text-center mb-4">Generate Label</h1>
+                                    {{-- <h1 class="text-primary pt-1 font-weight-bold text-center mb-4">Generate Label</h1> --}}
                                     <div class="table_responsive" style="width: 100%; overflow-x: auto;">
 
                                         <h1 class=" text-left mb-3"><b>List of Products</b></h1>
@@ -23,7 +46,7 @@
                                         </div>
                                         <div class="main_class">
                                           <div class="table_responsive" style="width: 100%; overflow-x: auto;">
-                                    <table class="table table-hover">
+                                    <table class="table ">
                                   <thead>
                                 <tr>
                                         <th>Id</th>
@@ -46,7 +69,7 @@
                                         <th>UOM</th>
                                         <th>Mfg.DT.</th>
                                         <th>Exp.DT</th>
-                                      
+
                                         <th>Pack. Size</th>
                                         <th>Container. No.</th>
                                         <th>Rec Qty:</th>
@@ -58,7 +81,7 @@
                                         {{-- <th>Printed By</th> --}}
                                         <th>Bar-Code</th>
                                         <th>Action</th>
-        
+
                                 </tr>
                         </thead>
                         <tbody>
@@ -98,9 +121,9 @@
                                  {!! DNS1D::getBarcodeHTML($product->bar_code, 'C39') !!}  {{ $product->bar_base
                                     }}
 
-                                </td>  
+                                </td>
 
-                               
+
                                 <td>
                                     <a href="{{ route('Editshow', $product->id) }}" class="btn btn-warning">Edit</a>
                                     <form action="{{ route('print', $product->id) }}" method="POST">

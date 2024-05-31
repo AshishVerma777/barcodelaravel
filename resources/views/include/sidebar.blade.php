@@ -1,12 +1,12 @@
 {{-- sidebar start --}}
 
-  <div class="left-side-menu">
-      <div class="h-100" data-simplebar>
+  <div class="left-side-menu" style="background-color: rgb(223, 227, 231); margin:0; ">
+      <div class="h-200" data-simplebar>
         <!-- User box -->
-        
+
 
         <!--- Sidemenu -->
-        <div id="sidebar-menu" >
+        <div id="sidebar-menu"  >
           <ul id="side-menu">
             {{-- <li class="menu-title mt-2">INVENTORY</li> --}}
 
@@ -19,7 +19,7 @@
               <div class="collapse" id="create">
                 <ul class="nav-second-level">
                   <li>
-                    <a href="{{ route('create') }}"><i data-feather="plus" class="pr-0 mr-1"></i>Barcode 
+                    <a href="{{ route('create') }}"><i data-feather="plus" class="pr-0 mr-1"></i>Barcode
                       Create</a>
                   </li>
                   {{-- <li>
@@ -68,7 +68,7 @@
               </div>
             </li>
             <li>
-          
+
           </ul>
         </div>
         <!-- End Sidebar -->

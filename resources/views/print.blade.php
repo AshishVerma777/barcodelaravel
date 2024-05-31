@@ -99,7 +99,7 @@
             left: 22%;
             text-align: center;
             font-weight: bold;
-            font-size: 20px;
+            font-size: 12px;
             color: rgb(11, 5, 176)
         }
 
@@ -110,7 +110,7 @@
         }
 
         .border {
-            border-bottom: 2px solid
+            border-bottom: 2px solid;
         }
 
         /* ----------------fghfgh--------------- */
@@ -126,6 +126,20 @@
             margin: 0;
         }
 
+         .logo img {
+            height: 80px;
+            width: auto;
+            margin-bottom: -10px;
+
+        }
+
+        .heading {
+            flex-grow: 1;
+            text-align: center;
+            font-weight: bold;
+            font-size: 30px;
+            margin-bottom: -10px;
+        }
         .info,
         .services,
         .total {
@@ -147,36 +161,6 @@
         .info tr {
             padding-left: 10px;
         }
-
-        .label-container {
-            width: 800px;
-            margin: 0 auto;
-            /* border: 1px solid #000; */
-            padding: 20px;
-            background-color: #fff;
-        }
-
-        .label-header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .label-header img {
-            max-width: 100px;
-        }
-
-        .label-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .label-table th,
-        .label-table td {
-            border: 1px solid #000;
-            padding: 8px;
-            text-align: left;
-        }
-
         .label-header {
             text-align: center;
             margin-bottom: 20px;
@@ -189,8 +173,14 @@
 
         .label-container {
             width: 665px;
-            padding: 0px !important;
-            background-color: #fff;
+            margin: auto;
+            padding: 8px; /* Adjust as needed */
+            /* padding: 0px !important; */
+            /* margin-top: 10px; */
+            /* margin-bottom: 40px; */
+
+            background-color: #ffffff;
+            page-break-after: always; /* New rule for printing */
         }
 
         .label-table {
@@ -200,24 +190,17 @@
 
         .label-table th,
         .label-table td {
-
+            border: 2px solid #000;
             padding: 8px;
             text-align: left;
             font-size: 14px;
         }
-
-        .label-table th {
-            background-color: #e9ecef;
-
+                .label-table th {
+            background-color: #fefeff;
         }
 
-        .label-container {
-    width: 665px;
-    margin: 0 auto; /* Adjust as needed */
-    padding: 20px; /* Adjust as needed */
-    background-color: #fff;
-    page-break-after: always; /* New rule for printing */
-}
+
+
 
 @media print {
     .label-container {
@@ -227,12 +210,13 @@
 
 .image_head {
     display: flex;
+    margin-bottom: -30px;
+
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    border-bottom: 2px solid #ccc;
+    margin-left: 8px;
 }
-
 .logo {
     flex: 0 0 auto; /* Do not grow or shrink */
 }
@@ -246,11 +230,20 @@
 
 /* Ensure the logo images are correctly sized and aligned */
 .logo img {
-    height: 80px; /* Adjust based on your needs */
+    height: 110px; /* Adjust based on your needs */
     width: auto;
+    margin-left:15px;
+    margin-top: 10px;
 }
-
-
+.logoV img {
+    height: 80px; /* Adjust based on your needs */
+    width: 130px;
+    margin-left:15px;
+}
+#custom-padding{
+    padding:none;
+    /* flex-shrink: 2; */
+}
     </style>
 </head>
 
@@ -283,108 +276,116 @@
 }
 </style>
 
-                
+
     <section class="performance-facts">
           <div class="label-container">
                 @foreach ($product->containers as $container)
-            
+            {{-- <div class="mheadall">
                    <div class="image_head">
                     <div class="logo">
                         <img src="http://www.agio-pharma.com/wp-content/uploads/2019/10/logo-agio.png" alt="VidhyaGxp Logo">
                     </div>
-                    <div class="heading">
+                    <div  class="heading">
                     Warehouse and Labeling Management
                     </div>
-                    <div class="logo">
+                    <div class="logoV">
                         <img src="https://vidyagxp.com/vidhyaGxp.png" alt="Other Logo">
                     </div>
                 </div>
+            </div> --}}
 
-               
                 <div class="label-container">
 
                     <table class="label-table">
                         <tr>
-                            <td colspan="2"><strong>Id :&nbsp;</strong> {{ $product->id }}</td>
+                            <td colspan="1" style="width: 23% " ><div class="logo" id=custom-padding>
+                                <img src="/assets/barcode/New_logo-agio.png" alt="VidhyaGxp Logo">
+                            </div> </td>
+                            <td colspan="2" > <div class="heading">
+                    Warehouse and Labeling Management
+                    </div> </td>
+                            <td  colspan="1"> <div class="logoV">
+                                <img src="/assets/barcode/New_vidyaGxp_logo.png" alt="Other Logo">
+                            </div> </td>
                         </tr>
                         <tr>
-                            <td colspan="2"><strong>Batch Status :&nbsp;<strong>  {{ $product->batch_status }} </td>
+                            <td colspan="4"><strong>Id :&nbsp;</strong> {{ $product->id }}</td>
                         </tr>
                         <tr>
-                            <td><strong>Item Code :&nbsp;</strong>{{ $product->item_code }}</td>
-                            <td><strong>Item Name :&nbsp;</strong> {{ $product->item_name}}</td>
+                            <td colspan="4"><strong>Batch Status :&nbsp;<strong>  {{ $product->batch_status }} </td>
                         </tr>
                         <tr>
-                            <td><strong>Location Code :&nbsp;</strong>{{ $product->location_code }}</td>
-                            <td><strong>Store :&nbsp;</strong> {{ $product->store }}</td>
+                            <td colspan="2"><strong>Item Code :&nbsp;</strong>{{ $product->item_code }}</td>
+                            <td colspan="2"><strong>Item Name :&nbsp;</strong> {{ $product->item_name}}</td>
                         </tr>
                         <tr>
-                            <td><strong>GRN Batch Id :&nbsp;</strong> {{ $product->grn_batch_id }}</td>
-                            <td><strong>ARN Id :&nbsp;</strong> {{ $product->arn_id }}</td>
+                            <td colspan="2"><strong>Location Code :&nbsp;</strong>{{ $product->location_code }}</td>
+                            <td colspan="2"><strong>Store :&nbsp;</strong> {{ $product->store }}</td>
                         </tr>
                         <tr>
-                            <td><strong>Total Container :&nbsp;</strong>{{ $product->container_no }}</td>
-                            <td><strong>Container Status :&nbsp;</strong>{{ $container->status }}</td>
+                            <td colspan="2"><strong>GRN Batch Id :&nbsp;</strong> {{ $product->grn_batch_id }}</td>
+                            <td colspan="2"><strong>ARN Id :&nbsp;</strong> {{ $product->arn_id }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><strong>Total Container :&nbsp;</strong>{{ $product->container_no }}</td>
+                            <td colspan="2"><strong>Container Status :&nbsp;</strong>{{ $container->status }}</td>
                         </tr>
 
                         <tr>
                             {{-- <td><strong> Total Weight :&nbsp;</strong></td> --}}
                             {{-- <td><strong>Unit :&nbsp;</strong> fdg</td> --}}
-                            <td><strong>weight Per Package :&nbsp;</strong>{{ $product->weightPerPackage }}</td>
-                            
-                            <td><strong>Quantity of Product :&nbsp;</strong>{{ $product->quantity_of_product }}</td>
-                        </tr>
-                        <tr>
-                        <td ><strong>Unit :&nbsp;</strong>{{ $product->unit }}</td>
+                            <td colspan="2"><strong>weight Per Package :&nbsp;</strong>{{ $product->weightPerPackage }}</td>
 
-                            <td><strong>Total Weight :&nbsp;</strong> {{ $product->totalWeight }}</td>
+                            <td colspan="2"><strong>Quantity of Product :&nbsp;</strong>{{ $product->quantity_of_product }}</td>
                         </tr>
                         <tr>
-                            {{-- <td colspan="2"><strong>Unit :&nbsp;</strong>{{ $product->unit }}</td> --}}
+                        <td  colspan="2"><strong>Unit :&nbsp;</strong>{{ $product->unit }}</td>
 
-                        </tr>
-                        <tr>
-                            <td colspan="2"><strong>Brand Name :&nbsp;</strong>{{ $product->brand_name }}</td>
-
-                        </tr>
-                        
-                        <tr>
-                            <td colspan="2"><strong>Manufacturer :&nbsp;</strong> {{ $product->manufacturer }}</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><strong>Supplier :&nbsp;</strong>{{ $product->supplier }}</td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><strong>Description :&nbsp;</strong>{{ $product->item_description }}</td>
+                            <td colspan="2"><strong>Total Weight :&nbsp;</strong> {{ $product->totalWeight }}</td>
                         </tr>
 
                         <tr>
-                            <td><strong>Batch/No :&nbsp;</strong> {{ $product->batch_no }}</td>
-                            <td><strong>UOM :&nbsp;</strong>{{ $product->unit }}</td>
+                            <td colspan="4"><strong>Brand Name :&nbsp;</strong>{{ $product->brand_name }}</td>
+
+                        </tr>
+
+                        <tr>
+                            <td colspan="4"><strong>Manufacturer :&nbsp;</strong> {{ $product->manufacturer }}</td>
                         </tr>
                         <tr>
-                            <td><strong>Mfg.DT. :&nbsp;</strong>{{ $product->mfg_dt }}</td>
-                            <td><strong>Exp.DT. :&nbsp;</strong>{{ $product->exp_dt }}</td>
+                            <td colspan="4"><strong>Supplier :&nbsp;</strong>{{ $product->supplier }}</td>
                         </tr>
                         <tr>
-                            <td><strong>Container no :&nbsp;</strong>{{ $loop->index + 1 }} /{{ $product->container_no }}</td>
-                            <td><strong>Pack. Size :&nbsp;</strong>{{ $product->pack_size }}</td>
+                            <td colspan="4"><strong>Description :&nbsp;</strong>{{ $product->item_description }}</td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2"><strong>Batch/No :&nbsp;</strong> {{ $product->batch_no }}</td>
+                            <td colspan="2"><strong>UOM :&nbsp;</strong>{{ $product->unit }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><strong>Mfg.DT. :&nbsp;</strong>{{ $product->mfg_dt }}</td>
+                            <td colspan="2"><strong>Exp.DT. :&nbsp;</strong>{{ $product->exp_dt }}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><strong>Container no :&nbsp;</strong>{{ $loop->index + 1 }} /{{ $product->container_no }}</td>
+                            <td colspan="2"><strong>Pack. Size :&nbsp;</strong>{{ $product->pack_size }}</td>
                         </tr>
                         {{-- <tr>
                             <td><strong>Manufacturer :&nbsp;</strong> 40</td>
                             <td><strong>Supplier :&nbsp;</strong> 2000.00 KG</td>
                         </tr> --}}
                         <tr>
-                            <td><strong>GRN No :&nbsp;</strong>{{ $product->grn_no }}</td>
-                            <td><strong>GRN Date :&nbsp;</strong> {{ $product->grn_date }}</td>
+                            <td colspan="2"><strong>GRN No :&nbsp;</strong>{{ $product->grn_no }}</td>
+                            <td colspan="2"><strong>GRN Date :&nbsp;</strong> {{ $product->grn_date }}</td>
                         </tr>
                         <tr>
-                            <td><strong>Format No :&nbsp;</strong>{{ $product->format_no }} </td>
-                            <td><strong>Rec Qty :&nbsp;</strong>{{ $product->rec_qty }}</td>
+                            <td colspan="2"><strong>Format No :&nbsp;</strong>{{ $product->format_no }} </td>
+                            <td colspan="2"><strong>Rec Qty :&nbsp;</strong>{{ $product->rec_qty }}</td>
                         </tr>
 
                         <tr>
-                                <td colspan="2" style="width: 150px; height: 50px;">
+                                <td colspan="4" style="width: 150px; height: 50px;">
                                 <strong>Barcode :&nbsp;</strong>
                                 <img src="data:image/png;base64,{{ DNS1D::getBarcodePNG($product->bar_code, 'C39') }}" alt="barcode"/>
                         </td>
@@ -399,4 +400,3 @@
 </body>
 
 </html>
-                            

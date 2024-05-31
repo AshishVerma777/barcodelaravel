@@ -22,7 +22,9 @@
     width: 100px; /* Adjust width as desired for the Ajio logo */
 }
 
-
+.head-background{
+    background-image: linear-gradient(to right, #97938dc3 0%, #5684a8 100%);
+}
 
 
 
@@ -66,21 +68,21 @@
 
 <div class="container-fluid  ">
       <div class="row justify-content-md-center">
-        <div class="col-md-12">
+        <div class="col-md-12 head-background">
             <div class="card px-5 mt-3  shadow">
-       
+
                <div class="image_head">
                 <div class="logo logo-vidya">
                     <img src="https://vidyagxp.com/vidhyaGxp.png" alt="VidyaGxP Logo">
                 </div>
-                
+<h2>Generate Barcode</h2>
                 <div class="logo logo-ajio">
                     <img src="{{ asset('user/images/ajio-removebg-preview.png') }}" alt="Ajio Logo" style="margin-top: -20px;">
                 </div>
             </div>
 
               </div>
-          
+
                 <form action="{{route('store')}}" method="post">
                  @csrf
                   <div class="col-12">
@@ -93,14 +95,14 @@
                             <option value="partially_approved">Partially Approved</option>
                             <option value="rejected">Rejected</option>
                         </select>
-                   
+
                         <button type="button" class="btn btn-primary mb-3" id="launch_deviation_button" style="display: none;" onclick="launchDeviation()">Launch Deviation</button>
-                     </div>         
+                     </div>
                     <div class="col-12">
                     <label for="">Item Code :</label>
                     <input type="text" class="form-control mb-3" name="item_code" >
                     </div>
-                   
+
                      <div class="col-12">
                     <label for="batch_status">Item Name:</label>
                      <input type="text" class="form-control mb-3" name="item_name" >
@@ -110,7 +112,7 @@
                         {{-- <option value="approved">Hydro</option> --}}
                         {{-- <option value="reject">Hydrosulfuric Acid</option> --}}
                         {{-- <option value="restrat"></option> --}}
-                    {{-- </select> --}} 
+                    {{-- </select> --}}
                     {{-- <select name="" id="">
                       <option value="Hydro">Hydro</option>
                       <option value="Hydro">Hydro</option>
@@ -141,7 +143,7 @@
                     <input type="text" class="form-control mb-3" name="container_no"  >
                     </div>
 
-                           
+
                   <div class="col-12">
                     <label for="container_status">Container Status:</label>
                     <select class="form-control mb-3" name="container_status" id="container_status" onchange="showLaunchDeviationButtonForContainer()">
@@ -152,8 +154,8 @@
                     <button type="button" class="btn btn-primary mb-3" id="launch_deviation_button_container" style="display: none;" onclick="launchDeviationForContainer()">Launch Deviation</button>
                   </div>
 
-              
-              
+
+
                     <div class="col-12">
                     <label for="brand_name">Brand Name:</label>
                       <input type="text" class="form-control mb-3" name="brand_name">
@@ -163,7 +165,7 @@
                       <div class="col-6">
                       <label for="quantity_of_product">Quantity of Product</label>
                       <input type="text" id="quantity" class="form-control mb-3" name="quantity_of_product" oninput="calculateTotalWeight()" placeholder="Enter quantity">
-                      
+
                       </div>
 
                       <div class="col-6">
@@ -184,20 +186,20 @@
                        <label for="totalWeight">Total Weight</label>
                        <input type="text" id="totalWeight" class="form-control mb-3" name="totalWeight" oninput="calculateTotalWeight()" placeholder="Enter weight per package" >
                      </div>
- 
+
                     <div class="col-12">
                       <label for="Item_Description">Item Description:</label>
                             <input type="text" class="form-control mb-3" name="item_description" >
                       </div>
 
 
-                       
+
                     <div class="col-12">
                         <label for="batch_no">Batch/No:</label>
                               <input type="text" class="form-control mb-3" name="batch_no" >
                       </div>
 
-                       
+
                       <div class="col-12">
                        <label for="uom_branch">UOM</label>
                               <select name="uom_branch" class="form-control mb-3" name="unit" id="unit">
@@ -206,7 +208,7 @@
                               {{-- <option value="ok">Ok</option> --}}
                               </select>
                       </div>
-                
+
                        <div class="d-flex">
                           <div class="col-6">
                               <label for="mfg_dt">Mfg.DT.</label>
@@ -237,7 +239,7 @@
 
 
                         {{-- <label for="no_of_cont">No. Of Cont.</label>
-                        <input type="text" class="form-control mb-3" name="no_of_cont" > --}} 
+                        <input type="text" class="form-control mb-3" name="no_of_cont" > --}}
                       <br>
                       <div class="col-12">
                         <label for="pack_size">Pack.Size</label>
@@ -251,7 +253,7 @@
 
                       <div class="col-12">
                         <label for="rec_qty">Rec Qty:</label>
-                        <input type="number" class="form-control mb-3" name="rec_qty" >
+                        <input type="text" class="form-control mb-3" name="rec_qty" >
                       </div>
 
                       <div class="col-12">
@@ -272,12 +274,12 @@
                       <div class="col-12">
                         <label for="grn_date">GRN Date:</label>
                         <input type="date" class="form-control mb-3" name="grn_date" >
-                      </div>                       
+                      </div>
 
                       <div class="col-12">
                         <label for="format_no">Format No.:</label>
                         <input type="text" class="form-control mb-3" name="format_no" >
-                      </div>                       
+                      </div>
                         {{-- <label for="printed_by">Printed By:</label>
                         <input type="text" class="form-control mb-3" name="printed_by">> --}}
 
@@ -286,11 +288,12 @@
                     {{-- <label for="">Date:</label>
                     <input type="date" class="form-control mb-3" name="date" required> --}}
                  <button type="submit" class="btn btn-success col-md-3">Submit</button>
+<br>
+<br>
 
-                        
 
-               
-    
+
+
             <script>
                 function calculateTotalWeight() {
                     var quantity = document.getElementById('quantity').value;
@@ -312,7 +315,7 @@
                 }
             </script>
 
-                <div> 
+                <div>
             </form>
         </div>
         </div>

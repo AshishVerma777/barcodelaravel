@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<style>
+   .content-page .bg-colorful{
+background-color: rgb(221, 227, 236) !important ;
+background-image: linear-gradient(135deg, #818eff 23%, #c3cfe2 100%);    }
+</style>
+
 
 {{-- header start --}}
 
@@ -9,33 +15,33 @@
 <body data-layout-mode="detached"
   data-layout='{"mode": "light", "width": "fluid", "menuPosition": "fixed", "sidebar": { "color": "light", "size": "default", "showuser": true}, "topbar": {"color": "dark"}, "showRightSidebarOnPageLoad": true}'>
   <!-- Begin page -->
-  <div id="wrapper">
+  <div id="wrapper" style="margin: 0; width:100%;">
     <!-- Topbar Start -->
-    <div class="navbar-custom">
+    <div class="navbar-custom" style="width: 100%">
       <div class="container-fluid">
       <div class="main_container">
-      <div class="Main_logo_1" style="margin-left: 40px;">
+      <div class="Main_logo_1" style="x">
           <img src="https://vidyagxp.com/vidhyaGxp.png" alt="user-img" title="Mat Helme" class="rounded-circle avatar-md" style="scale: 4;" />
           {{-- <p class="text-muted mt-2">Admin Head</p> --}}
-          
+
         </div>
        <div class="main_logo" style="margin-top: -60px;">  <ul class="list-unstyled topnav-menu float-right mb-0">
 
           <!-- All-->
 
           <li class="dropdown notification-list topbar-dropdown">
-          
+
             <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#"
               role="button" aria-haspopup="false" aria-expanded="false">
-              <img src="{{ asset('user/images/ajio-removebg-preview.png') }}" alt="user-image"  style="scale: 1.6;
+              <img src="{{ asset('user/images/ajio-removebg-preview.png') }}" alt="user-image"  style="scale: 1.6; margin-right:9px;
                background: white;" />
               <span class="pro-user-name ml-1">
-                Ajio <i class="mdi mdi-chevron-down"></i>  
+                Ajio <i class="mdi mdi-chevron-down"></i>
               </span>
             </a>
             <div class="dropdown-menu dropdown-menu-right profile-dropdown">
               <!-- item-->
-             
+
 
               <!-- item-->
               <a href="javascript:void(0);" class="dropdown-item notify-item">
@@ -59,11 +65,11 @@
           {{-- <a href="index.html" class="logo logo-dark text-center"> --}}
             <span class="logo-sm">
               <img src="assets/images/logo-sm.png" alt="" height="22" />
-            
+
             </span>
             <span class="logo-lg">
               <img src="assets/images/logo-dark.png" alt="" height="20" />
-              
+
             </span>
           </a>
 
@@ -110,7 +116,7 @@
     <!-- ============================================================== -->
 
     <div class="content-page">
-      <div class="content bg-white my-4 p-4">
+      <div  class="content text-dark">
         <!-- Start Content-->
        @yield('content')
       </div>

@@ -94,7 +94,7 @@
                                         <tbody>
 
 
-                                              @foreach ($data->containers as $container) 
+                                              @foreach ($data->containers as $container)
                                             {{-- {{dd($container)}}; --}}
                                               <tr>
                                                     <td>Container {{ $loop->index + 1 }}</td>
@@ -107,12 +107,12 @@
                                                         @endif
                                                     </td>
                                                 </tr>
-                                            @endforeach 
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 @endif
                             </div>
-                            
+
                             <br>
 
                         <div class="col-12">
@@ -155,13 +155,13 @@
                         <option value="gm" {{ $data->unit === 'gm' ? 'selected' : '' }}>Gram (gm)</option>
                     </select>
                     </div>
-                       
+
                       <div class="col-12">
                     <label for="Mfg_dt">Mfg.DT.</label>
                     <input type="date" class="form-control mb-3" name="mfg_dt" value="{{ $data->mfg_dt }}"  id="start_date_input">
-                   
+
                     </div>
-            
+
                         <div class="col-12">
                         <label for="exp_dt">Exp.DT</label>
                         <input type="date" class="form-control mb-3" name="exp_dt" value="{{ $data->exp_dt }}" id="end_date_input">
@@ -181,9 +181,9 @@
                                         startDateInput.max = endDate; // Optional: Restrict the start date max to the end date
                                     }
                                 });
-                            </script> 
+                            </script>
 
-              
+
                         <div class="col-12">
                         <label for="pack_size">Pack.Size</label>
                         <input type="text" class="form-control mb-3" name="pack_size" value="{{ $data->pack_size }}">
@@ -196,20 +196,20 @@
 
                          <div class="col-12">
                         <label for="rec_qty">Rec Qty:</label>
-                        <input type="number" class="form-control mb-3" name="rec_qty" value="{{ $data->rec_qty }}">
+                        <input type="text" class="form-control mb-3" name="rec_qty" value="{{ $data->rec_qty }}">
                         </div>
                         <div class="col-12">
                         <label for="manufacturer">Manufacturer:</label>
                         <input type="text" class="form-control mb-3" name="manufacturer" value="{{ $data->manufacturer }}">
                         </div>
-                        <div class="col-12">    
+                        <div class="col-12">
                         <label for="supplier">Supplier:</label>
                         <input type="text" class="form-control mb-3" name="supplier" value="{{ $data->supplier }}">
                         </div>
                         <div class="col-12">
                         <label for="grn_no">GRN No.:</label>
                         <input type="text" class="form-control mb-3" name="grn_no" value="{{ $data->grn_no }}">
-                        </div>              
+                        </div>
                         <div class="col-12">
                         <label for="grn_date">GRN Date:</label>
                         <input type="date" class="form-control mb-3" name="grn_date" value="{{ $data->grn_date }}">
@@ -225,11 +225,11 @@
 
                             {{-- <label for="">Date:</label>
                             <input type="date" class="form-control mb-3" name="date" required> --}}
-                    
 
-                                
 
-                  
+
+
+
                         <script>
                             function calculateTotalWeight() {
                                 var quantity = document.getElementById('quantity').value;
@@ -254,9 +254,9 @@
 
                         <!-- Additional divs and elements go here -->
                         <!-- ... -->
-                        
+
                             <button type="submit" class="btn btn-success col-md-3">Update</button>
-                     
+
                     </div>
                 </form>
             </div>
