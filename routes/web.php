@@ -29,6 +29,7 @@ Route::get('document', [ProductController::class, 'document'])->name('document')
 
 Route::get('/', [ProductController::class, 'dashboard'])->name('dashboard');
 
+Route::get('/login', [ProductController::class, 'login'])->name('login');
 
 // Route::post('/testprint', function() {
 //     return 'Form submitted successfully!';

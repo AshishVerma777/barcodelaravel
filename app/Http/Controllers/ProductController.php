@@ -1,7 +1,7 @@
 <?php
- 
+
 namespace App\Http\Controllers;
- 
+
 use App\Models\product;
 use App\Models\ProductContainer;
 use Milon\Barcode\DNS1D;
@@ -15,21 +15,23 @@ class ProductController extends Controller
         $products = product::all();
         return view('index',compact('products'));
     }
- 
+    public function login(){
+        return view('loginPage');
+    }
     public function create(){
         return view('create');
     }
- 
+
     public function store(Request $request){
 
         $number = mt_rand(1000000000,9999999999);
-         
+
         // if ($this->productCodeExists($number)) {
         //     $number = mt_rand(1000000000,999999999);
         // }
-         
 
-        
+
+
         $request['bar_code'] = $number;
         $product = product::create($request->all());
 
@@ -42,19 +44,19 @@ class ProductController extends Controller
             // if ($this->productCodeExists($number)) {
             //     $number = mt_rand(1000000000,999999999);
             // }
-           
+
             $container->product_id = $product->id;
             $container->status   = 'ok'; //$request->status;
             $container->save();
-           
-           
+
+
             // status = 'ok'
         }
- 
+
      return redirect('/');
       // return redirect()->back()->route('dashboard');
 }
- 
+
     public function productCodeExists($number){
         return product::whereProductCode($number)->exists();
     }
@@ -69,7 +71,7 @@ class ProductController extends Controller
             }
 
             return view('print', compact('product'));
-        
+
         }
 
     public function show()
@@ -77,13 +79,13 @@ class ProductController extends Controller
      return view("show");
      }
 
-     
+
      public function document()
     {
         $pdf = Pdf::loadView('comps.document2');
         return $pdf->stream();
      }
- 
+
      public function Editshow($id)
      {
        $data =product::find($id);
@@ -96,7 +98,7 @@ class ProductController extends Controller
       {
         $product = product::findOrFail($id);
        // $product1 = ProductContainer::findOrFail($id);
-        
+
         // return $product;
         $product->batch_status = $request->batch_status;
         $product->item_code = $request->item_code;
@@ -128,15 +130,15 @@ class ProductController extends Controller
         $product->format_no = $request->format_no;
         $product->printed_by = $request->printed_by;
        // $product1->status = $request->status;
-        
+
        if ($request->has('generate_new_barcode')) {
         $number = mt_rand(1000000000, 9999999999);
-        
+
         // Check if the generated barcode already exists, generate a new one if it does
         while ($this->productCodeExists($number)) {
             $number = mt_rand(1000000000, 9999999999);
         }
-        
+
         // Update the barcode in the request
         $product->bar_code = $number;
     }
@@ -147,13 +149,13 @@ class ProductController extends Controller
 
     // Redirect back to the view page or any other page after updating the product
     return redirect('/');
-} 
+}
 
 
 public function updateStatus($container)
 {
     $container = ProductContainer::findOrFail($container);
-    
+
     $container->status = $container->status == 'ok' ? 'leakage_damage' : 'ok'; // Update the status as per your requirement
 
     $container->save();
@@ -168,8 +170,8 @@ public function dashboard()
     $products = Product::orderBy('created_at', 'desc')->get();
 
     return view('dashboard',compact('products'));
-    
-   
+
+
 }
 //------------------------grid Data ----------------------------------------
 
@@ -182,5 +184,5 @@ public function gridData()
 }
 
 
-   
+
 }
