@@ -58,7 +58,7 @@
                                         <th>Grn Batch Id </th>
                                         <th>Arn Id :</th>
                                         <th>Total Container</th>
-                                        <th>Container Status </th>
+                                        {{--  <th>Container Status </th>  --}}
                                         <th>Brand Name</th>
                                         <th>Unit:</th>
                                         <th>Quantity of Product:</th>
@@ -96,7 +96,7 @@
                                 <td>{{ $product->grn_batch_id }}</td>
                                 <td>{{ $product->arn_id }}</td>
                                 <td>{{ $product->container_no }}</td>
-                                <td>{{ $product->container_status }}</td>
+                                {{--  <td>{{ $product->container_status }}</td>  --}}
                                 <td>{{ $product->brand_name }}</td>
                                 <td>{{ $product->unit }}</td>
                                 <td>{{ $product->quantity_of_product }}</td>

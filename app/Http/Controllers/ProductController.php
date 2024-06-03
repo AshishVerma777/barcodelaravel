@@ -20,43 +20,33 @@ class ProductController extends Controller
         return view('create');
     }
  
-    public function store(Request $request){
+    public function store(Request $request)
+    {
+        $number = mt_rand(1000000000, 9999999999);
 
-        $number = mt_rand(1000000000,9999999999);
-         
-        // if ($this->productCodeExists($number)) {
-        //     $number = mt_rand(1000000000,999999999);
-        // }
-         
-
-        
-        $request['bar_code'] = $number;
-        $product = product::create($request->all());
-
-        for ($i = 0; $i < $request->container_no; $i++)
-        {
-            // new ProductContainers
-
-            $container   = new ProductContainer();
-
-            // if ($this->productCodeExists($number)) {
-            //     $number = mt_rand(1000000000,999999999);
-            // }
-           
-            $container->product_id = $product->id;
-            $container->status   = 'ok'; //$request->status;
-            $container->save();
-           
-           
-            // status = 'ok'
+        while ($this->productCodeExists($number)) {
+            $number = mt_rand(1000000000, 9999999999);
         }
- 
-     return redirect('/');
-      // return redirect()->back()->route('dashboard');
-}
- 
-    public function productCodeExists($number){
-        return product::whereProductCode($number)->exists();
+
+        $request['bar_code'] = $number;
+        $product = Product::create($request->all());
+
+        if (!empty($request->containers)) {
+            foreach ($request->containers as $containerData) {
+                $container = new ProductContainer();
+                $container->product_id = $product->id;
+                $container->number = $containerData['number'];
+                $container->status = $containerData['status'];
+                $container->save();
+            }
+        }
+
+        return redirect('/');
+    }
+
+    private function productCodeExists($number)
+    {
+        return Product::where('bar_code', $number)->exists();
     }
 
     public function print($id)
@@ -136,7 +126,7 @@ class ProductController extends Controller
         while ($this->productCodeExists($number)) {
             $number = mt_rand(1000000000, 9999999999);
         }
-        
+            
         // Update the barcode in the request
         $product->bar_code = $number;
     }
