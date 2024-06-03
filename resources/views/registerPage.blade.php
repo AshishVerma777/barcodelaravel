@@ -830,9 +830,8 @@ input.checkbox:checked:after {
          </div>
      </div>
  </div> --}}
-          <form method="Get" action="{{ route('loginC') }}">
+          <form method="post" action="{{ route('register') }}">
             @csrf
-            {{-- @method('Post') --}}
                 <div class="main-w3layouts wrapper">
             <div class="logos">
                 <div class="logo">
@@ -841,24 +840,45 @@ input.checkbox:checked:after {
 		<h1><strong style="filter:drop-shadow(5px 5px 20px rgb(205, 206, 207))">Welcome to Warehouse and Labeling Management</strong></h1>
     </div>
 
-        <center><div class="logoV  border df" >
+
+        <div class="logoV  border df" style="display: flex; justify-content: center;">
             <img src="/assets/barcode/New_vidyaGxp_logo.png" alt="Other Logo">
-        </div></center>
+        </div>
+
 		<div class="main-agileinfo">
+
+            @if ($errors->any())
+                @foreach ($errors->all() as $error)
+                    <p>{{ $error }}</p>
+                @endforeach
+            @endif
+
 			<div class="agileits-top">
-				<form action="#" method="post">
+				{{-- <form action="#" method="post"> --}}
 					{{-- <input class="text" type="text" name="Username" placeholder="Username" required=""> --}}
-					<input class="text email" type="email" name="email" placeholder="Email" required="">
+					<input class="text" type="text" name="name" placeholder="Username" required="">
+
+                    {{-- <label for="name">{{ __('Name') }}</label>
+                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                    @error('name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror --}}
+
+                    <input class="text email" type="email" name="email" placeholder="Email" required="">
 					<input class="text" type="password" name="password" placeholder="Password" required="">
-					{{-- <input class="text w3lpass" type="password" name="password" placeholder="Confirm Password" required=""> --}}
-					<div class="wthree-text">
+					<input class="text w3lpass" type="password" name="password_confirmation" placeholder="Confirm Password" required="">
+                    {{-- <input class="text number" type="number" name="number" placeholder="Number" required=""> --}}
+
+                    <div class="wthree-text">
 						 <label class="anim">
-							{{-- <input type="checkbox" class="checkbox" required=""> --}}
-							{{-- <span>I Agree To The Terms & Conditions</span> --}}
+							<input type="checkbox" class="checkbox" required="">
+							<span>I Agree To The Terms & Conditions</span>
 						</label>
 						<div class="clear"> </div>
 					</div>
-					<input type="submit" value="Login">
+					<input type="submit" value="Register">
 				</form>
 				{{-- <p>Don't have an Account? <a href="#"> Login Now!</a></p> --}}
 			</div>

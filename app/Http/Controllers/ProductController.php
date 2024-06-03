@@ -4,10 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\product;
 use App\Models\ProductContainer;
+use App\Models\User;
+use Crypt;
 use Milon\Barcode\DNS1D;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Crypt as FacadesCrypt;
+use Illuminate\Support\Facades\Hash;
 
 class ProductController extends Controller
 {
@@ -18,6 +23,62 @@ class ProductController extends Controller
     public function login(){
         return view('loginPage');
     }
+    public function loginC(Request $request)
+    {
+
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+        // $user = User::where('email', $request->input('email'))->first();
+
+        // if ($user && Hash::check($request->input('password'), $user->password)) {
+        //     Auth::login($user);
+        $user = User::where('email', $request->input('email'))->first();
+
+            if ($user && $user->email === $request->input('email') && Hash::check($request->password, $user->password)) {
+                Auth::login($user);
+            return redirect()->route('dashboard')->with('success', 'login successful!');
+
+                // Login successful, continue with your logic
+            } else {
+                // Email or password does not match, handle the error or notify the user
+        return response()->json(['success' => false], 401);
+            }
+    }
+    public function logout(){
+            Auth::logout();
+            return redirect()->route('login');
+    }
+
+    public function showregister(){
+        // return $request->input();
+        // $data = User::
+        return view('registerPage');
+    }
+    public function register(Request $request)
+    {
+        // Validate the request data
+        $validatedData = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|',
+            'password' => 'required|string',
+        ]);
+
+        // Create a new user instance with the validated data
+        $user = User::create([
+            'name' => $validatedData['name'],
+            'email' => $validatedData['email'],
+            'password' => Hash::make($validatedData['password']),
+        ]);
+        $request->session()->put('user',$validatedData['name']);
+        // Optionally, log the user in
+        Auth::login($user);
+
+        // Redirect or return a view after successful registration
+        return redirect()->route('dashboard')->with('success', 'Registration successful!');
+    }
+
     public function create(){
         return view('create');
     }
