@@ -16,40 +16,23 @@ use App\Http\Controllers\ProductController;
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-/**
- *
- *  AUTHENTICATED ROUTES............
- *
- */
-Route::group(['middleware' => 'auth'], function() {
-    Route::get('create', [ProductController::class, 'create'])->name('create');
-    Route::get('/index', [ProductController::class, 'index']);
+Route::get('/index', [ProductController::class, 'index']);
 
-    Route::post('store', [ProductController::class, 'store'])->name('store');
-    Route::post('/print/{id}',  [ProductController::class, 'print'])->name('print');
-    Route::get('show', [ProductController::class, 'show'])->name('show');
-    Route::get('edit/{id}', [ProductController::class, 'Editshow'])->name('Editshow');
-    Route::get('update-container-status/{container}', [ProductController::class, 'updateStatus'])->name('update_container_status');
-    Route::post('update/{id}', [ProductController::class, 'update'])->name('update');
-    Route::get('document', [ProductController::class, 'document'])->name('document');
-    Route::get('/', [ProductController::class, 'dashboard'])->name('dashboard');
+Route::get('create', [ProductController::class, 'create'])->name('create');
+Route::post('store', [ProductController::class, 'store'])->name('store');
+Route::post('/print/{id}',  [ProductController::class, 'print'])->name('print');
+Route::get('show', [ProductController::class, 'show'])->name('show');
+Route::get('edit/{id}', [ProductController::class, 'Editshow'])->name('Editshow');
+Route::get('update-container-status/{container}', [ProductController::class, 'updateStatus'])->name('update_container_status');
+Route::post('update/{id}', [ProductController::class, 'update'])->name('update');
+Route::get('document', [ProductController::class, 'document'])->name('document');
+    
+Route::get('/', [ProductController::class, 'dashboard'])->name('dashboard');
 
 
-});
+// Route::post('/testprint', function() {
+//     return 'Form submitted successfully!';
+// })->name('testprint');
+//-----------------------------------------------------------------------------------------
 
-Route::group(['middleware'=>'web'],function(){
-    Route::get('/login', [ProductController::class, 'login'])->name('login');
-    Route::get('/register', [ProductController::class, 'showregister'])->name('showregister');
-    Route::post('/register', [ProductController::class, 'register'])->name('register');
-    Route::get('/loginC', [ProductController::class, 'loginC'])->name('loginC');
-    Route::get('/logout',[ProductController::class,'logout'])->name('logout');
-
-    // Route::get('/ProductController::class,'logout'])->name('account.logout');
-    // Route::post('/testprint', function() {
-    //     return 'Form submitted successfully!';
-    // })->name('testprint');
-    //-----------------------------------------------------------------------------------------
-
-    Route::get('/gridData', [ProductController::class, 'gridData'])->name('gridData');
-
-});
+Route::get('/gridData', [ProductController::class, 'gridData'])->name('gridData');
