@@ -30,19 +30,13 @@ class ProductController extends Controller
             'email' => 'required|email',
             'password' => 'required',
         ]);
-        // $user = User::where('email', $request->input('email'))->first();
-
-        // if ($user && Hash::check($request->input('password'), $user->password)) {
-        //     Auth::login($user);
         $user = User::where('email', $request->input('email'))->first();
 
             if ($user && $user->email === $request->input('email') && Hash::check($request->password, $user->password)) {
                 Auth::login($user);
             return redirect()->route('dashboard')->with('success', 'login successful!');
 
-                // Login successful, continue with your logic
             } else {
-                // Email or password does not match, handle the error or notify the user
         return response()->json(['success' => false], 401);
             }
     }

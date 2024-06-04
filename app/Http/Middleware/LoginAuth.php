@@ -15,10 +15,19 @@ class LoginAuth
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (auth()->check()) {
+        // if (auth()->check()) {
+        //     return $next($request);
+        // }
+        if (!auth()->check()) {
+            // return response('Forbidden', 403);
             return $next($request);
         }
+        else{
 
+            return $next($request);}
+        // Handle the case where the user is not authenticated
+        // You can redirect to a login page or return a 403 forbidden response
+        // return redirect()->route('login');
 
     }
 }
