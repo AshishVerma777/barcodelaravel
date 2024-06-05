@@ -18,12 +18,17 @@ use App\Http\Controllers\UserController;
 */
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
-Route::get('/admin/login',[AuthController::class,'getLogin'])->name('getLogin');
+Route::get('login',[AuthController::class,'getLogin'])->name('getLogin');
 Route::post('/admin/login',[AuthController::class,'postLogin'])->name('postLogin');
-
+Route::view('superadmin/login', 'admin.auth.adminlogin');
+//Route::get('superadmin/login',[AuthController::class,'superadminlogin'])->name('adminlogin');
+Route::post('superadmin/login',[AuthController::class,'adminlogin'])->name('adminlogin');
+//---------------------------------------------------------------------------------------------------
+Route::get('admin/dashboard',[ProfileController::class,'dashboard'])->name('dashboard');
+   
 Route::group(['middleware'=>['admin_auth']],function(){
     
-    Route::get('/admin/dashboard',[ProfileController::class,'dashboard'])->name('dashboard');
+   // Route::get('/admin/dashboard',[ProfileController::class,'dashboard'])->name('dashboard');
     Route::get('/admin/users',[UserController::class,'index'])->name('users.index');
 
     Route::get('/admin/logout',[ProfileController::class,'logout'])->name('logout');
