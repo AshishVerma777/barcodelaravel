@@ -151,6 +151,7 @@
         .text-danger,
         .text-success {
             margin-bottom: 1em;
+            color: red;
         }
 
         .icheck-primary {
@@ -191,7 +192,7 @@
                 <div class="text-danger text-center">{{session('error')}}</div>
                 @endif
                 @if(session('success'))
-              
+
                 <div class="text-success text-center">{{session('success')}}</div>
                 @endif
                 <form action="{{route('postLogin')}}" method="post">
