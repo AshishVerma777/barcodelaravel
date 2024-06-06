@@ -11,25 +11,25 @@ class AuthController extends Controller
         return view('admin.auth.login');
     }
 
-//     public function adminlogin(Request $request)
-// {
-//     $request->validate([
-//         'email' => 'required|email',
-//         'password' => 'required',
-//     ]);
+    public function adminlogin(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
 
-//     $credentials = $request->only('email', 'password');
-//     $credentials['is_admin'] = "admin";
+        $credentials = $request->only('email', 'password');
+        $credentials['is_admin'] = "admin";
 
-//     if (auth()->attempt($credentials, $request->remember)) {
-//         return redirect()->route('admin.dashboard')->with('success', 'Login Successful');
-//     } else {
-//         return redirect()->back()->withErrors([
-//             'msg' => 'The provided credentials do not match our records.',
-//         ]);
-//     }
-// }
-
+        if (auth()->attempt($credentials, $request->remember)) {
+            return redirect()->route('admindashboard')->with('success', 'Login Successful');
+        } else {
+            return redirect()->back()->withErrors([
+                'msg' => 'The provided credentials do not match our records.',
+            ]);
+        }
+    }
+    
 
 
 
@@ -42,7 +42,7 @@ class AuthController extends Controller
         $validated=auth()->attempt([
             'email'=>$request->email,
             'password'=>$request->password,
-            'is_admin'=>"admin"
+           
         ],$request->password);
 
         if($validated){
@@ -51,4 +51,16 @@ class AuthController extends Controller
             return redirect()->back()->with('error','Invalid credentials');
         }
     }
+
+  
+
+
+
+
+
+
+
+
 }
+
+
