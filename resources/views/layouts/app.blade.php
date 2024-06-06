@@ -4,7 +4,8 @@
 <style>
    .content-page .bg-colorful{
 background-color: rgb(221, 227, 236) !important ;
-background-image: linear-gradient(135deg, #818eff 23%, #c3cfe2 100%);    }
+background-image: linear-gradient(135deg, #818eff 23%, #c3cfe2 100%);
+  }
 </style>
 
 

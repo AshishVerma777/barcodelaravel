@@ -48,13 +48,21 @@ body {
   height: 100%;
   overflow: hidden;
   width: 100%; }
-
+/*
 .content-page {
   margin-left: 240px;
   overflow: hidden;
   padding: 0 15px 65px 15px;
   min-height: 80vh;
-  margin-top: 70px; }
+  margin-top: 70px; } */
+  .content-page {
+    margin-left: 234px;
+    overflow: hidden;
+    padding: 20px;
+    min-height: 80vh;
+    margin-top: 70px;
+    margin-right: -26px;
+}
 
 .left-side-menu {
   width: 240px;
@@ -266,7 +274,7 @@ body[data-sidebar-size="condensed"] .left-side-menu {
       color: #00acc1; }
 
 body[data-sidebar-size="condensed"] .content-page {
-  margin-left: 70px !important; }
+  margin-left: 50px !important; }
 
 @media (min-width: 992px) {
   body[data-sidebar-size="condensed"] .footer {
@@ -294,7 +302,7 @@ body[data-sidebar-size="condensed"] .user-box {
     display: block; }
   .content-page,
   body[data-sidebar-size="condensed"] .content-page {
-    margin-left: 0 !important;
+    margin-left: 2 !important;
     padding: 0 10px; }
   .footer {
     left: 0 !important; } }
@@ -2942,10 +2950,10 @@ body.authentication-bg-pattern {
 
 /*!
  * Waves v0.7.6
- * http://fian.my.id/Waves 
- * 
- * Copyright 2014-2018 Alfiana E. Sibuea and other contributors 
- * Released under the MIT license 
+ * http://fian.my.id/Waves
+ *
+ * Copyright 2014-2018 Alfiana E. Sibuea and other contributors
+ * Released under the MIT license
  * https://github.com/fians/Waves/blob/master/LICENSE */
 .waves-effect {
   position: relative;
