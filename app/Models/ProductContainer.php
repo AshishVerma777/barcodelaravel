@@ -10,6 +10,10 @@ class ProductContainer extends Model
     use HasFactory;
 
 
+    protected $fillable = [
+        'product_id', 'number', 'status'
+    ];
+
     public function product()//container
     {
         return $this->belongsTo(product::class, 'id');

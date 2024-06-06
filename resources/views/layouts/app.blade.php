@@ -5,29 +5,6 @@
    .content-page .bg-colorful{
 background-color: rgb(221, 227, 236) !important ;
 background-image: linear-gradient(135deg, #818eff 23%, #c3cfe2 100%);    }
-
-body[data-layout-mode=detached] #wrapper {
-    width: 100% !important;
-}
-@media (min-width: 992px) {
-    body[data-layout-mode=detached] #wrapper {
-        max-width: 100% !important;
-        margin: 0 auto;
-    }
-}
-.navbar-custom .button-menu-mobile {
-    border: none;
-    color: #fff;
-    display: inline-block;
-    height: 70px;
-    line-height: 70px;
-    width: 80px !important;
-    background-color: transparent;
-    font-size: 24px;
-    cursor: pointer;
-}
-
-
 </style>
 
 
@@ -38,7 +15,7 @@ body[data-layout-mode=detached] #wrapper {
 <body data-layout-mode="detached"
   data-layout='{"mode": "light", "width": "fluid", "menuPosition": "fixed", "sidebar": { "color": "light", "size": "default", "showuser": true}, "topbar": {"color": "dark"}, "showRightSidebarOnPageLoad": true}'>
   <!-- Begin page -->
-  <div id="wrapper" style="margin: 0; width:%;">
+  <div id="wrapper" style="margin: 0; width:100%;">
     <!-- Topbar Start -->
     <div class="navbar-custom" style="width: 100%">
       <div class="container-fluid">
@@ -75,56 +52,13 @@ body[data-layout-mode=detached] #wrapper {
               <div class="dropdown-divider"></div>
 
               <!-- item-->
-              <a href="{{route('login')}}" class="dropdown-item notify-item">
-                {{-- <i class="fe-sign-in"></i> --}}
-                <span>Login</span>
-              </a>
-              <div class="dropdown-divider"></div>
-
-              <!-- item-->
-              <a href="{{route('login')}}" class="dropdown-item notify-item">
-                {{-- <i class="fe-log-out"></i> --}}
+              <a href="{{route('logout')}}" class="dropdown-item notify-item">
+                <i class="fe-log-out"></i>
                 <span>Logout</span>
-              </a> <div class="dropdown-divider"></div>
-
-              <!-- item-->
-              <a href="{{route('showregister')}}" class="dropdown-item notify-item">
-                {{-- <i class="fe-id-cards"></i> --}}
-                <span>Register</span>
               </a>
             </div>
           </li>
         </ul></div>
-        {{-- @if(Session::has('user'))
-        <a href="javascript:void(0);" class="dropdown-item notify-item">
-            <i class="fe-user"></i>
-            <span>My Account {{ session('user') }}</span>
-        </a>
-    @else
-    <li class="dropdown notification-list topbar-dropdown">
-
-        <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#"
-          role="button" aria-haspopup="false" aria-expanded="false">
-          <img src="{{ asset('user/images/ajio-removebg-preview.png') }}" alt="user-image"  style="scale: 1.6; margin-right:9px;
-           background: white;" />
-          <span class="pro-user-name ml-1">
-            Ajio <i class="mdi mdi-chevron-down"></i>
-          </span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-right profile-dropdown">
-          <!-- item-->
-
-
-        <a href="{{ route('showregister') }}" class="dropdown-item notify-item">
-            <span>Register</span>
-        </a>
-        <a href="{{ route('login') }}" class="dropdown-item notify-item">
-            <span>Login</span>
-        </a>
-    </div>
-
-    @endif
- --}}
 
         <!-- LOGO -->
         <div class="logo-box">

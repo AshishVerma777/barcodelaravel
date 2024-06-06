@@ -4,15 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\product;
 use App\Models\ProductContainer;
-use App\Models\User;
-use Crypt;
 use Milon\Barcode\DNS1D;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Crypt as FacadesCrypt;
-use Illuminate\Support\Facades\Hash;
 
 class ProductController extends Controller
 {
@@ -20,100 +15,38 @@ class ProductController extends Controller
         $products = product::all();
         return view('index',compact('products'));
     }
-    public function login(){
-        return view('loginPage');
-    }
-    public function loginC(Request $request)
-    {
-
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required',
-        ]);
-        $user = User::where('email', $request->input('email'))->first();
-
-            if ($user && $user->email === $request->input('email') && Hash::check($request->password, $user->password)) {
-                Auth::login($user);
-            return redirect()->route('dashboard')->with('success', 'login successful!');
-
-            } else {
-        return response()->json(['success' => false], 401);
-            }
-    }
-    public function logout(){
-            Auth::logout();
-            return redirect()->route('login');
-    }
-
-    public function showregister(){
-        // return $request->input();
-        // $data = User::
-        return view('registerPage');
-    }
-    public function register(Request $request)
-    {
-        // Validate the request data
-        $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|',
-            'password' => 'required|string',
-        ]);
-
-        // Create a new user instance with the validated data
-        $user = User::create([
-            'name' => $validatedData['name'],
-            'email' => $validatedData['email'],
-            'password' => Hash::make($validatedData['password']),
-        ]);
-        $request->session()->put('user',$validatedData['name']);
-        // Optionally, log the user in
-        Auth::login($user);
-
-        // Redirect or return a view after successful registration
-        return redirect()->route('dashboard')->with('success', 'Registration successful!');
-    }
 
     public function create(){
         return view('create');
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
+        $number = mt_rand(1000000000, 9999999999);
 
-        $number = mt_rand(1000000000,9999999999);
-
-        // if ($this->productCodeExists($number)) {
-        //     $number = mt_rand(1000000000,999999999);
-        // }
-
-
-
-        $request['bar_code'] = $number;
-        $product = product::create($request->all());
-
-        for ($i = 0; $i < $request->container_no; $i++)
-        {
-            // new ProductContainers
-
-            $container   = new ProductContainer();
-
-            // if ($this->productCodeExists($number)) {
-            //     $number = mt_rand(1000000000,999999999);
-            // }
-
-            $container->product_id = $product->id;
-            $container->status   = 'ok'; //$request->status;
-            $container->save();
-
-
-            // status = 'ok'
+        while ($this->productCodeExists($number)) {
+            $number = mt_rand(1000000000, 9999999999);
         }
 
-     return redirect('/');
-      // return redirect()->back()->route('dashboard');
-}
+        $request['bar_code'] = $number;
+        $product = Product::create($request->all());
 
-    public function productCodeExists($number){
-        return product::whereProductCode($number)->exists();
+        if (!empty($request->containers)) {
+            foreach ($request->containers as $containerData) {
+                $container = new ProductContainer();
+                $container->product_id = $product->id;
+                $container->number = $containerData['number'];
+                $container->status = $containerData['status'];
+                $container->save();
+            }
+        }
+
+        return redirect('/');
+    }
+
+    private function productCodeExists($number)
+    {
+        return Product::where('bar_code', $number)->exists();
     }
 
     public function print($id)

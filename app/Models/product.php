@@ -11,15 +11,13 @@ class product extends Model
 
     protected $fillable =[
 
-        'batch_status', 'product_no','item_code', 'item_name','uom_branch', 'location_code', 'store', 'pack_size','count_no',
-        'grn_batch_id', 'arn_id', 'container_no', 'container_status', 'brand_name', 'unit','quantity_of_product','weightPerPackage','totalWeight',
-        'item_description', 'batch_no', 'uom', 'mfg_dt', 'exp_dt', 'no_of_cont', 
-        'pack_size', 'rec_qty', 'manufacturer', 'supplier', 'grn_no', 'grn_date', 
-        'format_no', 'printed_by',
-        'bar_code',
-        'print'
-
+        'batch_status', 'item_code', 'item_name', 'location_code', 'store', 'grn_batch_id', 
+        'arn_id', 'container_no', 'container_status', 'brand_name', 'quantity_of_product', 
+        'unit', 'weightPerPackage', 'totalWeight', 'item_description', 'batch_no', 
+        'uom_branch', 'mfg_dt', 'exp_dt', 'pack_size', 'count_no', 'rec_qty', 
+        'manufacturer', 'supplier', 'grn_no', 'grn_date', 'format_no', 'bar_code','print'
     ];
+
 
     public function containers()
     {

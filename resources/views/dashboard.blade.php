@@ -29,13 +29,13 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box">
-                                    {{-- <h4 class="page-title font-weight-bold">Generate Label</h4> --}}
+                                    <h4 class="page-title font-weight-bold">DASHBOARD</h4>
                                 </div>
                             </div>
                         </div>
                           <!-- end page title -->
 
-                                    {{-- <h1 class="text-primary pt-1 font-weight-bold text-center mb-4">Generate Label</h1> --}}
+                                    <h1 class="text-primary pt-1 font-weight-bold text-center mb-4">Generate Label</h1>
                                     <div class="table_responsive" style="width: 100%; overflow-x: auto;">
 
                                         <h1 class=" text-left mb-3"><b>List of Products</b></h1>
@@ -58,7 +58,7 @@
                                         <th>Grn Batch Id </th>
                                         <th>Arn Id :</th>
                                         <th>Total Container</th>
-                                        <th>Container Status </th>
+                                        {{--  <th>Container Status </th>  --}}
                                         <th>Brand Name</th>
                                         <th>Unit:</th>
                                         <th>Quantity of Product:</th>
@@ -96,7 +96,7 @@
                                 <td>{{ $product->grn_batch_id }}</td>
                                 <td>{{ $product->arn_id }}</td>
                                 <td>{{ $product->container_no }}</td>
-                                <td>{{ $product->container_status }}</td>
+                                {{--  <td>{{ $product->container_status }}</td>  --}}
                                 <td>{{ $product->brand_name }}</td>
                                 <td>{{ $product->unit }}</td>
                                 <td>{{ $product->quantity_of_product }}</td>

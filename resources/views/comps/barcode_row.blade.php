@@ -27,10 +27,9 @@
     <td>
         <input type="text" value="{{ $product->container_no}}">
     </td>
-    <td>
+     {{--  <td>
         <input type="text" value="{{ $product->container_status }}">
-    </td>
-
+    </td>    --}}
      <td>
         <input type="text" value="{{ $product->brand_name }}">
     </td>

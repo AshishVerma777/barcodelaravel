@@ -41,7 +41,7 @@
                     <div class="row">
                         <div class="col-12">
                             <label for="batch_status">Batch Status:</label>
-                            <select class="form-control mb-3" name="batch_status" id="batch_status" required onchange="showLaunchDeviationButton()">
+                            <select class="form-control mb-3" name="batch_status" id="batch_status"  onchange="showLaunchDeviationButton()">
                                 <option value="0" {{ $data->batch_status === '0' ? 'selected' : '' }}>Select</option>
                                 <option value="under_quarantine" {{ $data->batch_status === 'under_quarantine' ? 'selected' : '' }}>Under Quarantine</option>
                                 <option value="under_testing" {{ $data->batch_status === 'under_testing' ? 'selected' : '' }}>Under Testing</option>
@@ -97,7 +97,8 @@
                                               @foreach ($data->containers as $container)
                                             {{-- {{dd($container)}}; --}}
                                               <tr>
-                                                    <td>Container {{ $loop->index + 1 }}</td>
+                                                    {{--  <td>Container {{ $loop->index + 1 }}</td>  --}}
+                                                   <td> Container: {{$container->number}}</td>
                                                     <td>{{ $container->status }}</td>
                                                     <td>
                                                         @if ($container->status == 'leakage_damage')
@@ -106,6 +107,7 @@
                                                             <a href="{{ route('update_container_status', $container->id) }}" class="btn btn-danger">Mark as Damage</a>
                                                         @endif
                                                     </td>
+
                                                 </tr>
                                             @endforeach
                                         </tbody>
@@ -117,12 +119,12 @@
 
                         <div class="col-12">
                         <label for="brand_name">Brand Name:</label>
-                        <input type="text" class="form-control mb-3" name="brand_name" value="{{ $data->brand_name }}" required>
+                        <input type="text" class="form-control mb-3" name="brand_name" value="{{ $data->brand_name }}">
                         </div>
 
                         <div class="col-12">
                         <label for="quantity_of_product">Quantity of Product</label>
-                        <input type="text" id="quantity" class="form-control mb-3" name="quantity_of_product" value="{{ $data->quantity_of_product }}" oninput="calculateTotalWeight()" placeholder="Enter quantity" required>
+                        <input type="text" id="quantity" class="form-control mb-3" name="quantity_of_product" value="{{ $data->quantity_of_product }}" oninput="calculateTotalWeight()" placeholder="Enter quantity" >
                         </div>
                         <div class="col-12">
                         <label for="unit">Unit</label>
@@ -133,19 +135,19 @@
                         </div>
                         <div class="col-12">
                         <label for="weightPerPackage">Weight per Package</label>
-                        <input type="text" id="weightPerPackage" class="form-control mb-3" name="weightPerPackage" value="{{ $data->weightPerPackage }}" oninput="calculateTotalWeight()" placeholder="Enter weight per package" required>
+                        <input type="text" id="weightPerPackage" class="form-control mb-3" name="weightPerPackage" value="{{ $data->weightPerPackage }}" oninput="calculateTotalWeight()" placeholder="Enter weight per package">
                     </div>
                     <div class="col-12">
                         <label for="totalWeight">Total Weight</label>
-                        <input type="text" id="totalWeight" class="form-control mb-3" name="totalWeight" value="{{ $data->totalWeight }}" oninput="calculateTotalWeight()" placeholder="Enter weight per package" required>
+                        <input type="text" id="totalWeight" class="form-control mb-3" name="totalWeight" value="{{ $data->totalWeight }}" oninput="calculateTotalWeight()" placeholder="Enter weight per package" >
                         </div>
                     <div class="col-12">
                         <label for="Item_Description">Item Description:</label>
-                        <input type="text" class="form-control mb-3" name="item_description" value="{{ $data->item_description }}" required>
+                        <input type="text" class="form-control mb-3" name="item_description" value="{{ $data->item_description }}" >
                         <div>
                     <div class="col-12">
                         <label for="batch_no">Batch/No:</label>
-                        <input type="text" class="form-control mb-3" name="batch_no" value="{{ $data->batch_no }}" required>
+                        <input type="text" class="form-control mb-3" name="batch_no" value="{{ $data->batch_no }}">
                     </div>
                     <div class="col-12">
                     <label for="uom_branch">UOM</label>
@@ -252,8 +254,7 @@
                         </script>
 
 
-                        <!-- Additional divs and elements go here -->
-                        <!-- ... -->
+                       
 
                             <button type="submit" class="btn btn-success col-md-3">Update</button>
 

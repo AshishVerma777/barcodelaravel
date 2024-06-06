@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Barcodde Print</title>
+    <title>Barcode Print</title>
     <link rel="icon" href="{{ asset('assets\icon\logovidyagxp.png.png') }}" type="image/x-icon">
 
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">

@@ -17,7 +17,7 @@
     .heading-header {
         font-weight: bold;
         font-size: 40px;
-        background: linear-gradient(0deg, #ffa745,  #3482f7 85%);
+        background: linear-gradient(0deg) #ffa745,  #3482f7 85%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         flex-grow: 1;
@@ -93,7 +93,7 @@
                         <th>GRN Batch Id :</th>
                         <th>ARN Id :</th>
                         <th>Total Container :</th>
-                        <th>Container Status:</th>
+                         {{--  <th>Container Status:</th>   --}}
                         <th>Brand Name:</th>
                         <th>Unit:</th>
                         <th>Quantity of Product:</th>
