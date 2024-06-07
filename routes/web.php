@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserManagementController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,8 +30,9 @@ Route::get('admin/dashboard', [ProfileController::class, 'dashboard'])->name('ad
 Route::group(['middleware'=>['admin_auth']],function(){
     
    // Route::get('/admin/dashboard',[ProfileController::class,'dashboard'])->name('dashboard');
-    Route::get('/admin/users',[UserController::class,'index'])->name('users.index');
-
+   // Route::get('/admin/users',[UserController::class,'index'])->name('users.index');
+   Route::resource('admin/users', UserManagementController::class);
+   // Route::res('/admin/users/create',[UserManagementController::class,'create'])->name('adminusercreate');
     Route::get('/admin/logout',[ProfileController::class,'logout'])->name('logout');
     Route::get('create', [ProductController::class, 'create'])->name('create');
     Route::post('store', [ProductController::class, 'store'])->name('store');
