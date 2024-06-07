@@ -6,7 +6,7 @@
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-12">
-        
+
       </div><!-- /.col -->
       <div class="col-sm-12">
         <ol class="breadcrumb float-sm-right">
@@ -16,18 +16,25 @@
       </div>
     </div>
   </div>
-</div>  
+</div>
 @endsection
 @section('body')
+<style>
+    .createLogin{
+        padding:1.6rem;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        /* font-size: em; */
 
+    }
+</style>
  <div class="row">
     <div class="container-fluid">
       <div class="card card-primary">
-             <h1>Login Account</h1>  
+        <div class="createLogin" ><h3>Login Account</h3></div>
               <div class="card-header">
                 <h3 class="card-title">Create Account</h3>
               </div>
-              
+
               <!-- form start -->
              <form method="post" action="">
     @csrf
@@ -71,9 +78,9 @@
 </form>
 
             </div>
-         
+
     </div>
 </div>
-   
+
 @endsection
 
