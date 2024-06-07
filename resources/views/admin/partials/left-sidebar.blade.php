@@ -50,7 +50,7 @@
                with font-awesome or any other icon font library -->
 
            <li class="nav-item">
-            <a href="{{route('dashboard')}}" class="nav-link {{$current_route=='dashboard'?'active':''}}">
+            <a href="{{route('admindashboard')}}" class="nav-link {{$current_route=='dashboard'?'active':''}}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -69,7 +69,7 @@
               <li class="nav-item">
                 <a href="{{route('users.index')}}" class="nav-link {{$current_route=='users.index'?'active':''}}">
                   <i class="far fas fa-user"></i>
-                  <p>Users</p>
+                  <p>Login</p>
                 </a>
               </li>
 
