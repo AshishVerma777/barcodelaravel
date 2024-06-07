@@ -38,6 +38,7 @@
                             <th>Name</th>
                             <th>Email</th>
                             <th>Password</th>
+                            <th>Status</th>
                             <th>Role</th>
                             <th>Action</th>
                         </tr>
@@ -49,6 +50,8 @@
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
                             <td>{{ $user->password }}</td>
+                          
+                            <td>{{ $user->status ? 'Active' : 'Deactivated' }}</td>
                             <td></td>
                             <td>
                                 <!-- Add your actions here -->
