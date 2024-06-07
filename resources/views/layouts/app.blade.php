@@ -6,6 +6,16 @@
 background-color: rgb(221, 227, 236) !important ;
 background-image: linear-gradient(135deg, #818eff 23%, #c3cfe2 100%);
   }
+
+  body[data-layout-mode=detached] #wrapper {
+    width: 100% !important;
+}
+@media (min-width: 992px) {
+    body[data-layout-mode=detached] #wrapper {
+        max-width: 100% !important;
+        margin: 0 auto;
+    }
+}
 </style>
 
 
