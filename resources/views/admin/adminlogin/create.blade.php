@@ -18,6 +18,7 @@
   </div>
 </div>
 @endsection
+
 @section('body')
 <style>
     .createLogin{
@@ -32,8 +33,7 @@
         height: -20px;
 
     }
-</style>
- <div class="row">
+</style><div class="row">
     <div class="container-fluid">
       <div class="card card-primary">
              <div class="createLogin" ><h3>Login Account</h3></div>
@@ -89,4 +89,3 @@
 </div>
 
 @endsection
-

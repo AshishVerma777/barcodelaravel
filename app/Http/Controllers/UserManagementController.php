@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+
 class UserManagementController extends Controller
 {
     /**
@@ -15,7 +17,7 @@ class UserManagementController extends Controller
             // $data=[
             //     'title'=>'Users'
             // ];
-            $users = User::all();
+            $users = User::where('status',1)->get();
             return view('admin.adminlogin.index', compact(['users']));
         
     }
@@ -34,28 +36,24 @@ class UserManagementController extends Controller
      */
     public function store(Request $request)
     {
-       // return  $request->all();
-
-       $request->validate([
-        'name'=>'required|string|max:255',
-        'email'=>'required|string|email|max:255|unique:users',
-        'password'=>'required|string|min:8|confirmed'
-       ]);
-
-       $user= new User();
-       $user->name = $request->name;
-       $user->email = $request->email;
-      // $user->password	 = $request->password;
-      
-       $user->password	 = bcrypt($request->password);
-      
-       //return $user;
-       $user->save();
-     
-       return redirect()->route('users.index')->with('success','User Created Successfully');
-
-
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:8|confirmed',
+        ]);
+    
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->status = 1; // Active by default
+    
+        //return $user; // This line is just for debugging and should not be present in production
+        $user->save();
+    
+        return redirect()->route('users.index')->with('success', 'User Created Successfully');
     }
+    
 
     /**
      * Display the specified resource.
@@ -73,9 +71,9 @@ class UserManagementController extends Controller
      */
     public function edit(string $id)
     {
-        $users= User::find($id);
+        $user= User::find($id);
         //dd($users);
-         return view('admin.adminlogin.edit_user',compact('users'));
+         return view('admin.adminlogin.edit_user',compact('user'));
    
     }
 
@@ -84,14 +82,58 @@ class UserManagementController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users,email,' . $id,
+            'old_password' => 'required_with:new_password|nullable',
+            'new_password' => 'nullable|string|min:8|confirmed',
+        ]);
+    
+        $user = User::findOrFail($id);
+    
+        // Check if new password is provided
+        if ($request->filled('new_password')) {
+            // Check if the old password matches
+            if (!Hash::check($request->old_password, $user->password)) {
+                return redirect()->back()->with('error', 'Current password does not match.');
+            }
+            // Hash and set the new password
+            $user->password = Hash::make($request->new_password);
+        }
+    
+        // Update user details
+        $user->name = $request->name;
+        $user->email = $request->email;
+    
+        // Save the user
+        $user->save();
+    
+        // Redirect with success message
+        return redirect()->route('users.index')->with('success', 'User updated successfully');
     }
+    
+                
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
     {
-        //
+        $user=User::findOrFail($id);
+
+        $user->status=0;//deactive user
+        $user->save();
+        return redirect()->route('users.index')->with('success','User deactivated successfully');
+
+    }
+
+    public function  restore(string $id)
+    {
+        $user=User::withTrashed()->findOrFail($id);
+        $user->status=1;//reactive user;
+        $user->restore();
+        return redirect()->route('users.index')->with('success','User reactivated successfully');
+    
+
     }
 }

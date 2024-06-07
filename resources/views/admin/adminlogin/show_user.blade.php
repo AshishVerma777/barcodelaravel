@@ -62,7 +62,7 @@
         </div>
         <div class="form-group">
             <label for="password_confirmation">Confirm Password</label>
-            <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" placeholder="Confirm Password" value="{{$users~->password}}">
+            <input type="password" name="password_confirmation" class="form-control" id="password_confirmation" placeholder="Confirm Password" value="{{$users->password}}">
             @error('password_confirmation')
                 <div class="text-danger">{{ $message }}</div>
             @enderror
