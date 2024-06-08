@@ -58,10 +58,24 @@
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{route('users.index')}}" class="nav-link {{$current_route=='users.index'?'active':''}}">
-                  <i class="far fas fa-user"></i>
+                  <i class="far fa-plus-square nav-icon"></i>
                   <p>Login</p>
                 </a>
               </li>
+
+
+
+
+              <li class="nav-item">
+                <a href="{{route('roles.index')}}" class="nav-link {{$current_route=='roles.index'?'active':''}}">
+                  <i class="fa fa-user-circle nav-icon"></i>
+                  <p>Roles</p>
+                </a>
+              </li>
+
+
+
+
 
             </ul>
           </li>
