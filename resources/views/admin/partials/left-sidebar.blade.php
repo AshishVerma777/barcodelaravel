@@ -13,9 +13,9 @@
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
+        {{--  <div class="image">
           <img src="{{asset('admin-assets/dist/img/user2-160x160.jpg')}}" class="img-circle elevation-2" alt="User Image">
-        </div>
+        </div>  --}}
         <div class="info">
           <a href="#" class="d-block">{{auth()->user()->name}}</a>
         </div>
@@ -66,12 +66,12 @@
 
 
 
-              <li class="nav-item">
+              {{--  <li class="nav-item">
                 <a href="{{route('roles.index')}}" class="nav-link {{$current_route=='roles.index'?'active':''}}">
                   <i class="fa fa-user-circle nav-icon"></i>
                   <p>Roles</p>
                 </a>
-              </li>
+              </li>  --}}
 
 
 

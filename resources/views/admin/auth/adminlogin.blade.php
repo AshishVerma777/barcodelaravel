@@ -32,9 +32,9 @@
                         <div class="logo" style="display:flex;">
                             <img src="{{ asset('admin/images/vidyagxplogo.png') }}" alt="..." class="w-100 h-100" style="max-width: 300px">
                         </div>
-                        <div class="logo">
+                        {{--  <div class="logo">
                             <img src="{{ asset('admin/images/agio.jpg') }}" alt="..." class="w-100 h-100" style="transform: scale(0.6)">
-                        </div>
+                        </div>  --}}
                     </div>
                 </div>
                 <h2 class="text text-dark text-center">Welcome To Admin-Console</h2>
