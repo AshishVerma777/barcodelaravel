@@ -12,7 +12,9 @@ class RoleController extends Controller
      */
     public function index()
     {
-        return view('admin.Roles.rolepermission');
+ 
+        $roles   = RolePermission::all();
+        return view('admin.Roles.rolepermission',compact('roles'));
     }
     /**
      * Show the form for creating a new resource.
@@ -27,7 +29,7 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        return $request->all();
+       // return $request->all();
        $roles = new RolePermission();
 
        $roles->role_name= $request->role_name;
@@ -40,12 +42,10 @@ class RoleController extends Controller
             'delete' => $request->has('delete'),
         ];
              
-
-
-
-
        $roles->permission =json_encode($permision);
 
+       
+       //return $roles;
        $roles->save();
 
       
@@ -67,7 +67,13 @@ class RoleController extends Controller
      */
     public function edit(string $id)
     {
-        //
+            $data  =  RolePermission::find($id);
+
+          //  dd($data);
+    
+            return  view('admin.Roles.edit_role',compact('data'));
+       
+
     }
 
     /**

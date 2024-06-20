@@ -236,7 +236,7 @@
     margin-top: 10px;
 }
 .logoV img {
-    height: 80px; /* Adjust based on your needs */
+    height: 50px; /* Adjust based on your needs */
     width: 130px;
     margin-left:15px;
 }
@@ -298,9 +298,9 @@
 
                     <table class="label-table">
                         <tr>
-                            <td colspan="1" style="width: 23% " ><div class="logo" id=custom-padding>
+                            {{--  <td colspan="1" style="width: 23% " ><div class="logo" id=custom-padding>
                                 <img src="/assets/barcode/New_logo-agio.png" alt="VidhyaGxp Logo">
-                            </div> </td>
+                            </div> </td>  --}}
                             <td colspan="2" > <div class="heading">
                     Warehouse and Labeling Management
                     </div> </td>

@@ -33,7 +33,7 @@
                         <img src="https://vidyagxp.com/vidhyaGxp.png" alt="VidyaGxP Logo">
                     </div>
                     <div class="logo logo-ajio">
-                        <img src="{{ asset('user/images/ajio-removebg-preview.png') }}" alt="Ajio Logo">
+                        {{--  <img src="{{ asset('user/images/ajio-removebg-preview.png') }}" alt="Ajio Logo">  --}}
                     </div>
                 </div>
                 <form action="{{route('update', $data->id)}}" method="post">
@@ -77,7 +77,7 @@
                         </div>
                         <div class="col-12">
                             <label for="container_no">Total Container :</label>
-                            <input type="text" class="form-control mb-3" name="container_no" value="{{$data->container_no}}">
+                            <input type="text" class="form-control mb-3" name="container_no" value="{{$data->container_no}}" readonly>
                         </div>
 
                         <div class="col-12">

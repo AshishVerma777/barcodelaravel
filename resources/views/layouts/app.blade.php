@@ -33,10 +33,10 @@ background-image: linear-gradient(135deg, #818eff 23%, #c3cfe2 100%);    }
 
             <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#"
               role="button" aria-haspopup="false" aria-expanded="false">
-              <img src="{{ asset('user/images/ajio-removebg-preview.png') }}" alt="user-image"  style="scale: 1.6; margin-right:9px;
-               background: white;" />
+              {{--  <img src="{{ asset('user/images/ajio-removebg-preview.png') }}" alt="user-image"  style="scale: 1.6; margin-right:9px;
+               background: white;" />  --}}
               <span class="pro-user-name ml-1">
-                Ajio <i class="mdi mdi-chevron-down"></i>
+                logout <i class="mdi mdi-chevron-down"></i>
               </span>
             </a>
             <div class="dropdown-menu dropdown-menu-right profile-dropdown">

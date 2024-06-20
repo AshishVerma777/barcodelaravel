@@ -178,7 +178,7 @@
     <div class="main-w3layouts wrapper">
         <div class="logos">
             <div class="logo">
-                <img src="/assets/barcode/New_logo-agio.png" alt="VidhyaGxp Logo">
+                {{--  <img src="/assets/barcode/New_logo-agio.png" alt="VidhyaGxp Logo">  --}}
             </div>
             <div class="logoV">
                 <img src="/assets/barcode/New_vidyaGxp_logo.png" alt="Other Logo">

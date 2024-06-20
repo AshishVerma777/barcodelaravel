@@ -46,7 +46,12 @@ class AuthController extends Controller
         ],$request->password);
 
         if($validated){
-            return redirect()->route('dashboard')->with('success','Login Successfull');
+            if (auth()->user()->is_admin == 'admin')
+            {
+                return redirect()->route('admindashboard');
+            } else {
+                return redirect()->route('dashboard')->with('success','Login Successfull');
+            }
         }else{
             return redirect()->back()->with('error','Invalid credentials');
         }

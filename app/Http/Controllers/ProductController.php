@@ -32,14 +32,23 @@ class ProductController extends Controller
         $product = Product::create($request->all());
 
         if (!empty($request->containers)) {
-            foreach ($request->containers as $containerData) {
+            foreach ($request->containers as $containerData)
+             {
+               // dd($containerData);
                 $container = new ProductContainer();
                 $container->product_id = $product->id;
                 $container->number = $containerData['number'];
                 $container->status = $containerData['status'];
                 $container->save();
             }
+            
         }
+
+      
+     
+
+
+
 
         return redirect('/');
     }
@@ -145,6 +154,8 @@ public function updateStatus($container)
     $container = ProductContainer::findOrFail($container);
     
     $container->status = $container->status == 'ok' ? 'leakage_damage' : 'ok'; // Update the status as per your requirement
+
+
 
     $container->save();
 

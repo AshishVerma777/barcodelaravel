@@ -25,7 +25,7 @@ Route::post('/admin/login', [AuthController::class, 'postLogin'])->name('postLog
 Route::view('superadmin/login', 'admin.auth.adminlogin');
 Route::post('superadmin/login', [AuthController::class, 'adminlogin'])->name('adminlogin');
 
-Route::get('admin/dashboard', [ProfileController::class, 'dashboard'])->name('admindashboard');
+//Route::get('admin/dashboard', [ProfileController::class, 'dashboard'])->name('admindashboard');
 
 //--------------------------------------------------------------------------------------
 Route::group(['middleware'=>['admin_auth']],function(){
@@ -34,21 +34,24 @@ Route::group(['middleware'=>['admin_auth']],function(){
    // Route::get('/admin/users',[UserController::class,'index'])->name('users.index');
     Route::resource('admin/users', UserManagementController::class);
     Route::resource('admin/roles',RoleController::class);
+    
+ 
+    Route::get('admin/dashboard', [ProfileController::class, 'dashboard'])->name('admindashboard');
 
+ });
 
-
-    Route::get('/admin/logout',[ProfileController::class,'logout'])->name('logout');
-    Route::get('create', [ProductController::class, 'create'])->name('create');
-    Route::post('store', [ProductController::class, 'store'])->name('store');
-    Route::post('/print/{id}',  [ProductController::class, 'print'])->name('print');
-    Route::get('show', [ProductController::class, 'show'])->name('show');
-    Route::get('edit/{id}', [ProductController::class, 'Editshow'])->name('Editshow');
-    Route::get('update-container-status/{container}', [ProductController::class, 'updateStatus'])->name('update_container_status');
-    Route::post('update/{id}', [ProductController::class, 'update'])->name('update');
-    Route::get('document', [ProductController::class, 'document'])->name('document');
-        
-    Route::get('/', [ProductController::class, 'dashboard'])->name('dashboard');
-
+ Route::group(['middleware' => 'auth'], function() {
+   Route::get('create', [ProductController::class, 'create'])->name('create');
+   Route::post('store', [ProductController::class, 'store'])->name('store');
+   Route::post('/print/{id}',  [ProductController::class, 'print'])->name('print');
+   Route::get('show', [ProductController::class, 'show'])->name('show');
+   Route::get('edit/{id}', [ProductController::class, 'Editshow'])->name('Editshow');
+   Route::get('update-container-status/{container}', [ProductController::class, 'updateStatus'])->name('update_container_status');
+   Route::post('update/{id}', [ProductController::class, 'update'])->name('update');
+   Route::get('document', [ProductController::class, 'document'])->name('document');
+       
+   Route::get('/', [ProductController::class, 'dashboard'])->name('dashboard');
+   Route::get('/admin/logout',[ProfileController::class,'logout'])->name('logout');
 
  });
 

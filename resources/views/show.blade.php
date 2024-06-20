@@ -55,7 +55,7 @@
 
 <header>
     <div class="logo-img">
-        <img src="http://www.agio-pharma.com/wp-content/uploads/2019/10/logo-agio.png" alt="Agio Logo" >
+        {{--  <img src="http://www.agio-pharma.com/wp-content/uploads/2019/10/logo-agio.png" alt="Agio Logo" >  --}}
     </div>
     <div class="heading-header ">
         Warehouse and Labeling Management

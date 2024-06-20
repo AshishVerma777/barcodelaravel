@@ -116,7 +116,7 @@
                     </div>
                     <h2>Generate Barcode</h2>
                     <div class="logo logo-ajio">
-                        <img src="{{ asset('user/images/ajio-removebg-preview.png') }}" alt="Ajio Logo" style="margin-top: -20px;">
+                        {{--  <img src="{{ asset('user/images/ajio-removebg-preview.png') }}" alt="Ajio Logo" style="margin-top: -20px;">  --}}
                     </div>
                 </div>
             </div>
