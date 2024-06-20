@@ -17,7 +17,7 @@
     .heading-header {
         font-weight: bold;
         font-size: 40px;
-        background: linear-gradient(0deg) #ffa745,  #3482f7 85%);
+        background: linear-gradient(0deg, #ffa745,  #3482f7 85%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         flex-grow: 1;
@@ -57,7 +57,7 @@
     <div class="logo-img">
         {{--  <img src="http://www.agio-pharma.com/wp-content/uploads/2019/10/logo-agio.png" alt="Agio Logo" >  --}}
     </div>
-    <div class="heading-header ">
+    <div class="heading-header">
         Warehouse and Labeling Management
     </div>
     <div class="logo-img">
