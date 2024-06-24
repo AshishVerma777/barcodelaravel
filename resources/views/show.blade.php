@@ -67,17 +67,16 @@
 
 <div class="container-fluid background-color">
     <h1 class=" pt-4 text-center mb-4">Show Barcode</h1>
-    <div class="row justify-content-md-center">
+    <div class="row">
 
-        <div class="pb-2" style="display: flex; gap: 825px;">
+        <div class="p-2 d-flex justify-content-between w-100">
             <div class="right-name">
                 <h2>List of Products</h2>
             </div>
-<div class="input-field">
-    <div class="text-white fw-bold">Enter Barcode No.</div>
-    <input style="padding: 5px; margin-right: 17px;" type="text" name="qr_scanner" id="QrScanner" />
-
-</div>
+            <div class="input-field">
+                <div class="text-white fw-bold">Enter Barcode No.</div>
+                <input style="padding: 5px; margin-right: 17px;" type="text" name="qr_scanner" id="QrScanner" />
+            </div>
         </div>
 
         <div class="table_responsive" style="    height: 183px;">
