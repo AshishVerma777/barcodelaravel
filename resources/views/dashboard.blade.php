@@ -6,14 +6,14 @@
      table th {
             background-color: #f8f9fa;
             color: #000; /* Set the color to black */
-            font-size: 17px;
+            font-size: 14px;
             text-align: center; /* Change the font size */
         }
         table td{
             color:#feffff;
         }
         .pb-2{
-            block-size:60px;
+            block-size:50px;
         }
 
 .table_responsive{
@@ -24,21 +24,59 @@
 
 }
 
+  /* @media(min-width: 992px) {
+    body[data-layout-mode=detached] .footer {
+        position: fixed;
+         margin: 0 10px; 
+    }
+    
+    
+}  */
+
+.left-side-menu{
+    width: 260px !important;
+    background: #fff;
+    bottom: 0;
+    padding: 35px 0;
+    position: fixed;
+    transition: all .1s ease-out;
+    top: 70px;
+    box-shadow: 0 0 35px 0 rgba(154, 161, 171, .15);
+}
+
+#sidebar-menu>ul>li>a {
+    color: #6e768e;
+    display: block;
+    padding: 12px 20px;
+    position: relative;
+    transition: all .4s;
+    font-family: "Cerebri Sans,sans-serif";
+    font-size: 0.8rem !important;
+}
+.heading-dashboard{
+    display: flex;
+    justify-content: space-between;
+
+}
+
     </style>
 <div class="container-fluid">
                         <div class="row">
-                            <div class="col-12">
+                            <div class="col-12 heading-dashboard">
                                 <div class="page-title-box">
-                                    <h4 class="page-title font-weight-bold">DASHBOARD</h4>
+                                    <h4 class="page-title font-weight-bold   ">DASHBOARD</h4>
                                 </div>
+<div class="page-title-box">
+<h3 class="text-primary pt-1 font-weight-bold text-center mb-4">Generate Label</h3>
+
+</div>
                             </div>
                         </div>
                           <!-- end page title -->
 
-                                    <h1 class="text-primary pt-1 font-weight-bold text-center mb-4">Generate Label</h1>
                                     <div class="table_responsive" style="width: 100%; overflow-x: auto;">
 
-                                        <h1 class=" text-left mb-3"><b>List of Products</b></h1>
+                                        <h3 class=" text-left mb-3"><b>List of Products</b></h3>
                                         <hr>
                                         <div class="pb-2">
                                             <a href="{{ route('create') }}" class="btn btn-success">Add</a>

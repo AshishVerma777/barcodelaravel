@@ -4,7 +4,27 @@
 <style>
    .content-page .bg-colorful{
 background-color: rgb(221, 227, 236) !important ;
-background-image: linear-gradient(135deg, #818eff 23%, #c3cfe2 100%);    }
+background-image: linear-gradient(135deg, #818eff 23%, #c3cfe2 100%);   
+ }
+
+ body[data-layout-mode=detached] #wrapper {
+    width: 100% !important;
+}
+@media (min-width: 992px) {
+    body[data-layout-mode=detached] #wrapper {
+        max-width: 100% !important;
+        margin: 0 auto;
+    }
+}
+/* #sidebar-menu>ul>li>a {
+    color: #6e768e;
+    display: block;
+    padding: 12px 20px;
+    position: relative;
+    transition: all .4s;
+    font-family: "Cerebri Sans,sans-serif";
+    font-size: 0.8rem !important;
+} */
 </style>
 
 
@@ -21,7 +41,7 @@ background-image: linear-gradient(135deg, #818eff 23%, #c3cfe2 100%);    }
       <div class="container-fluid">
       <div class="main_container">
       <div class="Main_logo_1" style="x">
-          <img src="https://vidyagxp.com/vidhyaGxp.png" alt="user-img" title="Mat Helme" class="rounded-circle avatar-md" style="scale: 4;" />
+          <img src="https://vidyagxp.com/vidhyaGxp.png" alt="user-img" title="Mat Helme" class="rounded-circle avatar-md ml-2" style="scale: 3; " />
           {{-- <p class="text-muted mt-2">Admin Head</p> --}}
 
         </div>

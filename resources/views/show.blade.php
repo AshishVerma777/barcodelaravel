@@ -16,7 +16,7 @@
 
     .heading-header {
         font-weight: bold;
-        font-size: 40px;
+        font-size: 25px;
         background: linear-gradient(0deg, #ffa745,  #3482f7 85%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -26,6 +26,7 @@
 
     .table_responsive {
         width: 100%;
+        height: 100%;
         overflow-x: auto;
     }
 
@@ -51,6 +52,15 @@
     .background-color{
         background-image: linear-gradient(to right, #97938dc3 0%, #5684a8 100%);
     }
+
+    {{--  @media(min-width: 992px) {
+    body[data-layout-mode=detached] .footer {
+        position: fixed;
+         margin: 0 5px; 
+    }  --}}
+    
+    
+}
 </style>
 
 <header>
@@ -66,12 +76,12 @@
 </header>
 
 <div class="container-fluid background-color">
-    <h1 class=" pt-4 text-center mb-4">Show Barcode</h1>
+    <h2 class=" pt-4 text-center mb-4">Show Barcode</h2>
     <div class="row">
 
         <div class="p-2 d-flex justify-content-between w-100">
             <div class="right-name">
-                <h2>List of Products</h2>
+                <h3>List of Products</h3>
             </div>
             <div class="input-field">
                 <div class="text-white fw-bold">Enter Barcode No.</div>
@@ -79,7 +89,7 @@
             </div>
         </div>
 
-        <div class="table_responsive" style="    height: 183px;">
+        <div class="table_responsive" style="height: 400px;">
             <table class="table table-hover">
                 <thead>
                     <tr class="rows">

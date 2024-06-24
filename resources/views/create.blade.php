@@ -7,6 +7,7 @@
     justify-content: space-between; /* Ensures one logo is on each side */
     align-items: center; /* Centers logos vertically */
     width: 100%;
+    height: 123px;
 }
 
 .logo img {
@@ -23,6 +24,19 @@
 
 .head-background{
     background-image: linear-gradient(to right, #97938dc3 0%, #5684a8 100%);
+}
+ @media(min-width: 992px) {
+    body[data-layout-mode=detached] .footer {
+        position: fixed;
+         margin: 0 10px; 
+    }
+    
+    
+}
+
+.button-submit{
+    display: flex;
+    justify-content: center;
 }
 </style>
 
@@ -114,7 +128,7 @@
                     <div class="logo logo-vidya">
                         <img src="https://vidyagxp.com/vidhyaGxp.png" alt="VidyaGxP Logo" height="22" style="scale:2px;">
                     </div>
-                    <h2>Generate Barcode</h2>
+                    <h3>Generate Barcode</h3>
                     <div class="logo logo-ajio">
                         {{--  <img src="{{ asset('user/images/ajio-removebg-preview.png') }}" alt="Ajio Logo" style="margin-top: -20px;">  --}}
                     </div>
@@ -236,7 +250,7 @@
 
                 <div class="col-12">
                     <label for="rec_qty">Rec Qty:</label>
-                    <input type="number" class="form-control mb-3" name="rec_qty">
+                    <input type="text" class="form-control mb-3" name="rec_qty">
                 </div>
 
                 <div class="col-12">
@@ -264,7 +278,7 @@
                     <input type="text" class="form-control mb-3" name="format_no">
                 </div>
 
-                <button type="submit" class="btn btn-success col-md-3">Submit</button>
+                <button  type="submit" class="btn btn-success col-md-2 button-submit">Submit</button>
                 <br>
                 <br>
             </form>

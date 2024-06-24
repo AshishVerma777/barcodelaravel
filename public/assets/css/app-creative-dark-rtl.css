@@ -59,9 +59,9 @@ body {
   margin-top: 70px; }
 
 .left-side-menu {
-  width: 240px;
+  width: 260px;
   bottom: 0;
-  padding: 20px 0;
+  padding: 35px 0;
   position: fixed;
   transition: all .1s ease-out;
   top: 70px;
